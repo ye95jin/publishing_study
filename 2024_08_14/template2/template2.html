@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Basic Template</title>
+<meta charset="utf-8">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 770px;
+	height: 38px;
+	background-color: #0072bb;
+}
+header .utils ul {
+	display: flex;
+}
+nav {
+	width: 770px;
+	height: 40px;
+	background-color: #18334e;
+}
+nav ul {
+	display: flex;
+	justify-content: center;
+}
+.slider img {
+	width: 770px;
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo">
+				<h1><a href=""><img src="images/logo.png" alt="logo"></a></h1>
+			</div>
+			<div class="utils">
+				<ul>
+					<li><a href=""><img src="images/utils_menu1.png" alt="utils_menu1"></a></li>
+					<li><a href=""><img src="images/utils_menu2.png" alt="utils_menu2"></a></li>
+					<li><a href=""><img src="images/utils_menu3.png" alt="utils_menu3"></a></li>
+				</ul>
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li><a href=""><img src="images/menu1.png" alt="menu1"></a></li>
+				<li><a href=""><img src="images/menu2.png" alt="menu2"></a></li>
+				<li><a href=""><img src="images/menu3.png" alt="menu3"></a></li>
+				<li><a href=""><img src="images/menu4.png" alt="menu4"></a></li>
+				<li><a href=""><img src="images/menu5.png" alt="menu5"></a></li>
+				<li><a href=""><img src="images/menu6.png" alt="menu6"></a></li>
+			</ul>
+		</nav>
+		<div class="slider">
+			<img src="images/slider.png" alt="slider">
+		</div>
+	</div>
+</body>
+</html>
