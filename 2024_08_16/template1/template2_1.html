@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Basic Template</title>
+<meta charset="utf-8">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+
+/* 텍스트의 가로 정렬 요건*/
+/*.cont {
+	background-color: #09f;
+	text-align: center;
+}
+.cont .box {
+	display: inline-block;
+	padding: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+}*/
+
+/*블럭의 가로 정렬 요건*/
+.cont {
+	display: flex;
+	justify-content: center; /*flex-start / flex-end / center / space-between*/
+	
+	align-items: center; /*stretch / flex-start / flex-end / center */
+	gap: 20px;
+	
+	height: 200px;
+	background-color: #09f;
+}
+.cont .box {
+	padding: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+}
+</style>
+</head>
+
+<body>
+	<div class="cont">
+		<div class="box">box</div>
+		<div class="box">box</div>
+		<div class="box">box</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Basic Template</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+
+body {
+	font-family: "Roboto","Noto Sans KR", sans-serif;
+}
+
+.wrapper {
+	width: 850px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header nav ul {
+	display: flex;
+}
+
+.utils {
+	background-color: #212121;
+}
+
+.utils ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 97px;
+	height: 30px;
+}
+
+.utils ul li a { 
+	display: block;
+	padding: 4px 6px;
+	font-size: 9px; 
+	color: #98b6bf;
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="logo"><h1><a href=""><img src="images/logo.png" alt="logo"></a></h1></div>
+			<nav>
+				<ul>
+					<li><a href=""><img src="images/menu1.png" alt="menu1"></a></li>
+					<li><a href=""><img src="images/menu2.png" alt="menu2"></a></li>
+					<li><a href=""><img src="images/menu3.png" alt="menu3"></a></li>
+					<li><a href=""><img src="images/menu4.png" alt="menu4"></a></li>
+					<li><a href=""><img src="images/menu5.png" alt="menu5"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="slider">
+			<img src="images/keyvisual.png" alt="keyvisual">
+		</div>
+		<div class="utils">
+			<ul>
+				<li><a href="">CONTACT</a></li>
+				<li><a href="">SITEMAP</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
