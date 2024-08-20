@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Flexbox Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+}
+.box_cont {
+	display: flex;
+	background-color: #24bbaf;
+}
+.box_cont div[class^=box_] {
+	margin: 20px;
+	padding: 20px;
+	/* width: 200px; */
+	text-align: center;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+footer {
+	padding: 50px 0;
+	text-align: center; /* 상속되는 컨테이너 속성 */
+	background-color: #999;
+}
+
+footer .inner {
+	display: flex; /*상속되지 않은 속성*/
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 1020px;
+}
+
+footer .copyright {
+	width: 100px;
+	height: 50px;
+	background-color: #ccc;
+}
+
+footer .link {
+	width: 100px;
+	height: 50px;
+	background-color: #ccc;
+}
+
+@media only screen and (max-width : 1020px) {
+	footer .inner {
+	padding: 0 25px;
+}
+}
+
+</style>
+</head>
+
+<body>
+<div class="box_cont">
+	<div class="box_a">a</div>
+	<div class="box_b">b</div>
+	<div class="box_c">c</div>
+	<div class="box_d">d</div>
+	<div class="box_e">e</div>
+	<div class="box_f">f</div>
+	<div class="box_g">g</div>
+	<div class="box_h">h</div>
+</div>
+<footer>
+	<div class="inner">
+		<div class="copyright">copyright</div>
+		<div class="link">link</div>
+	</div>
+</footer>
+</body>
+</html>
