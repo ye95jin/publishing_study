@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Clone Coding1</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	color: #333;
+	background-color: #999;
+}
+
+nav { 
+	position: absolute; 		
+	left: 0;
+	top: 0;
+	width: 100%; /*absolute는 div라도 100% 가로 크기를 가지지 못합니다.*/
+	height: 60px;
+	overflow: hidden;
+	background-color: #fff;
+	/* height 변경을 0.3초간 동작을 연결시켜집니다.*/
+	transition: height 0.3s;
+}
+
+nav:hover { /*아무 요소가 선택 가능*/
+	height: 190px;
+}
+
+nav > ul { /*바로 밑 요소를 선택*/
+	display: flex;
+	justify-content: center;
+}
+
+nav > ul > li > a {
+	display: block;
+	padding: 0 50px;
+	line-height: 60px;
+	background-color: #eaeaea;
+}
+
+nav li ul {
+	padding-left: 40px;
+	padding-top: 10px;	
+}
+
+nav li ul a {
+	line-height: 24px;
+}
+
+.slider {
+	margin-top: 60px;
+	height: 420px;
+}
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<nav>
+		<ul>
+			<li> <!--1depth-->
+				<a href="">NEW</a>
+				<ul class="sub">
+					<li><a href="">ARRIVED</a></li> <!--2depth-->
+					<li><a href="">NEW</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">WOMEN</a>
+				<ul class="sub">
+					<li><a href="">APPAREL</a></li>
+					<li><a href="">SHOES</a></li>
+					<li><a href="">BAGS</a></li>
+					<li><a href="">ACCESSORIES</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">MEN</a>
+				<ul class="sub">
+					<li><a href="">APPAREL</a></li>
+					<li><a href="">SHOES</a></li>
+					<li><a href="">BAG & ACC</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">LIFE</a>
+				<ul class="sub">
+					<li><a href="">APARTMENT</a></li>
+					<li><a href="">ELECTRONICS</a></li>
+					<li><a href="">CULTURE</a></li>
+					<li><a href="">BEAUTY</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">SALE</a>
+				<ul class="sub">
+					<li><a href="">SALE</a></li>
+					<li><a href="">SALE EVENT</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">BRAND</a>
+				<ul class="sub">
+					<li><a href="">EXCLUSIVE</a></li>
+					<li><a href="">TOP</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="slider">
+		<img src="images/key1.jpg" alt="key1">
+	</div>
+</div>
+</body>
+</html>
