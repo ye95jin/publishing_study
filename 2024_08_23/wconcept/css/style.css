@@ -1,0 +1,505 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body { 
+	font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+/* header */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 25px 0px;
+	width: 1020px;
+	height: 120px;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+
+header .sns,
+    header .logo,
+    header .utils {
+        width: 33.3%;
+        justify-content: center;
+    }
+
+header .sns {
+	display: flex;
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+header .sns ul {
+	display: flex;
+	gap: 6px;
+}
+
+header .sns ul li a {
+	display: block;
+}
+
+header .logo {
+	display: flex;
+	align-items: center;
+}
+
+header .utils {
+	display: flex;
+	justify-content: flex-end;
+}
+
+header .utils ul {
+	display: flex;
+	gap:6px
+}
+
+header .utils ul li a{
+	display: block;
+	padding: 0px 12px;
+	line-height: 26px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #999;
+}
+
+/* menu */
+
+
+.menu {
+	position: relative;
+	height: 60px;
+}
+
+nav { 
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 55px;
+	overflow: hidden;
+	text-align: center;
+	background-color: #fff;
+	transition: height 0.3s;
+	z-index: 1;
+}
+
+nav:hover { 
+	height: 190px;
+}
+
+nav > ul > li {
+	position: relative;
+}
+
+nav > ul { 
+	display: flex;
+	justify-content: center;
+}
+
+nav > ul > li > a {
+	display: block;
+	padding: 0 50px;
+	line-height: 60px;
+	font-size: 0.875em;
+	color: #2f2f2f;
+}
+
+nav > ul > li:hover > a {
+	color: #b4252d;
+}
+
+nav .sub {
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	padding-top: 14px;
+	height: 131px;
+}
+nav .sub a {
+	display: block;
+	padding: 6px 0 7px;
+	line-height: 1;
+	text-align: left;
+	font-size: 12px;
+	color: #a0a0a0;
+}
+nav .sub a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+
+/* slider */
+
+.slider {
+	position: relative;
+	height: 480px;
+}
+
+.slider img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slider .left_arrow {
+	position: absolute;
+	left: 50px;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+.slider .right_arrow {
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+
+/* section */
+
+section {
+	margin: 0 auto;
+	padding: 70px 0 60px;
+	width: 1020px;
+}
+
+.banner1, 
+.banner2 {
+	display: flex;
+	gap: 30px;
+}
+
+.banner2 {
+	margin-top: 30px;
+}
+
+.banner1_1,
+.banner2_2 {
+	width: 690px;
+	height: 388px;
+	overflow: hidden;
+}
+
+.banner1 .banner1_1 a img,
+.banner2 .banner2_2 a img  {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1);
+	transition: transform 0.3s ;
+}
+
+.banner1 .banner1_1 a:hover img,
+.banner1 .banner1_1 a:focus img,
+.banner2 .banner2_2 a:hover img,
+.banner2 .banner2_2 a:focus img {
+	transform: scale(1.1);
+}
+
+.banner1 .banner1_2 a,
+.banner2 .banner2_1 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 388px;
+	text-align: center;
+	border: 1px solid #000;
+	box-sizing: border-box;
+}
+.banner1 .banner1_2 a .title strong,
+.banner2 .banner2_1 a .title strong {
+	font-size: 24px;
+}
+
+.banner1 .banner1_2 a .title span,
+.banner2 .banner2_1 a .title span {
+	display: block;
+	font-size: 11px;
+	margin-top: 5px;
+	color: #302f2f;
+}
+.banner1 .banner1_2 a .desc,
+.banner2 .banner2_1 a .desc {
+	margin-top: 30px;
+	font-size: 12px;
+	color: #666;
+}
+
+.banner1 .banner1_2 a:hover .desc,
+.banner2 .banner2_1 a:hover .desc {
+	text-decoration: underline;
+}
+
+.banner1 .banner1_2 a .view_more,
+.banner2 .banner2_1 a .view_more {
+	display: inline-block;
+	margin-top: 25px;
+	padding: 10px 20px;
+	font-size: 11px;
+	text-decoration: underline;
+	background-color: #fff;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+
+.banner1 .banner1_2 a:hover .view_more,
+.banner2 .banner2_1 a:hover .view_more {
+	text-decoration: none;
+	background-color: #b5252e;
+	color: #fff;
+}
+
+
+.banner3 {
+	display: flex;
+	gap: 30px;
+	margin-top: 30px;
+}
+
+.banner3_left,
+.banner3_right {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.banner3 .banner3_left .banner3_left1 a { 
+	display: flex;
+	align-items: flex-end;
+	width: 495px;
+	height: 570px;
+	background: url(../images/heich.jpg) no-repeat; 
+}
+
+.banner3 .banner3_right .banner3_right2 a { 
+	display: flex;
+	align-items: flex-end;
+	width: 495px;
+	height: 570px;
+	background: url(../images/mimic.jpg) no-repeat; 
+}
+
+.banner3 .banner3_left .banner3_left1 a .inner,
+.banner3 .banner3_right .banner3_right2 a .inner {
+	margin-left: 30px;
+	margin-bottom: 55px;
+	transform: scale(1);
+	transition: transform 0.3s ;
+}
+
+.banner3 .banner3_left .banner3_left1 a span,
+.banner3 .banner3_right .banner3_right2 a span {
+	display: block;
+	font-size: 14px;
+	color: #fff;
+}
+
+.banner3 .banner3_left .banner3_left1 a strong,
+.banner3 .banner3_right .banner3_right2 a strong{
+	display: block;
+	margin-top: 8px;
+	font-size: 22px;
+	font-weight: 600;
+	color: #fff;
+}
+
+.banner3 .banner3_left .banner3_left1 a span.view_more,
+.banner3 .banner3_right .banner3_right2 a span.view_more { 
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 18px;
+	border: 1px solid #fff;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+
+.banner3 .banner3_left .banner3_left1 a:hover span.view_more,
+.banner3 .banner3_left .banner3_left1 a:focus span.view_more,
+.banner3 .banner3_right .banner3_right2 a:hover span.view_more,
+.banner3 .banner3_right .banner3_right2 a:focus span.view_more { 
+	background-color: #fff;
+	color: #666;
+}
+
+.banner3 .banner3_left .banner3_left2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 495px;
+	height: 300px;
+	padding: 15px;
+	text-align: center;
+	box-sizing: border-box;
+	background: url(../images/new.png) no-repeat;
+}
+
+.banner3 .banner3_left .banner3_left2 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	transition: 0.3s;
+}
+
+.banner3 .banner3_left .banner3_left2:hover a {
+	background: url(../images/new1.jpg) no-repeat;
+}
+
+.banner3 .banner3_left .banner3_left2:hover a strong,
+.banner3 .banner3_left .banner3_left2:hover a span {
+	color: #fff;
+	transition: 0.3s;
+}
+
+.banner3 .banner3_left .banner3_left2:hover a span.view_more,
+.banner3 .banner3_left .banner3_left2:focus a span.view_more {
+	background-color: #b5252e;
+}
+
+
+.banner3 .banner3_right .banner3_right1  {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	text-align: center;
+	width: 495px;
+	height: 300px;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	background-color: #fff;
+	transition: 0.3s;
+} 
+
+.banner3 .banner3_right .banner3_right1 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.banner3 .banner3_right .banner3_right1:hover {
+	background: url(../images/sale.jpg) no-repeat;
+}
+
+.banner3 .banner3_right .banner3_right1:hover a strong,
+.banner3 .banner3_right .banner3_right1:hover a span {
+	color: #fff;
+}
+
+.banner3 .banner3_right .banner3_right1:hover a span.view_more,
+.banner3 .banner3_right .banner3_right1:focus a span.view_more {
+	background-color: #b5252e;
+}
+
+
+.banner3 .banner3_left .banner3_left2 a strong,
+.banner3 .banner3_right .banner3_right1 a strong {
+	display: block;
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.banner3 .banner3_left .banner3_left2 a span,
+.banner3 .banner3_right .banner3_right1 a span {
+	display: block;
+	font-size: 14px;
+	color: #666;
+}
+
+.banner3 .banner3_left .banner3_left2 a span.view_more,
+.banner3 .banner3_right .banner3_right1 a span.view_more { 
+	display: inline-block;
+	margin-top: 20px;
+	padding: 15px 30px;
+	background-color: #000;
+	box-sizing: border-box;
+	color: #fff;
+	transition: 0.3s;
+}
+
+.banner3 .banner3_left .banner3_left2 a:hover span.view_more,
+.banner3 .banner3_left .banner3_left2 a:focus span.view_more,
+.banner3 .banner3_right .banner3_right1 a:hover span.view_more,
+.banner3 .banner3_right .banner3_right1 a:focus span.view_more { 
+	background-color: #b5252e;
+}
+
+
+/* footer */
+
+footer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 55px 160px;
+	box-sizing: border-box;
+	gap: 15px;
+	background-color: #333;
+}
+
+footer .info p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	font-size: 12px;
+	color: #666;
+}
+
+footer .info p a {
+	display: inline-block;
+	padding: 7px 9px;
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 12px;
+	background-color: #B5252E; 
+	color: #fff;
+}
+
+footer .social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+}
+
+footer .social a {
+	display: block;
+	padding: 5px 5px;
+	box-sizing: border-box;
+}
+
+footer .copyright {
+	font-size: 10px;
+	color: #666;
+}
