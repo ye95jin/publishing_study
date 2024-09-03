@@ -1,0 +1,275 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+table,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul,
+ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: top;
+  border: none;
+}
+
+.wrapper {
+  position: relative;
+}
+.skip_nav a {
+  position: fixed;
+  left: 0;
+  top: -9999px;
+  z-index: 9999;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 0.875em;
+  background-color: #000;
+  color: #fff;
+}
+.skip_nav a:focus {
+  top: 0;
+}
+
+/* header */
+#start {
+  position: relative;
+}
+#start .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 1250px;
+  height: 120px;
+}
+#start .header .nav > ul {
+  display: flex;
+}
+#start .header .nav > ul > li {
+  position: relative;
+}
+#start .header .nav > ul > li > a {
+  display: block;
+  padding: 0 42px;
+  line-height: 40px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+}
+#start .header .nav > ul > li:hover > a {
+  color: #ff330e;
+}
+#start .header .nav li ul {
+  display: none;
+  position: absolute;
+  z-index: 500;
+  width: 100%;
+}
+#start .header .nav li:hover ul {
+  display: block;
+}
+#start .header .nav ul ul a {
+  display: block;
+  margin: 2px 0;
+  padding-left: 10px;
+  line-height: 26px;
+  font-size: 0.875em;
+  background-color: #999;
+  color: #fff;
+}
+#start .header .nav ul ul a:hover {
+  background-color: #ff330e;
+}
+#start .slider {
+  position: relative;
+  height: 600px;
+}
+#start .slider .gallery li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+#start .slider .gallery li img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#start .slider .gallery .author {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  line-height: 18px;
+  font-size: 0.813em;
+  font-style: italic;
+  color: #fff;
+  transform: translateX(-40vw);
+}
+#start .slider .content {
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  width: 1250px;
+  height: 600px;
+}
+#start .slider .content .info {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  z-index: 15;
+  width: 500px;
+  transform: translateY(-50%);
+}
+#start .slider .content .info p {
+  line-height: 1.75;
+  font-size: 1.375em;
+  font-weight: 600;
+  color: #ff330e;
+}
+#start .slider .content .info a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 3px;
+}
+#start .slider .content .info a strong {
+  display: inline-block;
+  padding: 10px 13px 10px 10px;
+  font-size: 3.125em;
+  font-weight: 600;
+  background-color: #ff330e;
+  color: #fff;
+}
+#start .slider .content .control {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(30vw);
+}
+#start .slider .content .control ul {
+  display: flex;
+  gap: 8px;
+}
+#start .slider .content .control li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  text-indent: -9999px;
+  background-color: rgba(245, 245, 245, 0.5);
+  border-radius: 50%;
+}
+#start .slider .content .control li.active a {
+  background-color: #ff330e;
+}
+#start .lnb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  width: 100px;
+  height: 100%;
+  background-color: #fff;
+}
+#start .lnb .close {
+  margin-top: 45px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+#start .lnb .close i {
+  font-size: 1.25em;
+  color: #000;
+  transition: 0.4s;
+}
+#start .lnb .close.active i {
+  color: #ff330e;
+  transform: rotate(45deg);
+}
+#start .lnb .search {
+  margin-top: 35px;
+  width: 40px;
+  height: 140px;
+}
+#start .lnb .search a {
+  display: block;
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
+  font-size: 1.125em;
+  color: #000;
+}
+#start .lnb .search img {
+  margin-top: 15px;
+}
+
+/* information */
+#information {
+  display: flex;
+  gap: 80px;
+  padding: 80px 0 50px; /*공간 여백은 padding*/
+  margin: 0 auto;
+  max-width: 1246px;
+  height: 164px;
+  background-color: #f4f4f4;
+}
+
+#information .title {
+  /* 클래스 이름 단순하게 작성합니다. */
+  width: 400px;
+  /*flex-basis : 400px;*/
+  background-color: #999;
+}
+
+#information .content {
+  width: calc(100% - 480px);
+  background-color: #999;
+}
+
+@media only screen and (max-width: 1246px) {
+  /*그리드 해상도에서 날개*/
+  #information {
+    padding: 80px 25px 50px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #information {
+    flex-direction: column; /*2덩어리일 경우 효과 */
+    gap: 20px; /*이전 :: 80px*/
+    height: auto; /*이전 :: 164px*/
+  }
+  #information .title,
+  #information .content {
+    width: auto; /*수치를 없앱니다.*/
+    height: 100px;
+  }
+}
