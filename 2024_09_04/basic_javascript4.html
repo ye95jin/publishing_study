@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>basic :: JavaScript Variables</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+button {
+	padding: 5px 15px;
+	font-family: "Open Sans", sans-serif;
+	background-color: #666;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+button:hover {
+	background-color: #888;
+}
+input[type="text"] {
+	display: inline-block;
+	margin-left: 2px;
+	padding: 4px 10px;
+	width: 200px;
+	line-height: 1.2;
+	font-family: "Open Sans", sans-serif;
+	font-size: 0.875em;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 3px #ddd;
+	box-sizing: border-box;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+.result {
+	margin-top: 20px;
+	color: #fff;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	//javaScript를 공부하기 위해서는 선행학습이 필요합니다. 
+	// 1) 배열
+	let array=["new","photo",2]; 
+
+	// console.log(array);
+	// console.log(array[0]); //new
+
+
+	// 예전 코드 
+	for(let i=0; i<array.length; i++){
+		//console.log(array[i]);
+	}
+
+	
+
+	// array.forEach(function(item,i){ // item : 요소, i : 반복자 
+	// 	console.log(item,i);
+	// });
+
+	
+
+	let a=0;
+	//a=a+1; //우항은 이전값은 좌값은 계산된 값입니다. 
+	//a+=1; //좌항하고 우항이 같으면 생략하고 복합연산자를 사용합니다. 
+	a++; //후위 연산자를 사용해서 1을 추가합니다. 
+
+	//console.log(a++); //0
+	console.log(++a); //1 전위연산자를 사용하면 미리 1이 추가됩니다. 
+	console.log(a); //1 
+
+	// 2) object
+	// UI 상에서 데이터베이스를 만들 때 사용(json)합니다. 
+	// MongoDB 데이터베이스에서도 object 유형입니다. 
+
+	let joinObj={
+		name:"hongildong",
+		age: 24,
+		job: "designer",
+		doto: "design"
+	};
+
+	// console.log(joinObj);
+	// console.log(joinObj.name); //hongildong
+
+	// 3)function
+	// 이벤트에서 사용됩니다.
+	// UI 코드 정리하는 방법을 알아야 합니다. 
+	// React, Vue.js, Node.js 코드의 기본입니다.
+	// 3-1) 기본형
+	// function 함수 이름(){}
+	function myFn1(){ //선언
+		console.log("myFn1");
+	}
+
+	myFn1(); // 호출 
+
+	// 3-2) 대입함수 
+	// 이벤트 함수, 콜백함수로 사용됩니다. 
+	// function(){} : 실행 명령어, 콜백 함수 
+
+	let myFn2=function(){ //선언
+		console.log("myFn2");
+	};
+
+	myFn2(); //호출 
+
+	// 3-3) 화살표 함수 
+	// React와 같은 JavaScript 어플리케이션을 위해 개발된 함수입니다. 
+
+	let myFn3=() => { //선언
+		console.log("myFn3");
+	};
+
+	myFn3(); //호출 
+
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript</h1>
+<div class="container">
+	<button class="calc">Calculate</button>
+	<input type="text" id="data">
+	<div class="result"></div>
+	<div class="list">
+		<ul>
+			<li>list1</li>
+			<li>list1</li>
+			<li>list1</li>
+			<li>list1</li>
+		</ul>
+	</div>
+<!-- 
+	<script>
+		let list=document.querySelectorAll(".list li");
+		list.forEach(function(item){
+			item.addEventListener("click")
+		})
+	</script> -->
+
+</div>
+</body>
+</html>
