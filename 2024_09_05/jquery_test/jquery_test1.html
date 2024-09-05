@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: jQuery Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.controller {
+	padding-top: 20px;
+}
+.controller li a {
+	display: block;
+	margin-bottom: 20px;
+	padding: 20px;
+	width: 80px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 0.875em;
+	background-color: #fff;
+	color: #666;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+.controller li.on a {
+	width: 120px;
+	background-color: #8ac007;
+	color: #fff;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	
+$(document).ready(function(){ 
+	$(".controller li").click(function(){ 
+		$(".controller li").removeClass("on"); 
+		$(this).addClass("on"); 
+	});
+});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: jQuery Test</h1>
+<div class="container">
+	<ul class="controller">
+		<li><a href="#">tab1</a></li>
+		<li><a href="#">tab2</a></li>
+		<li><a href="#">tab3</a></li>
+		<li><a href="#">tab4</a></li>
+		<li><a href="#">tab5</a></li>
+		<li><a href="#">tab6</a></li>
+	</ul>
+</div>
+</body>
+</html>

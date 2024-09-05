@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: jQuery Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.controller {
+	display: flex;
+	gap: 12px;
+	padding-top: 20px;
+}
+.controller li a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+.controller li.on a {
+	width: 50px;
+	background-color: #8ac007;
+}
+.picture {
+	position: relative;
+	margin-top: 30px;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+.picture ul {
+	display: flex;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2400px;
+	transition: left 0.4s;
+}
+.picture li {
+	width: 400px;
+	height: 400px;
+}
+.picture img {
+	max-width: 100%;
+	height: auto;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".controller li:first-child").addClass("on"); //로딩
+
+		$(".controller li").click(function(){
+			$(".controller li").removeClass("on"); //클릭
+			$(this).addClass("on");
+
+			let targetx=$(this).index()*(-1)*400; //좌측 위치 좌표 
+
+			// UI는 번호에 맞는 아웃풋을 내는 행동입니다.
+			//console.log($(this).index()); // 0~5
+			//console.log($(this).index() * (-1) * 400);
+			
+			$(".picture ul").css({
+				left: targetx
+			});
+
+			// $(".picture ul").css({
+			// 	left: $(this).index()*(-1)*400 //너무 어려운 코드
+			// });
+
+			// .picture ul { left : -400; }
+		});
+		
+	});
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: jQuery Example</h1>
+<div class="container">
+	<ul class="controller">
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+		<li><a href="#"></a></li>
+	</ul>
+	<div class="picture">
+		<ul>
+			<li><img src="images/work1.jpg" alt=""></li>
+			<li><img src="images/work2.jpg" alt=""></li>
+			<li><img src="images/work3.jpg" alt=""></li>
+			<li><img src="images/work4.jpg" alt=""></li>
+			<li><img src="images/work5.jpg" alt=""></li>
+			<li><img src="images/work6.jpg" alt=""></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
