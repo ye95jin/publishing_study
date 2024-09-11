@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GNB Prototype</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+}
+#header {
+	min-width: 1100px;
+	height: 40px;
+	background-color: #999;
+}
+#header .header_inner {
+	position: relative;
+	margin: 0 auto;
+	width: 1100px;
+	height: 40px;
+	text-align: center;
+}
+#header .logo {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#header .logo h1 {
+	font-size: 1em;
+}
+#header .logo h1 a {
+	display: block;
+	line-height: 39px;
+	font-size: 0.875em;
+	font-weight: 600;
+	color: #fff;
+}
+#header .sns {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#header .sns a {
+	display: block;
+	line-height: 40px;
+	font-size: 0.875em;
+	font-weight: 600;
+	color: #fff;
+}
+#header nav > ul > li {
+	display: inline-block;
+	position: relative;
+}
+#header nav > ul > li > a {
+	display: block;
+	padding: 0 32px;
+	line-height: 40px;
+	font-size: 0.875em;
+	font-weight: 600;
+	color: #fff;
+}
+#header nav > ul > li:hover > a,
+#header nav > ul > li.active > a {
+	color: #ff0;
+}
+#header nav li ul {
+	display: none;
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 2px rgba(0,0,0,.1);
+}
+#header nav li li a {
+	display: block;
+	line-height: 38px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 0.875em;
+	background-color: #333;
+	color: #fff;
+	transition: all 300ms;
+}
+/*
+#header nav > ul > li:hover ul {
+	display: block;
+}
+*/
+#header nav li li a:hover,
+#header nav li li a:focus {
+	background-color: #f90;
+}
+.contents {
+	padding: 20px;
+	min-width: 1100px;
+	font-size: 0.875em;
+	background-color: #f4f4f4;
+	color: #666;
+	box-sizing: border-box;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	/*
+	$("nav > ul > li").mouseenter(function(){
+		$(this).children("ul").stop().slideDown(300);
+	});
+
+	$("nav > ul > li").mouseleave(function(){
+		$(this).children("ul").slideUp(300);
+	});
+	*/
+
+	$("nav > ul > li").hover(
+		function(){ // mouseenter, 마우스를 올린 이벤트입니다.
+			// $(this).children("ul") : nav li ul
+			// 2차 UL은 display가 none으로 지정되어 있습니다.
+			// slideDown()은 display: none; 경우에 애니메이션으로 보이게 할 수 있습니다.
+			// slideDown() : 버티컬처럼 스르르 내려오면 보입니다.
+			// fadeIn() : 투명도로 보입니다.
+
+			$(this).children("ul").stop().slideDown(300);
+		},
+		function(){ // mouseleave, 마우스를 내린 이벤트입니다.
+			$(this).children("ul").stop().slideUp(300);
+		}
+	);
+
+	// 내비게이션 접근성은 A를 기준으로 작성합니다.
+	// 접근성은 Tab으로 테스트하는 방법이 기본입니다.
+	$("nav > ul > li > a").focusin(function(){
+		// $(this).next() : nav li ul
+		// 2차 메뉴가 열리는 스크립트입니다.
+		$(this).next().fadeIn(300);
+
+		// $(this).parent() : nav > ul > li
+		// 1차 메뉴 A가 활성화되는 스크립트입니다.
+		// nav > ul > li.active > a { background-color: #ff0; }
+		$(this).parent().addClass("active");
+	});
+
+	// 2차 메뉴 마지막 A에 포커스아웃 이벤트입니다.
+	$("nav li li:last-child a").focusout(function(){
+		// $(this).parent().parent() : nav li ul
+		$(this).parent().parent().fadeOut(300);
+
+		// $(this).parent().parent().parent() : nav > ul > li
+		// nav > ul > li.active > a { background-color: #ff0; }
+		$(this).parent().parent().parent().removeClass("active");
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+	<header id="header">
+		<div class="header_inner">
+			<div class="logo">
+				<h1 id="logo"><a href="">logo</a></h1>
+			</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">1DEPTH</a>
+						<ul>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+							<li><a href="">2depth</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<div class="sns"><a href="">sns</a></div>
+		</div>
+	</header>
+	<div class="contents">contents</div>
+</div>
+</body>
+</html>
