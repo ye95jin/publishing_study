@@ -1,0 +1,144 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+	color: #000;
+}
+
+/* 헤더 */
+
+#header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	background-color: #fff;
+}
+
+/* 헤더 이너 */
+
+#header .header_inner {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 1140px;
+	height: 66px;
+	overflow: hidden;
+	background-color: #fff;
+	transition: height 0.3s;
+}
+
+#header .header_inner.active {
+	height: 290px;
+}
+
+#header .header_inner:hover::after,
+#header .header_inner.active::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 66px;
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+}
+
+/* 헤더 이너 _ 왼쪽 */
+
+#header .header_inner .header-left {
+	display: flex;
+	align-items: center;
+	height: 66px;
+}
+
+#header .header_inner .header-left a {
+	display: block;
+}
+
+#header .header_inner .header-left .search {
+	margin-left: 40px;
+}
+
+/* 헤더 이너 _ 네비게이션 */
+
+#header .header_inner nav > ul {
+	display: flex;
+	position: relative;
+}
+
+#header .header_inner nav > ul > li > a {
+	display: block;
+	padding: 0 25px;
+	line-height: 66px;
+	font-weight: 700;
+}
+
+#header .header_inner nav > ul > li:hover > a,
+#header .header_inner nav > ul > li.active > a {
+	color: #f24e1e;
+}
+
+
+#header .header_inner nav .sub {
+	position: absolute;
+	top: 66px;
+	padding-top: 15px;
+}
+
+#header .header_inner nav .sub a {
+	padding: 0 25px;
+	line-height: 30px;
+	white-space: nowrap;
+	font-size: 0.875em;
+}
+
+#header .header_inner nav .sub a:hover,
+#header .header_inner nav .sub a:focus {
+	text-decoration: underline;
+	font-weight: 700;
+}
+
+/* 헤더 이너 _ 오른쪽 */
+
+#header .header_inner .header-right {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	height: 66px;
+}
+
+
+#header .header_inner .header-right .sns ul {
+	display: flex;
+	gap: 20px;
+}
+
+/* 슬라이더 */
+
+.slider {
+	width: 100%;
+	height: 586px;
+}
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

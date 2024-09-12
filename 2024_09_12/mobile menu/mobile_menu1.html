@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Mobile Menu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	height: 2000px;
+}
+body.fixed {
+	overflow-y: hidden;
+}
+#header {
+	position: relative;
+	height: 3.75em;
+	font-size: 1em;
+	background-color: #24bbaf;
+}
+#desktop {
+	text-align: center;
+}
+#desktop li {
+	display: inline-block;
+}
+#desktop li a {
+	display: block;
+	padding: 0 1.875em;
+	line-height: 4.286em;
+	font-size: 0.875em;
+	color: #fff;
+}
+#mobile {
+	position: fixed;
+	left: -15em;
+	top: 0;
+	z-index: 1000;
+	padding: 6.25em 0 0 3.125em;
+	width: 15em;
+	height: 100%;
+	background-color: #fff;
+	transition: left 0.4s;
+	box-sizing: border-box;
+}
+#mobile.active {
+	left: 0;
+}
+#mobile a {
+	display: block;
+	line-height: 3.6;
+	border-bottom: 1px solid #eaeaea;
+}
+#header .tab {
+	display: none;
+	position: absolute;
+	left: 0.625em;
+	top: 0.625em;
+	width: 2.5em;
+	height: 2.5em;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: url(images/toggle_button.png) no-repeat 0 0;
+	background-size: cover;
+}
+.dim {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.6);
+}
+.dim.active {
+	display: block;
+}
+
+@media only screen and (max-width: 600px) {
+	#header {
+		font-size: 0.875em;
+	}
+	#desktop {
+		display: none;
+	}
+	#header .tab {
+		display: block;
+	}
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	$(".tab").click(function(e){
+		e.preventDefault();
+
+		$("body").addClass("fixed");
+		$("#mobile").addClass("active");
+		$(".dim").addClass("active");
+	});
+
+	$(".dim").click(function(){
+		$("body").removeClass("fixed");
+		$("#mobile").removeClass("active");
+		$(".dim").removeClass("active");
+	});
+
+	// window, document는 큰 따옴표로 jQuery 참조하지 않습니다. 
+	// window 이벤트 : resize(), scroll()
+	// $(window).width(), 600px보다 크면
+	// #mobile이 active 클래스가 있으면, 
+	// #mobile의 active를 제거합니다.  
+	$(window).resize(function(){
+		// console.log($(window).width());
+		if($(window).width() > 600){ // 데스크탑 상황에서
+			if($("#mobile").hasClass("active") == true){ // active 클래스가 있으면 
+				console.log($(window).width());
+
+				$("body").removeClass("fixed");
+				$("#mobile").removeClass("active");
+				$(".dim").removeClass("active");
+			}
+		}
+	});
+});
+
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<header id="header">
+		<nav id="desktop">
+			<ul>
+				<li><a href="">MENU1</a></li>
+				<li><a href="">MENU2</a></li>
+				<li><a href="">MENU3</a></li>
+				<li><a href="">MENU4</a></li>
+				<li><a href="">MENU5</a></li>
+			</ul>
+		</nav>
+		<nav id="mobile">
+			<ul>
+				<li><a href="">MENU1</a></li>
+				<li><a href="">MENU2</a></li>
+				<li><a href="">MENU3</a></li>
+				<li><a href="">MENU4</a></li>
+				<li><a href="">MENU5</a></li>
+			</ul>
+		</nav>
+		<a href="" class="tab">tab</a>
+	</header>
+	<div class="dim"></div>
+</div>
+</body>
+</html>
