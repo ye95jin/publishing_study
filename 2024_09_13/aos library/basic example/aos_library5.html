@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: AOS Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background: #f1f1f1;
+	color: #555;
+}
+.container {
+	min-width: 440px;
+}
+.title {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+.container div[class^=area] {
+	margin-bottom: 150px;
+}
+.container div[class^=area] h2 {
+	line-height: 1.5;
+	font-weight: 300;
+	font-size: 1.25em;
+}
+.container div[class^=area] img {
+	margin-top: 20px;
+}
+</style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+	window.addEventListener("load", function(){
+		AOS.init({
+			duration:400,
+			easing:"ease-in-out",
+			once:false
+		});
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: AOS Library</h1>
+<div class="container">
+	<div class="area1" data-aos="fade-up">
+		<h2>area1</h2>
+		<img src="images/work1.jpg" alt="work1">
+	</div>
+	<div class="area2" data-aos="fade-down">
+		<h2>area2</h2>
+		<img src="images/work2.jpg" alt="work2">
+	</div>
+	<div class="area3" data-aos="fade-up">
+		<h2>area3</h2>
+		<img src="images/work3.jpg" alt="work3">
+	</div>
+	<div class="area4" data-aos="fade-down">
+		<h2>area4</h2>
+		<img src="images/work4.jpg" alt="work4">
+	</div>
+	<div class="area5" data-aos="fade-up">
+		<h2>area5</h2>
+		<img src="images/work5.jpg" alt="work5">
+	</div>
+</div>
+</body>
+</html>
