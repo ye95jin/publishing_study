@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: jQuery Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+
+:root { /* added */
+	--swiper-theme-color: #c10a28;
+}
+
+body {
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+}
+
+.keyvisual {
+	margin: 0 auto;
+	padding-bottom: 50px;
+	width: 1180px;
+	height: 400px;
+	overflow-x: hidden;
+}
+
+.keyvisual .swiper-container {
+	position: relative;
+}
+
+.keyvisual .swiper-pagination {
+	top: auto;
+	bottom: -30px;
+}
+
+
+/* .controller {
+	margin-top: 20px;
+	text-align: center;
+}
+.controller li {
+	display: inline-block;
+	margin: 0 6px;
+}
+.controller li a {
+	display: block;
+	width: 12px;
+	height: 12px;
+	text-indent: -9999px;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 0 2px rgba(0,0,0,.4);
+}
+.controller li.on a {
+	width: 30px;
+	background-color: #c10a28;
+} */
+
+.main_slider .swiper-pagination .swiper-pagination-bullet { /* added */
+	/* display: inline-block; */
+	margin: 0 6px;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 0 2px rgba(0,0,0,.4);
+	opacity: 1;
+}
+.main_slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active { /* added */
+	background-color: var(--swiper-theme-color);
+	width: 30px;
+
+}
+.main_slider .prev,
+.main_slider .next { /* added */
+	position: absolute;
+	top: 50%;
+	z-index: 1000;
+	height: 60px;
+	line-height: 60px;
+	font-size: 1em;
+	transform: translateY(-50%);
+}
+.main_slider .prev { /* added */
+	left: 30px;
+}
+.main_slider .next { /* added */
+	right: 30px;
+}
+
+
+/* slider control  */
+
+#start .slider .content .control {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(30vw);
+}
+#start .slider .content .control ul {
+  display: flex;
+  gap: 8px;
+}
+#start .slider .content .control li a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  text-indent: -9999px;
+  background-color: rgba(245, 245, 245, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+#start .slider .content .control li.active a {
+  background-color: #ff330e;
+}
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+	$(function(){
+		const mainSwiper = new Swiper(".swiper-container", {
+			navigation: {
+				nextEl: ".mainSwiper .swiper-button-next",
+				prevEl: ".mainSwiper .swiper-button-prev",
+			},
+			pagination: {
+				el: ".mainSwiper .swiper-pagination"
+			}
+		}); 
+		$(".main_slider .prev").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slidePrev();
+		});
+		$(".main_slider .next").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slideNext();
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	<div class="keyvisual">
+		<div class="main_slider">
+			<div class="swiper-container mainSwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><img src="images/keyvisual1.jpg" alt="keyvisual"></div>
+					<div class="swiper-slide"><img src="images/keyvisual2.jpg" alt="keyvisua2"></div>
+					<div class="swiper-slide"><img src="images/keyvisual3.jpg" alt="keyvisua3"></div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+</html>
