@@ -1,0 +1,243 @@
+AOS(animation on scroll) 라이브러리에 관련된 설명입니다.
+
+
+1) 관련 경로
+
+
+https://michalsnik.github.io/aos
+
+https://github.com/michalsnik/aos
+
+
+
+2) CDN
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+3) NPM
+
+
+> npm install aos --save
+
+
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
+
+
+아래에 나열된 것은 기본 설정입니다.
+
+AOS.init({
+	disable: false,
+	startEvent: "DOMContentLoaded",
+	initClassName: "aos-init",
+	animatedClassName: "aos-animate",
+	// useClassNames: false,
+	// disableMutationObserver: true,
+	// debounceDelay: 50,
+	// throttleDelay: 99,
+
+	offset: 120,
+	delay: 500,
+	duration: 400,
+	easing: "ease",
+	once: false,
+	// mirror: false,
+	// anchorPlacement: "top-bottom"
+});
+
+
+
+4) 자세한 설명
+
+
+4-1) 기본 설정
+
+disable: false, : 'phone', 'tablet', 'mobile'에서 사용 여부를 boolean 방식으로 적용합니다.
+
+startEvent: "DOMContentLoaded", : AOS가 초기화해야 하는 이벤트입니다.
+
+initClassName: "aos-init", : 초기화 후의 클래스 이름입니다.
+
+animatedClassName: "aos-animate", : 애니메이션이 적용된 후의 클래스 이름입니다.
+
+useClassNames: false, : true인 경우 'data-aos' 방식으로 스크롤 클래스를 추가합니다.
+
+disableMutationObserver: true, : 돌발적인 애니메이션을 감지합니다.
+
+debounceDelay: 50, : 창 크기를 조정하는 동안의 디바운스 지연 시간입니다.
+
+throttleDelay: 99, : 페이지를 스크롤하는 동안의 스크롤 지연 시간입니다.
+
+
+4-2) 'data-aos-*' 속성으로 요소 별로 재정의할 수 있는 설정
+
+offset: 120, : 원래의 발생 위치로부터의 px 거리입니다.
+
+delay: 500, : 지연 시간으로 50ms 기본으로 0에서 3000까지의 시간입니다.
+
+duration: 400, : 애니메이션 시간으로 50ms 기본으로 0에서 3000까지의 시간입니다.
+
+easing: "ease", : 기본 이징입니다.
+
+once: false, : 아래로 스크롤하는 동안에 애니메이션이 한 번만 발생하는 지에 대한 여부입니다.
+
+// mirror: false, : 요소를 스크롤하는 동안 요소를 애니메이션으로 표시할지 여부입니다.
+
+// anchorPlacement: "top-bottom" : 애니메이션을 트리거해야 하는 창과 관련된 요소의 위치를 ​​정의합니다.
+
+useClassNames: true; 방식이거나 설정 값이 없는 경우 data-aos-* 속성을 사용하여 동작을 제어할 수 있습니다.
+
+
+예시 코드는 아래와 같습니다.
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: AOS Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background: #f1f1f1;
+	color: #555;
+}
+.container {
+	max-width: 800px;
+	margin: 10vh auto 0 auto;
+}
+.container ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px 15px;
+}
+.container li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc((100% - 30px)/3);
+	height: 300px;
+	background-color: #1da4e2;
+	color: #fff;
+}
+</style>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+window.addEventListener("load", function(){
+	AOS.init();
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+	<ul>
+		<li
+			data-aos="fade-up"
+			data-aos-offset="200"
+			data-aos-delay="50"
+			data-aos-duration="1000"
+			data-aos-easing="ease-in-out"
+			data-aos-once="false"
+		>1</li>
+	</ul>
+</div>
+</body>
+</html>
+
+
+4-3) 애니메이션 종류
+
+4-3-1) Fade Animations
+
+fade
+fade-up
+fade-down
+fade-left
+fade-right
+fade-up-right
+fade-up-left
+fade-down-right
+fade-down-left
+
+
+4-3-2) Flip Animations
+
+flip-up
+flip-down
+flip-left
+flip-right
+
+
+4-3-3) Slide Animations
+
+slide-up
+slide-down
+slide-left
+slide-right
+
+
+4-3-4) Zoom animations
+
+zoom-in
+zoom-in-up
+zoom-in-down
+zoom-in-left
+zoom-in-right
+zoom-out
+zoom-out-up
+zoom-out-down
+zoom-out-left
+zoom-out-right
+
+
+4-4) 이징 함수
+
+linear
+ease
+ease-in
+ease-out
+ease-in-out
+ease-in-back
+ease-out-back
+ease-in-out-back
+ease-in-sine
+ease-out-sine
+ease-in-out-sine
+ease-in-quad
+ease-out-quad
+ease-in-out-quad
+ease-in-cubic
+ease-out-cubic
+ease-in-out-cubic
+ease-in-quart
+ease-out-quart
+ease-in-out-quart

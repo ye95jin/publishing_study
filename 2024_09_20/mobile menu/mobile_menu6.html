@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Mobile Menu</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+}
+#header {
+	position: relative;
+	height: 3.75em;
+	font-size: 1em;
+	background-color: #24bbaf;
+}
+#desktop {
+	text-align: center;
+}
+#desktop li {
+	display: inline-block;
+}
+#desktop li a {
+	display: block;
+	padding: 0 1.875em;
+	line-height: 4.286em;
+	font-size: 0.875em;
+	color: #fff;
+}
+#mobile {
+	display: none;
+	position: fixed;
+	right: 0.625em;
+	top: 0;
+	z-index: 1000;
+	padding: 0 1.25em 1.875em 1.25em;
+	width: 52%;
+	/* min-width: 230px; */
+	height: 100vh;
+	background-color: #fff;
+}
+#mobile.active {
+	display: block;
+}
+#mobile > ul {
+	margin-top: 15vh;
+	height: 70vh;
+	overflow-y: auto;
+}
+#mobile > ul > li {
+	border-top: 1px solid #eaeaea;
+}
+#mobile > ul > li:first-child {
+	border-top: none;
+}
+#mobile > ul > li > a {
+	display: block;
+	padding: 1.125em 0 1.125em 0.625em;
+	text-indent: 0.625em;
+}
+#mobile > ul > li.active > a {
+	background-color: #24bbaf;
+	color: #fff;
+}
+#mobile ul ul {
+	display: none;
+	padding: 0.375em 0;
+	background-color: #f4f4f4;
+}
+#mobile ul ul a {
+	display: block;
+	line-height: 2;
+	text-indent: 1.25em;
+}
+#header .tab {
+	display: none;
+	position: absolute;
+	right: 0.625em;
+	top: 0.625em;
+	width: 2.5em;
+	height: 2.5em;
+	text-indent: -9999px;
+	background: url(images/toggle_button.png) no-repeat 0 0;
+	background-size: cover;
+}
+.dim {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.6);
+}
+.dim.active {
+	display: block;
+}
+
+@media only screen and (max-width: 600px) {
+	#header {
+		font-size: 0.875em;
+	}
+	#desktop {
+		display: none;
+	}
+	#header .tab {
+		display: block;
+	}
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	$(function(){
+		let winw;
+
+		$(window).resize(function(){
+			winw=$(window).width();
+			if(winw > 600){
+				if($("#mobile").hasClass("active") == true){
+					$("#mobile").removeClass("active");
+					$(".dim").removeClass("active");
+				}
+			}
+		});
+		
+		$(".tab").click(function(e){
+			e.preventDefault();
+			$("#mobile").addClass("active");
+			$(".dim").addClass("active");
+		});
+		$(".dim").click(function(){
+			$("#mobile").removeClass("active");
+			$(".dim").removeClass("active");
+		});
+
+		$("#mobile > ul > li").click(function(e){
+			e.preventDefault();
+			if($(this).hasClass("active") == false){
+				$("#mobile > ul > li").removeClass("active");
+				$(this).addClass("active");
+
+				$("#mobile ul ul").slideUp(300);
+				$(this).find("ul").slideDown(300);
+			}
+			else{
+				$(this).removeClass("active");
+				$(this).find("ul").slideUp(300);
+			}
+		});
+	});
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+	<header id="header">
+		<nav id="desktop">
+			<ul>
+				<li><a href="">MENU1</a></li>
+				<li><a href="">MENU2</a></li>
+				<li><a href="">MENU3</a></li>
+				<li><a href="">MENU4</a></li>
+				<li><a href="">MENU5</a></li>
+			</ul>
+		</nav>
+		<nav id="mobile">
+			<ul>
+				<li>
+					<a href="">MENU1</a>
+					<ul>
+						<li><a href="">sub1</a>
+						<li><a href="">sub2</a>
+						<li><a href="">sub3</a>
+						<li><a href="">sub4</a>
+					</ul>
+				</li>
+				<li>
+					<a href="">MENU2</a>
+					<ul>
+						<li><a href="">sub1</a>
+						<li><a href="">sub2</a>
+						<li><a href="">sub3</a>
+						<li><a href="">sub4</a>
+					</ul>
+				</li>
+				<li>
+					<a href="">MENU3</a>
+					<ul>
+						<li><a href="">sub1</a>
+						<li><a href="">sub2</a>
+						<li><a href="">sub3</a>
+						<li><a href="">sub4</a>
+					</ul>
+				</li>
+				<li>
+					<a href="">MENU4</a>
+					<ul>
+						<li><a href="">sub1</a>
+						<li><a href="">sub2</a>
+						<li><a href="">sub3</a>
+						<li><a href="">sub4</a>
+					</ul>
+				</li>
+				<li>
+					<a href="">MENU5</a>
+					<ul>
+						<li><a href="">sub1</a>
+						<li><a href="">sub2</a>
+						<li><a href="">sub3</a>
+						<li><a href="">sub4</a>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<a href="" class="tab">tab</a>
+	</header>
+	<div class="dim"></div>
+</div>
+</body>
+</html>
