@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" type="image/x-icon" href="http://static.wconcept.co.kr/favicon.ico" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="http://static.wconcept.co.kr/favicon.ico" sizes="16x16">
+
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+$(function(){
+	// 슬라이더 UI 설정
+	const mainSwiper=new Swiper(".mainSwiper", {
+			speed: 1000,
+			loop: true,
+			// autoplay: true,
+			pagination: {
+				el: ".mainSwiper .swiper-pagination",
+			} 
+		});
+		$(".main_slider .swiper-button-prev").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slidePrev();
+		});
+		$(".main_slider .swiper-button-next").click(function(e){ // added
+			e.preventDefault();
+			mainSwiper.slideNext();
+		});
+    // GNB 스크립트 
+    $("nav > ul > li").hover(
+        function(){
+            $("nav").addClass("active").css('height', '190px');  // 높이를 190px로 변경
+        },
+        function(){
+            $("nav").removeClass("active").css('height', '60px');  // 다시 55px로 원상복귀
+        }
+    );
+
+    $("nav > ul > li > a").focusin(function(){
+        if($(this).parent().index() == 0){
+            $("nav").addClass("active").css('height', '190px');
+        }
+        $(this).parent().addClass("active");
+    });
+
+    let total = $("nav > ul > li").length;
+
+    $("nav li li:last-child a").focusout(function(){
+        if($(this).parent().parent().parent().index() == total-1){
+            $("nav").removeClass("active").css('height', '60px');
+        }
+        $(this).parent().parent().parent().removeClass("active");
+    });
+});
+
+</script>
+
+<title>Wconcept</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="skip_nav">
+			<a href="#section">본문 바로가기</a>
+		</div>
+		<header id="header">
+			<div class="sns">
+				<ul>
+					<li><a href=""><img src="images/social_icon1.gif" alt="social_icon1"></a></li>
+					<li><a href=""><img src="images/social_icon2.gif" alt="social_icon2"></a></li>
+					<li><a href=""><img src="images/social_icon3.gif" alt="social_icon3"></a></li>
+				</ul>
+				<a href=""><img src="images/mileage_ov.png" alt="mileage_ov"></a>
+			</div>
+			<div class="logo">
+				<a href=""><img src="images/logo.png" alt="logo"></a>
+			</div>
+			<div class="utils">
+				<ul>
+					<li><a href="">LOGIN</a></li>
+					<li><a href="">JOIN</a></li>
+					<li><a href="">개인정보취급방침</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="menu">
+			<nav>
+				<ul>
+					<li> 
+						<a href="">NEW</a>
+						<ul class="sub">
+							<li><a href="">ARRIVED</a></li> 
+							<li><a href="">NEW</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">WOMEN</a>
+						<ul class="sub">
+							<li><a href="">APPAREL</a></li>
+							<li><a href="">SHOES</a></li>
+							<li><a href="">BAGS</a></li>
+							<li><a href="">ACCESSORIES</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" tabindex="-1">MEN</a>
+						<ul class="sub">
+							<li><a href="">APPAREL</a></li>
+							<li><a href="">SHOES</a></li>
+							<li><a href="">BAG & ACC</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">LIFE</a>
+						<ul class="sub">
+							<li><a href="" >APARTMENT</a></li>
+							<li><a href="" >ELECTRONICS</a></li>
+							<li><a href="" >CULTURE</a></li>
+							<li><a href="" >BEAUTY</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" >SALE</a>
+						<ul class="sub">
+							<li><a href="" >SALE</a></li>
+							<li><a href="" >SALE EVENT</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="" >BRAND</a>
+						<ul class="sub">
+							<li><a href="" >EXCLUSIVE</a></li>
+							<li><a href="" >TOP</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="keyvisual">
+			<div class="main_slider">
+				<div class="swiper-container mainSwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="images/key1.jpg" alt="key1">
+						</div>
+						<div class="swiper-slide">
+							<img src="images/key2.jpg" alt="key2">
+						</div>
+						<div class="swiper-slide">
+							<img src="images/key3.jpg" alt="key3">
+						</div>
+						<div class="swiper-slide">
+							<img src="images/key4.jpg" alt="key4">
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</div>
+		<section id="section">
+			<div class="banner1">
+				<div class="banner1_1">
+					<a href=""><img src="images/buttero.jpg" alt="buttero"></a>
+				</div>
+				<div class="banner1_2"> 
+					<a href="">
+						<div class="inner">
+							<div class="title">
+								<strong>buttero</strong>
+								<span>101% handcrafted</span>
+							</div>
+							<div class="desc">A fusion of pure rawness<br>and eleganc</div>
+							<div class="view_more">view_more</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="banner2">
+				<div class="banner2_1"> 
+					<a href="">
+						<div class="inner">
+							<div class="title">
+								<strong>atclip launching</strong>
+								<span>new launching</span>
+							</div>
+							<div class="desc">Focus on restraint<br>and the complex beauty</div>
+							<div class="view_more">view_more</div>
+						</div>
+					</a>
+				</div>
+				<div class="banner2_2">
+					<a href=""><img src="images/atclip.jpg" alt="atclip"></a>
+				</div>
+			</div>
+			<div class="banner3">
+				<div class="banner3_left">
+					<div class="banner3_left1">
+						<a href="">
+							<div class="inner">
+								<span>heich blade 17 f/w collection</span>
+								<strong>lookbook</strong>
+								<span class="view_more">view more</span>
+							</div>
+						</a>
+					</div>
+					<div class="banner3_left2">
+						<a href="">
+							<div class="inner">
+								<strong>new</strong>
+								<span>new in this week</span>
+								<span class="view_more">view more</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="banner3_right">
+					<div class="banner3_right1">
+						<a href="">
+							<div class="inner">
+								<strong>sale</strong>
+								<span>다양하고 특별한 할인혜택을 만나보세요.</span>
+								<span class="view_more">view more</span>
+							</div>
+						</a>
+					</div>
+					<div class="banner3_right2">
+						<a href="">
+							<div class="inner">
+								<span>mimicawe 17 f/w</span>
+								<strong>collection</strong>
+								<span class="view_more">view more</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="info">
+				<p>㈜더블유컨셉코리아 대표자 : 황재의 서울특별시 강남구 테헤란로14길 16, 5층<a href="">개인정보취급방침</a></p>
+			</div>
+			<div class="social">
+				<a href=""><img src="images/facebook_ot.png" alt="facebook"></a>
+				<a href=""><img src="images/blog_ot.png" alt="blog"></a>
+				<a href=""><img src="images/kakao_ot.png" alt="kakao"></a>
+			</div>
+			<div class="copyright">copyright(c) 2018 W conecpt all rights reserved.</div>
+		</footer>
+	</div>
+</body>
+</html>

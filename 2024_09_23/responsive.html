@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Basic responsive</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul,ol {
+		list-style: none;
+	}
+
+	header { 
+		padding: 0 5%; /* 좌우 % 여백으로 되어 있습니다. */
+	}
+
+	header .inner {
+		height: 2.5em;
+		background-color: #eaeaea;
+	}
+	
+	section {
+		margin: 0 auto;
+		padding: 3.125em 0;
+		max-width: 1280px;
+		background-color: #f4f4f4;
+	}
+
+	section ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 25px 20px; /* y간격 / x간격 */
+	}
+
+	section ul li {
+		width: calc((100% - 40px)/3); /* 무조건 가변폭으로 */
+		height: 12.5em; /*테스트*/
+		background-color: #999;
+	}
+	
+	@media only screen and (max-width : 1280px) {
+		header {
+			padding: 0 20px;
+		}
+		section {
+			padding: 3.125em 20px;
+		}
+	}
+
+	@media only screen and (max-width : 920px){
+		section ul li {
+		width: calc((100% - 20px)/2); 
+		}
+	}
+
+	
+	@media only screen and (max-width : 760px){
+		header, section {
+			font-size: 0.875em; /* 1em -> 0.875em*/
+		}
+		section ul li {
+		width: 100%; 
+		}
+	}
+</style>
+</head>
+<body>
+	<!-- 1280 / 920 / 760 / 460-->
+	<div class="wrapper">
+		<header>
+			<div class="inner"></div>
+		</header>
+		<section>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+	</div>
+</body>
+</html>

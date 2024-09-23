@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Wconcept</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	color: #333;
+}
+nav {
+	position: relative;
+	height: 55px;
+}
+nav > ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 55px;
+	overflow: hidden;
+	text-align: center;
+	background-color: #fff;
+	transition: height 0.3s;
+}
+nav > ul:hover {
+	height: 185px;
+}
+nav > ul > li {
+	position: relative;
+}
+nav > ul > li > a {
+	display: block;
+	padding: 0 60px;
+	line-height: 55px;
+	font-size: 0.875em;
+	color: #2f2f2f;
+}
+nav > ul > li:hover > a {
+	color: #b4252d;
+}
+nav .sub {
+	position: absolute;
+	left: 0;
+	top: 55px;
+	padding-left: 60px;
+	padding-top: 14px;
+	text-align: left;
+}
+nav .sub a {
+	display: block;
+	padding: 6px 0 7px;
+	line-height: 1;
+	font-size: 0.75em;
+	color: #aaa;
+}
+nav .sub a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+.slider {
+	height: 420px;
+}
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.banner1 {
+	margin-top: 50px;
+	width: 690px;
+	height: 388px;
+	overflow: hidden;
+}
+.banner1 a img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: scale(1);
+	transition: transform 0.3s;
+}
+.banner1 a:hover img,
+.banner1 a:focus img {
+	transform: scale(1.1);
+}
+.banner2 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+	width: 300px;
+	height: 388px;
+	text-align: center;
+	border: 1px solid #a0a0a0;
+	box-sizing: border-box;
+}
+.banner2 a strong {
+	font-size: 1.5em;
+}
+.banner2 a span {
+	display: block;
+	margin-top: 5px;
+	font-size: 0.875em;
+	color: #302f2f;
+}
+.banner2 a p {
+	margin-top: 30px;
+	font-size: 0.875em;
+	color: #a0a0a0;
+}
+.banner2 a .button {
+	display: inline-block;
+	margin-top: 25px;
+	padding: 10px 20px;
+	text-decoration: underline;
+	background-color: #fff;
+	box-sizing: border-box;
+	transition: 0.3s;
+}
+.banner2 a:hover p,
+.banner2 a:focus p {
+	text-decoration: underline;
+}
+.banner2 a:hover .button,
+.banner2 a:focus .button {
+	text-decoration: none;
+	background-color: #b5252e;
+	color: #fff;
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<nav>
+		<ul>
+			<li>
+				<a href="">NEW</a>
+				<ul class="sub">
+					<li><a href="">ARRIVED</a></li>
+					<li><a href="">NEW</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">WOMEN</a>
+				<ul class="sub">
+					<li><a href="">APPAREL</a></li>
+					<li><a href="">SHOES</a></li>
+					<li><a href="">BAGS</a></li>
+					<li><a href="">ACCESSORIES</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">MEN</a>
+				<ul class="sub">
+					<li><a href="">APPAREL</a></li>
+					<li><a href="">SHOES</a></li>
+					<li><a href="">BAG & ACC</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">LIFE</a>
+				<ul class="sub">
+					<li><a href="">APARTMENT</a></li>
+					<li><a href="">ELECTRONICS</a></li>
+					<li><a href="">CULTURE</a></li>
+					<li><a href="">BEAUTY</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">SALE</a>
+				<ul class="sub">
+					<li><a href="">SALE</a></li>
+					<li><a href="">SALE EVENT</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">BRAND</a>
+				<ul class="sub">
+					<li><a href="">EXCLUSIVE</a></li>
+					<li><a href="">TOP</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="slider">
+		<img src="images/key1.jpg" alt="key1">
+	</div>
+	<div class="banner1">
+		<a href=""><img src="images/buttero.jpg" alt="buttero"></a>
+	</div>
+	<div class="banner2">
+		<a href="">
+			<div class="inner">
+				<strong>buttero</strong>
+				<span>101% handcrafted</span>
+				<p>A fusion of pure rawness <br>and elegance</p>
+				<span class="button">view more</span>
+			</div>
+		</a>
+	</div>
+</div>
+</body>
+</html>
