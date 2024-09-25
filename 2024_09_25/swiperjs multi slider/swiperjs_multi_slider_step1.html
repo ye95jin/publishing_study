@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>plugins :: SwiperJS Multi Slider</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+
+/* sub slider */
+#sub_slider {
+	position: relative;
+	padding-bottom: 50px;
+	overflow-x: hidden;
+}
+#sub_slider .swiper {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+#sub_slider .swiper .swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	text-align: center;
+	font-size: 0.875em;
+	background-color: #fff;
+}
+#sub_slider .swiper .swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#sub_slider .swiper .swiper-pagination {
+	bottom: -30px;
+}
+
+@media only screen and (min-width: 1201px) {
+   #sub_slider {
+      padding-bottom: 0;
+      overflow: visible;
+   }
+   #sub_slider .swiper .swiper-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+   }
+   #sub_slider .swiper .swiper-slide {
+      width: calc((100% - 80px)/5);
+   }
+   #sub_slider .swiper .swiper-pagination {
+      display: none;
+   }
+}
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+	$(function(){
+		/*
+		const subSwiper=new Swiper(".mySwiper", {
+			slidesPerView: 1, // 640px 미만
+			spaceBetween: 20,
+			centeredSlides:true, // 중앙 배치 슬라이드 
+			initialSlide: 1, // 2번째 슬라이더를 중앙 배치
+			pagination: {
+				el: ".mySwiper .swiper-pagination",
+				clickable: true
+			},
+			breakpoints: { // min-width
+				640: { // 680px 이상,768px 미만
+					slidesPerView: 2
+				},
+				768: { // 768px 이상,1024px 미만
+					slidesPerView: 3
+				},
+				1024:{ // 1024px 이상
+					slidesPerView: 4
+				}
+			}
+		});
+		*/
+
+		// 처음에는 Swiper 인스턴스를 비워 놓습니다. 
+		let subSwiper=null; // 변수가 비면 undefined, 오브젝트가 비면 null
+
+		$(window).resize(function(){
+			// console.log(window.innerWidth); // 윈도우의 가로크기
+
+			// 화면을 리사이즈하면, 1200px보다 커지면, 스와이퍼 기능을 없앱니다. 
+			// subSwiper.destroy();
+
+			// 1200px보다 작아지면, 스와이퍼 기능을 추가해야 합니다. 
+			// swiper=new Swiper(".mySwiper", {...});
+
+			//console.log("out : "+flag);
+
+			if(window.innerWidth >= 1200){ // 1200px보다 해상도가 클 경우입니다. 
+
+				if(subSwiper != null){ // subSwiper가 슬라이더 역할을 할 경우입니다. 
+					subSwiper.destroy(); // Swiper를 제거합니다. 
+					subSwiper= null;
+				}
+
+				// if(flag != "Swiper 제거"){ // flag가 "Swiper 제거"가 아닐 경우
+				// 	flag="Swiper 제거";
+				// 	console.log("in : "+flag);
+				// }
+			
+			}
+			else{ // 1200px보다 미만인 경우입니다. 
+				if(subSwiper == null){ // subSwiper가 비어있는 경우입니다.
+					subSwiper=new Swiper(".mySwiper", { // Swiper 역할을 합니다.
+					slidesPerView: 1, // 640px 미만
+					spaceBetween: 20,
+					centeredSlides:true, // 중앙 배치 슬라이드 
+					initialSlide: 2, // 2번째 슬라이더를 중앙 배치
+					pagination: {
+						el: ".mySwiper .swiper-pagination",
+						clickable: true
+					},
+					breakpoints: { // min-width
+						640: { // 680px 이상,768px 미만
+							slidesPerView: 2
+						},
+						768: { // 768px 이상,1024px 미만
+							slidesPerView: 3
+						},
+						1024:{ // 1024px 이상
+							slidesPerView: 4
+						}
+					}
+				});
+				}
+	
+
+				// if(flag != "Swiper 생성"){
+				// 	flag="Swiper 생성";
+				// 	console.log("in : "+flag);
+				// }
+	
+			}
+
+			// 리사이즈를 컨트롤할 줄 알아야 합니다. 해상도가 변경되면 많은 이벤트가 발생됩니다. 
+			// 그 중에서 한 번만 조건이 되면 동작시킬 줄 알아야 합니다. 
+		});
+
+		$(window).trigger("resize"); // 한 번 실행시켜 줍니다. 
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">plugins :: SwiperJS Multi Slider</h1>
+<div class="container">
+	<div id="sub_slider">
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">Slide 1</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+				<div class="swiper-slide">Slide 4</div>
+				<div class="swiper-slide">Slide 5</div>
+				<div class="swiper-slide">Slide 6</div>
+				<div class="swiper-slide">Slide 7</div>
+				<div class="swiper-slide">Slide 8</div>
+				<div class="swiper-slide">Slide 9</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

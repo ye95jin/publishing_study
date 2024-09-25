@@ -1,0 +1,21 @@
+$primary-color: #09f;
+
+button {
+	display: inline-block;
+	background-color: $primary-color;
+	color: #fff;
+}
+
+nav {
+	position: absolute;
+
+	> ul {
+		display: flex;
+
+		> li.active > a {
+			display: block;
+			padding: 0 20px;
+			color: $primary-color;
+		}
+	}
+}

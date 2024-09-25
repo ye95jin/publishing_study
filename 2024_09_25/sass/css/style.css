@@ -1,0 +1,17 @@
+button {
+  display: inline-block;
+  background-color: #09f;
+  color: #fff;
+}
+
+nav {
+  position: absolute;
+}
+nav > ul {
+  display: flex;
+}
+nav > ul > li.active > a {
+  display: block;
+  padding: 0 20px;
+  color: #09f;
+}
