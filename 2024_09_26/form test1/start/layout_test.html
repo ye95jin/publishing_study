@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Layout Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+
+/* Common CSS */ 
+
+/* Placeholder */
+::-ms-input-placeholder { 
+	color: #7d7d7d;
+}
+
+::placeholder {
+	color: #7d7d7d;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+	height: 46px;
+	font-family: "Open Sans", sans-serif;
+	color: #7d7d7d;
+	background-color: #f1f1f1;
+	border: none;
+	border-bottom: 1px solid #7d7d7d;
+	box-sizing: border-box;
+}
+
+textarea {
+	padding: 10px 16px; 
+	line-height: 1.5;
+	font-family: "Open Sans", sans-serif;
+	color: #777; 
+	border: 2px solid #e4e4e4;
+	resize: none;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+input[type=submit],
+input[type=reset] {
+	padding: 0 25px;
+	height: 55px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 0.913em;
+	background-color: #585858;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	letter-spacing: 3px;
+}
+
+body {
+	margin: 20px;
+	padding: 20px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+
+
+.title {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1290px;	
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+/* container */
+
+
+.container {
+	margin: 0 auto;
+	padding: 45px 0;
+	max-width: 1290px;
+}
+
+.container h2 {
+	padding-bottom: 40px;
+}
+
+.container .login .row  {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 22px;
+}
+
+.container .login .row input.name,
+.container .login .row input.email {
+	width: 48.2%;
+}
+
+.container .login input.message {
+	width: 100%;
+}
+
+.container .login .button {
+	margin-top: 35px;
+	text-align: left;
+}
+
+input.submit {
+	width: auto; 
+}
+
+/* Media Queries */
+@media only screen and (max-width: 480px) {
+	.container .login .row {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.container .login .row input.name,
+	.container .login .row input.email {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.container .login .button {
+		width: 100%;
+	}
+
+	.container .login .button input.submit {
+		width: 100%; 
+		padding: 0; 
+		height: 55px; 
+	}
+}
+
+
+
+</style>
+</head>
+
+<body>
+<h1 class="title">basic :: Layout Test</h1>
+<div class="container">
+	<h2>GET IN TOUCH</h2>
+		<div class="login">
+			<form action="">
+					<span class="row">
+						<input type="text" name="Name" placeholder="Name" class="name">
+						<input type="text" name="Email" placeholder="Email" class="email">
+					</span>
+					<input type="text" name="Message" placeholder="Message" class="message">
+					<div class="button">
+						<input type="submit" value="SEND" class="submit">
+					</div>
+			</form>
+		</div>
+</div>
+</body>
+</html>
