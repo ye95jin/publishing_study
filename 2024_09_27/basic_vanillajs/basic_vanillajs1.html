@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Node Access</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	/* background-color: #555; */
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+#tutorial li {
+	margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Node Access</h1>
+<div class="container">
+	<ul id="tutorial">
+		<li class="html">HTML</li>
+		<li class="css">CSS</li>
+		<li class="css3">CSS3</li>
+		<li class="javascript">JavaScript</li>
+		<li class="jquery">jQuery</li>
+		<li class="blank"></li>
+	</ul>
+	<p id="portfolio">portfolio</p>
+</div>
+<script>
+// 단수일 경우에는 DOM 명령어, 속성을 사용할 수 있습니다. 
+// 복수일 경우에는 forEach()로 읽어서 처리해야 합니다. 
+
+// getElementById(): 단수
+// let portfolio=document.getElementById("portfolio");
+// portfolio.style.backgroundColor="#f90";
+
+
+// querySelector는 CSS 방식으로 선택합니다. 
+// querySelector() : 단수
+let portfolio=document.querySelector("#portfolio");
+portfolio.style.backgroundColor="#f90";
+
+
+// querySelectorAll() : 복수
+let liList=document.querySelectorAll("#tutorial li");
+liList.forEach(function(item, i){
+	item.style.backgroundColor="#f90";
+});
+</script>
+</body>
+</html>
