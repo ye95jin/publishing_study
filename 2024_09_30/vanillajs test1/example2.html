@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: jQuery Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.controller {
+	padding-top: 20px;
+}
+.controller {
+	display: flex;
+	gap: 12px;
+}
+.controller li a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 20px;
+	transition: width 0.3s, background-color 0.3s;
+}
+.controller li.on a {
+	width: 50px;
+	background-color: #8ac007;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+// step1
+
+// JavaScript 방법 
+// window.addEventListener("load",function(){
+// 	let li=document.querySelector(".controller li.first");
+
+// 	li.addEventListener("click",function(e){
+// 		e.preventDefault();
+// 		li.classList.add("on");
+// 	});
+// });
+
+// 기억해야할 코드 
+// addEventListener("click",function(e){})
+// classList.add("on")
+// classList.remove("on")
+
+// JQuery 방법
+// $(function(){
+// 	$(".controller li.first").click(function(e){ //querySelector()
+// 		// addEventListener("click",function(e){})
+// 		e.preventDefault();
+// 		$(this).addClass("on"); // e.currentTarget.classList.add("on");
+// 	});
+// });
+
+// step2
+// JavaScript 방법 
+// window.addEventListener("load",function(){
+// 	let li=document.querySelectorAll(".controller li");
+
+// 	li.forEach(function(item){
+// 		item.addEventListener("click",function(e){
+// 			e.preventDefault();
+// 			item.classList.add("on");
+// 		});
+// 	});
+// });
+
+// JQuery 방법
+
+// $(function(){
+// 	$(".controller li").click(function(e){ //querySelectorAll()
+// 		e.preventDefault();
+
+// 		$(this).addClass("on"); 
+// 	});
+// });
+
+// step3
+
+// JavaScript 방법 
+
+window.addEventListener("load",function(){
+	let li=document.querySelectorAll(".controller li");
+
+	li.forEach(function(item1){
+		item1.addEventListener("click",function(e){
+			e.preventDefault();
+
+			li.forEach(function(item2){
+				item2.classList.remove("on");
+			});
+			
+			item1.classList.add("on");
+		});
+	});
+});
+
+
+// JQuery 방법
+
+// $(function(){
+// 	$(".controller li").click(function(e){ //querySelectorAll()
+// 		e.preventDefault();
+
+// 		$(".controller li").removeClass("on");
+// 		$(this).addClass("on");
+// 	});
+// });
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: jQuery Example</h1>
+<div class="container">
+	<ul class="controller">
+		<li class="first"><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+</div>
+</body>
+</html>

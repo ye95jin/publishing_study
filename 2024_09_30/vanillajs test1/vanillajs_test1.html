@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Vanillajs Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #555;
+	color: #000;
+}
+button {
+	padding: 5px 15px;
+	background-color: #666;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+button:hover {
+	background-color: #888;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	position: relative;
+	margin-top: 50px;
+}
+.ball {
+	position: absolute;
+	left: 0;
+	top: 60px;
+	width: 60px;
+	height: 60px;
+	background-color: #8ac007;
+	border-radius: 50%;
+	transition: left 0.3s;
+}
+.ball.active {
+	transform: scale(2);
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	window.addEventListener("load",function(){ 
+		let amount=0;
+
+		let animateBtn=document.querySelector("#animate");
+		let ball=document.querySelector(".ball")
+
+		animateBtn.addEventListener("click",function(){
+			amount=amount+50;
+
+			ball.style.left=amount+"px";
+		}); 
+	});
+
+
+// 	$(function(){
+// 	let amount=0;
+
+// 	$("#animate").click(function(){
+// 		// console.log("clicked!!");
+
+// 		// $(".ball").css({left: 100});
+// 		// $(".ball").addClass("active");
+
+// 		amount=amount+50;
+// 		$(".ball").css({left: amount+"px"});
+// 	});
+// });
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: Vanillajs Test</h1>
+<div class="container">
+	<button id="animate" title="animate">animate</button>
+	<div class="ball"></div>
+</div>
+</body>
+</html>

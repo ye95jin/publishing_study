@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Node Access</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+#tutorial li {
+	margin-top: 20px;
+}
+</style>
+<script>
+
+// window.addEventListener("DOMContentLoaded", function(){
+	window.addEventListener("load", function(){
+    // 1) id
+    let tutorial1=document.getElementById("tutorial"); // 단수, HTMLElement
+    // console.log(tutorial1);
+
+    // 2) jQuery처럼 CSS 방식으로 선택
+    let tutorial2=document.querySelector("#tutorial"); // 단수, Node
+    // console.log(tutorial2);
+
+    let liList=document.querySelectorAll("#tutorial li"); // 복수, NodeList
+    // console.log(liList);
+
+    // 단수는 속성, 명령어 적용이 가능합니다.
+    // 복수는 해체해서 속성, 명령어 적용이 가능합니다.
+
+    // tutorial2.addEventListener("click", function(){
+	liList.forEach(function(item){
+		item.addEventListener("click", function(){
+			// console.log("click");
+		});
+	});
+
+    // 3) Filtering
+	let css3=document.querySelector(".css3");
+
+	css3.addEventListener("click",function(e){
+		// console.log(e.target); // 클릭 대상, $(this)와 유사 
+		// console.log(e.target.parentElement); // #tutorial
+		// console.log(e.target.parentElement.children); // #tutorial li // HTMLCollection
+
+		e.target.parentElement.children.classList.remove("active");
+
+		// $("#tutorial li").removeClass("active");
+		// $(this).addClass("active"); 
+		});
+
+    // 4) 배열 해체(parsing) : for(), forEach()
+	let array=["zero", "one", "two"];
+
+    array.forEach(function(item, i){ // Array, NodeList
+       // console.log(item, i); // 배열자, 반복자
+	});
+
+   for(let i=0; i<array.length; i++){ // HTMLCollection
+      // console.log(array[i], i); // 배열자, 반복자
+	}
+});
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Node Access</h1>
+<div class="container">
+	<ul id="tutorial">
+		<li class="html">HTML</li>
+		<li class="css">CSS</li>
+		<li class="css3">CSS3</li>
+		<li class="javascript">JavaScript</li>
+		<li class="jquery">jQuery</li>
+		<li class="blank"></li>
+	</ul>
+	<p id="portfolio">portfolio</p>
+</div>
+</body>
+</html>

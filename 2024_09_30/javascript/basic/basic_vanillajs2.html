@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Node Access</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+#tutorial li {
+	margin-top: 20px;
+}
+
+#tutorial li.active {
+	background-color: #f90;
+	color: #fff;
+}
+
+</style>
+<script>
+	/*
+	$(function(){
+	$("#tutorial li")
+	});
+	*/
+
+	// 단수는 속성, 명령어 적용이 가능합니다.
+    // 복수는 해체해서 속성, 명령어 적용이 가능합니다.
+	window.addEventListener("load",function(){
+		let liList=document.querySelectorAll("#tutorial li"); // 복수 , NodeList
+		// console.log(liList); 복수, NodeList
+
+		// liList는 복수이므로 item1로 해체해서 이벤트를 등록시킬 수 있습니다. 
+		liList.forEach(function(item1, i){
+			item1.addEventListener("click", function(){
+				// console.log(i);
+
+				// liList는 복수이므로 item2로 해체해서 클래스를 제거할 수 있습니다. 
+				liList.forEach(function(item2){
+					item2.classList.remove("active");
+				});
+				
+				item1.classList.add("active");
+			});
+		});
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Node Access</h1>
+<div class="container">
+	<ul id="tutorial">
+		<li class="html">HTML</li>
+		<li class="css">CSS</li>
+		<li class="css3">CSS3</li>
+		<li class="javascript">JavaScript</li>
+		<li class="jquery"><p>jQuery</p></li>
+		<li class="blank"></li>
+	</ul>
+	<p id="portfolio">portfolio</p>
+</div>
+</body>
+</html>
