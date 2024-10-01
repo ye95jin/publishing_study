@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.controller {
+	padding-top: 20px;
+}
+.controller {
+	display: flex;
+	gap: 12px;
+}
+.controller li a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 20px;
+	transition: width 0.3s, background-color 0.3s;
+}
+.controller li.on a {
+	width: 50px;
+	background-color: #8ac007;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+// step1
+/*$(function(){
+	$(".controller li.first").click(function(e){
+		e.preventDefault();
+
+		$(this).addClass("on");
+	});
+});
+*/
+
+/*
+window.addEventListener("load",function(){
+	let li=document.querySelector(".controller li.first");
+
+	li.addEventListener("click",function(e){
+		e.preventDefault();
+
+		li.classList.add("on");
+	});
+});
+*/
+
+// step2
+/*
+$(function(){
+	$(".controller li").click(function(e){
+		e.preventDefault();
+
+		$(this).addClass("on");
+	});
+});
+*/
+
+/*
+window.addEventListener("load",function(){
+	// let li=document.querySelector(".controller li"); 첫번째 li만 참조 
+	let li=document.querySelectorAll(".controller li"); // 복수, NodeList 유형
+
+	// 복수는 JavaScript 명령어,속성을 바로 추가할 수 없습니다.
+	// 해체해서 명령어, 속성을 추가해야합니다. 
+
+	// let array=["zero","one","two"]; //복수 
+
+	// console.log(li, array);
+
+	// let item=0; // 변수 
+
+	li.forEach(function(item, i){ //인자,함수 안에서만 사용됩니다. 
+		// console.log(item, i); // <li class="first"><a href=""></a></li>, 0
+		item.addEventListener("click",function(e){
+			e.preventDefault();
+
+			item.classList.add("on");
+		});
+	});
+});
+*/
+
+// step3
+/*
+$(function(){
+	$(".controller li").click(function(e){
+		e.preventDefault();
+
+		$(".controller li").removeClass("on");
+		$(this).addClass("on");
+	});
+});
+*/
+
+
+window.addEventListener("load",function(){
+	let li=document.querySelectorAll(".controller li");
+
+	// 첫번째 활성화 되고싶을때 
+	li[0].classList.add("on"); // [li.first,li,li, .....]
+	// let liFirst=document.querySelector(".controller li:first-child");
+	// liFirst.classList.add("on"); // 이렇게도 쓸수있지만 번거롭기 때문에 li[0]으로 
+
+	// 복수일 경우 명령어,속성을 추가할 경우 해체해야 합니다. 
+
+	li.forEach(function(item){ 
+		item.addEventListener("click",function(e){
+			e.preventDefault();
+
+			li.forEach(function(item2){
+				item2.classList.remove("on");
+			});
+
+			item.classList.add("on");
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: jQuery Example</h1>
+<div class="container">
+	<ul class="controller">
+		<li class="first"><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+</div>
+</body>
+</html>
