@@ -1,0 +1,61 @@
+
+
+1)변수 
+
+선언시에도 $, 호출시에도 $시그널을 시용합니다. 
+// variables
+$main-font: "Open Sans", sans-serif;
+$main-color: #999;
+$main-text-color: #666;
+
+
+2)확장
+
+반복적인 코드를 미리 작성해서 붙여넣기 합니다.
+
+%시그널을 써서 선언합니다.
+// extend
+%depth1-a {
+	display: block;
+	padding: 10px 40px;
+	font-weight: 600;
+	background-color: $main-color;
+	color: #fff;
+}
+%depth2-a {
+	display: block;
+	padding: 0 35px 0 40px;
+	line-height: 38px;
+	font-weight: 400;
+	background-color: #fff;
+	color: $main-text-color;
+}
+
+3)믹스인
+// mixin
+@mixin box-shadow($x, $y, $blur, $color) {
+	box-sizing: $x $y $blur $color;
+}
+@mixin css-transition($prop, $dur) {
+	transition: $prop $dur;
+}
+
+4)중첩 
+// nesting
+.clearfix {
+	&::before, &::after {
+		content: "";
+		display: block;
+	}
+	&::after {
+		clear: both;
+	}
+}
+nav {
+}
+
+5)부분화 
+
+@import "_common";
+@import "_nav";
+@import "_content";

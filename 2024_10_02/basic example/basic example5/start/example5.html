@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.picture {
+	width: 1220px;
+	height: 200px;
+	overflow: hidden;
+}
+.picture ul {
+	float: left;
+	margin-left: -1200px;
+	width: 1200px;
+	transition: margin-left 0.8s;
+}
+.picture ul.on {
+	margin-left: 0;
+}
+.picture li {
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+.picture img {
+	max-width: 100%;
+	height: auto;
+}
+.picture .handle {
+	float: left;
+	display: block;
+	width: 20px;
+	height: 200px;
+	text-indent: -9999px;
+	background-color: #333;
+	cursor: pointer;
+	border-radius: 0 10px 10px 0;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+/*
+$(function(){
+	$(".handle").click(function(e){
+		e.preventDefault();
+
+		// $(".picture ul").toggleClass("on");
+
+		// if(pictureUl.classList.contains("on")==false){
+		
+		if($(".picture ul").hasClass("on") == false){ 
+			$(".picture ul").addClass("on");
+		}
+		else{
+			$(".picture ul").removeClass("on");
+		}
+	});
+});
+*/
+
+window.addEventListener("load",function(){
+	let button=document.querySelector(".handle");
+	let pictureUl=document.querySelector(".picture ul");
+
+	button.addEventListener("click", function(e){
+		e.preventDefault();
+
+		if(pictureUl.classList.contains("on")==false){
+			pictureUl.classList.add("on");
+		} 
+		else {
+			pictureUl.classList.remove("on");
+		}
+	});
+});
+
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Example</h1>
+<div class="container">
+	<div class="picture">
+		<ul>
+			<li><img src="images/work1.jpg" alt=""></li>
+			<li><img src="images/work2.jpg" alt=""></li>
+			<li><img src="images/work3.jpg" alt=""></li>
+			<li><img src="images/work4.jpg" alt=""></li>
+			<li><img src="images/work5.jpg" alt=""></li>
+			<li><img src="images/work6.jpg" alt=""></li>
+		</ul>
+		<a href="" class="handle">click</a>
+	</div>
+</div>
+</body>
+</html>

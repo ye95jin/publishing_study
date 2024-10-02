@@ -1,0 +1,70 @@
+body, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: block;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+nav ul > li > a {
+  display: block;
+  padding: 10px 40px;
+  font-weight: 600;
+  background-color: #999;
+  color: #fff;
+}
+
+nav ul ul a {
+  display: block;
+  padding: 0 35px 0 40px;
+  line-height: 38px;
+  font-weight: 400;
+  background-color: #fff;
+  color: #666;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+}
+
+nav {
+  font-size: 0.875em;
+}
+nav > ul > li {
+  float: left;
+}
+nav ul ul {
+  display: none;
+  position: absolute;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+nav ul ul a {
+  transition: all 300ms;
+}
+nav > ul > li:hover ul {
+  display: block;
+}
+nav ul ul a:hover {
+  background-color: #f4f4f4;
+}
+
+.contents {
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #666;
+}

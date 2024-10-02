@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+dfn,
+del,
+p,
+blockquote,
+fieldset,
+input,
+textarea,
+select,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+button,
+canvas,
+video {
+	margin: 0;
+	padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+address,
+caption,
+cite,
+code,
+th,
+dfn,
+del {
+	font-weight: normal;
+	font-style: normal;
+}
+ul,
+ol {
+	list-style: none;
+}
+fieldset,
+img {
+	border: none;
+}
+caption,
+th {
+	text-align: left;
+}
+table {
+	@extend %border-collapse;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+	cursor: pointer;
+	line-height: normal;
+}
+button,
+input {
+	line-height: normal;
+}
+input[type="hidden"],
+[hidden],
+.hidden {
+	display: none;
+}
+textarea {
+	overflow: auto;
+	resize: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+.clearfix {
+	display: block;
+}
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+a>img {
+	vertical-align: bottom;
+}
+strong,
+b {
+	font-weight: bold;
+}
+em,
+i {
+	font-style: italic;
+}
+del {
+	text-decoration: line-through;
+}
+:focus {
+	outline: none;
+}
+.clear {
+	display: block;
+	clear: both;
+	line-height: 0;
+	height: 0;
+	font-size: 0;
+}
+.clearfix:after,
+.wrap:after,
+aside:after,
+section:after,
+article:after,
+.text:after {
+	@extend %after;
+}
+.align-left {
+	float: left !important;
+}
+.align-right {
+	float: right !important;
+}
+.overflow-hidden {
+	@extend %overflow-hidden;
+}
+
+
+// variables
+$main-text-color: #6a6a6a;
+$main-link-color: #26a6d1;
+$main-bg-color: #fff;
+
+
+// extend
+%border-collapse {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+%before {
+	content: "";
+	display: block;
+}
+%after {
+	content: "";
+	display: block;
+	clear: both;
+}
+%overflow-hidden {
+	display: block;
+	overflow: hidden;
+}
+%box-sizing {
+	box-sizing: border-box;
+}
+
+
+// mixin
+@mixin transition-effect($prop, $dur, $easing: ease-out, $delay: 0){
+	transition-property: $prop;
+	transition-duration: $dur;
+	transition-timing-function: $easing;
+	transition-delay: $delay;
+}
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+@mixin box-shadow($shadow) {
+	box-shadow: $shadow;
+}
+@mixin font-style($size, $color, $weight: 400) {
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+}
+@mixin margin-style($space) {
+	margin: $space;
+}
+@mixin padding-style($space) {
+	padding: $space;
+}
+
+/* common CSS */
+html {
+	height: 100%;
+	background-color: $main-bg-color;
+}
+body {
+	height: 100%;
+	line-height: 26px;
+	font-family: "Open Sans", sans-serif;
+	@include font-style(1em, $main-text-color);
+}
+a {
+	color: $main-link-color;
+	@include transition-effect(color, 0.15s, linear);
+}
+a:hover {
+	color: #1e85a7;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #324d5b; 
+}
+h1, h2, h3 {
+	@include margin-style(0 0 22px);
+	line-height: 40px;
+	@include font-style(1.875em, #324d5b);
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.main {
+	min-height: 100%;
+	overflow: hidden;
+	@extend %box-sizing;
+}
+.wrap {
+	@include margin-style(0 auto);
+	@include padding-style(0 30px);
+	max-width: 940px;
+}

@@ -1,0 +1,88 @@
+/* promotion CSS */
+.promo {
+	background-color: #3db39e;
+	color: $main-bg-color;
+
+	.wrap {
+		position: relative;
+		min-height: 634px;
+	}
+	.promo-text {
+		@include padding-style(100px 0 0);
+		width: 460px;
+		line-height: 30px;
+		@include font-style(1.125em,$main-bg-color );
+		@extend %box-sizing;
+	}
+	.promo-text p {
+		@include padding-style(35px 0 0);
+		@include font-style(0.875em, $main-bg-color, 400);
+	}
+	.wrap img {
+		position: absolute;
+		right: 18px;
+		bottom: 0;
+	}
+	.promo-title {
+		line-height: 60px;
+		@include font-style(3em, $main-bg-color, bold);
+	}
+	.promo-button {
+		display: inline-block;
+		@include padding-style(0 30px);
+		height: 52px;
+		line-height: 52px;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		@include font-style(1.25em, $main-link-color, 600);
+		background-color: $main-bg-color;
+		@include border-radius(5px);
+		@include transition-effect(all, 0.15s, linear);
+	}
+	.promo-button:hover {
+		background-color: #e2f9f5;
+		color: #26a5d1;
+	}
+	.promo-button:active {
+		background-color: #e2f9f5;
+		color: #188bb2;
+		@include box-shadow(0 0 2px rgba(0, 0, 1, 0.1));
+	}
+	.promo-link {
+		@include margin-style(0 0 0 35px);
+		line-height: 52px;
+		text-transform: uppercase;
+		white-space: nowrap;
+		@include font-style(1.25em, $main-bg-color, bold);
+	}
+	.promo-link:hover {
+		color: #c9f9f0;
+	}
+}
+
+/* responsive CSS */
+@media only screen and (max-width: 860px) {
+	.promo .wrap img {
+		display: block;
+		position: relative;
+		right: auto;
+		bottom: auto;
+		margin: 0 auto;
+	}
+	.promo .promo-text {
+		display: block;
+		@include padding-style(65px 0 48px);
+		width: auto;
+		height: auto;
+		text-align: center;
+	}
+	.promo .promo-title {
+		line-height: 50px;
+		@include font-style(2.5em, $main-bg-color);
+	}
+	.promo .promo-link,
+	.promo .promo-button {
+		@include margin-style(0 15px 15px);
+	}
+}

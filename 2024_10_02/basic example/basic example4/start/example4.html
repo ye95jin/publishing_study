@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+nav ul {
+	margin: 16px 0 16px 0;
+	padding: 8px 0;
+	text-align: left;
+	font-weight: 400;
+	border-bottom: 1px solid #d4d4d4;
+}
+nav ul li {
+	display: inline;
+}
+nav ul li a {
+	margin-right: 0;
+	padding: 10px 20px 10px;
+	text-decoration: none;
+	font-size: 0.87rem;
+	background-color: #f1f1f1;
+	color: #333;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	transition: all 0.4s;
+}
+nav ul li.on a {
+	background-color: #8ac007;
+	color: #fff;
+	border-color: #8ac007
+}
+.description {
+	display: none;
+	margin: 30px 0;
+	padding: 30px 0;
+	font-size: 0.875em;
+	color: #333;
+	border-bottom: 4px solid #d4d4d4;
+}
+.description.active {
+	display: block;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+/*
+$(function(){
+	let n=0;
+
+	$("nav li").eq(n).addClass("on");
+	$(".description").eq(n).addClass("active");
+
+	$("nav li").click(function(e){
+		e.preventDefault();
+
+		$("nav li").removeClass("on");
+		$(this).addClass("on");
+
+		n=$(this).index();
+
+		$(".description").removeClass("active");
+		$(".description").eq(n).addClass("active");
+	});
+});
+*/
+
+window.addEventListener("load", function(){
+	let n=0;
+	let navList=document.querySelectorAll("nav li");
+	let desList=document.querySelectorAll(".description");
+
+	navList[n].classList.add("on");
+	desList[n].classList.add("active");
+
+	navList.forEach(function (item1, i) {
+		
+		item1.addEventListener("click", function (e){
+			e.preventDefault();
+
+			navList.forEach(function(item2){
+				item2.classList.remove("on");
+			});
+
+			desList.forEach(function(item3){
+				item3.classList.remove("active");
+			});
+
+			navList[i].classList.add("on");
+			desList[i].classList.add("active"); 
+		});
+	});
+});
+
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Example</h1>
+<div class="container">
+	<nav>
+		<ul>
+			<li class="tab1"><a href="">HTML</a></li>
+			<li class="tab2"><a href="">CSS</a></li>
+			<li class="tab3"><a href="">JavaScript</a></li>
+			<li class="tab4"><a href="">jQuery</a></li>
+		</ul>
+	</nav>
+	<div class="description_group">
+		<div class="description HTML">subject : HTML</div>
+		<div class="description CSS">subject : CSS</div>
+		<div class="description JavaScript">subject : JavaScript</div>
+		<div class="description jQuery">subject : jQuery</div>
+	</div>
+</div>
+</body>
+</html>

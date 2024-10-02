@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+body, ol, ul {
+	margin: 0;
+	padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: block;
+}
+.clearfix::after {
+	clear: both;
+}
+
+// variables
+$main-font: "Open Sans", sans-serif;
+$main-color: #999;
+$main-text-color: #666;
+
+
+// extend
+%depth1-a {
+	display: block;
+	padding: 10px 40px;
+	font-weight: 600;
+	background-color: $main-color;
+	color: #fff;
+}
+%depth2-a {
+	display: block;
+	padding: 0 35px 0 40px;
+	line-height: 38px;
+	font-weight: 400;
+	background-color: #fff;
+	color: $main-text-color;
+}
+
+
+// mixin
+@mixin box-shadow($x, $y, $blur, $color) {
+	box-shadow: $x $y $blur $color;
+}
+@mixin css-transition($prop, $dur) {
+	transition: $prop $dur;
+}
+
+body {
+	font-family: $main-font;
+	font-size: 1em;
+}

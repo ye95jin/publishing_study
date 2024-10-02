@@ -1,0 +1,53 @@
+// variables
+$main-text-color: #6a6a6a;
+$main-link-color: #26a6d1;
+$main-bg-color: #fff;
+
+
+// extend
+%border-collapse {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+%before {
+	content: "";
+	display: block;
+}
+%after {
+	content: "";
+	display: block;
+	clear: both;
+}
+%overflow-hidden {
+	display: block;
+	overflow: hidden;
+}
+%box-sizing {
+	box-sizing: border-box;
+}
+
+
+// mixin
+@mixin transition-effect($prop, $dur, $easing: ease-out, $delay: 0){
+	transition-property: $prop;
+	transition-duration: $dur;
+	transition-timing-function: $easing;
+	transition-delay: $delay;
+}
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+@mixin box-shadow($shadow) {
+	box-shadow: $shadow;
+}
+@mixin font-style($size, $color, $weight: 400) {
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+}
+@mixin margin-style($space) {
+	margin: $space;
+}
+@mixin padding-style($space) {
+	padding: $space;
+}

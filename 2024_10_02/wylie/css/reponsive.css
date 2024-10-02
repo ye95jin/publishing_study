@@ -1,0 +1,120 @@
+
+/* 940px 이하 */
+@media screen and (max-width: 940px) {
+	/* common */
+    .wrapper {
+
+    }
+	/* header */
+	
+	#header {
+		
+	}
+
+
+	/* slider */
+	/* section */
+	/* section _business */
+	/* section _portfolio */
+}
+
+/* 720px 이하 */
+@media screen and (max-width: 720px) {
+	/* header */
+	/* slider */
+	/* section */
+	/* section _business */
+	/* section _portfolio */
+}
+
+
+/* 460px 이하 */
+@media screen and (max-width: 460px) {
+	/* header */
+	/* slider */
+	/* section */
+	/* section _business */
+	/* section _portfolio */
+}
+
+
+
+
+
+
+
+
+/* 940px 이하 */
+/* @media screen and (max-width: 940px) {
+    #portfolio .content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #portfolio .content .content-item {
+        width: calc(33.333% - 20px); 
+    }
+
+	#portfolio .content .content-item .content-inner .text {
+        padding: 20px 40px 15px 40px; 
+    }
+
+	#portfolio .content .content-item .content-inner .text strong {
+        font-size: 1.1em; 
+    }
+
+    #portfolio .content .content-item .content-inner .text span {
+        font-size: 0.7em; 
+    }
+} */
+
+/* 720px 이하 */
+/* @media screen and (max-width: 720px) {
+	
+    #portfolio .content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #portfolio .content .content-item {
+        width: calc(50% - 20px); 
+    }
+
+	#portfolio .content .content-item .content-inner .text {
+        padding: 15px 30px 10px 30px;
+    }
+
+	#portfolio .content .content-item .content-inner .text strong {
+        font-size: 1em; 
+    }
+
+    #portfolio .content .content-item .content-inner .text span {
+        font-size: 0.65em; 
+    }
+
+	
+} */
+
+/* 460px 이하 */
+/* @media screen and (max-width: 460px) {
+    #portfolio .content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #portfolio .content .content-item {
+        width: 100%; 
+    }
+
+	#portfolio .content .content-item .content-inner .text {
+        padding: 10px 20px 5px 20px; 
+    }
+
+	#portfolio .content .content-item .content-inner .text strong {
+        font-size: 0.9em; 
+    }
+
+    #portfolio .content .content-item .content-inner .text span {
+        font-size: 0.6em;
+    }
+} */

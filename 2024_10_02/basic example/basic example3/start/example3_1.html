@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	margin-bottom: 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+	min-width: 440px;
+}
+.controller li {
+	display: inline-block;
+	margin-left: 8px;
+}
+.controller li:first-child {
+	margin-left: 0;
+}
+.controller li a {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+.controller li.on a {
+	width: 50px;
+	background-color: #8ac007;
+}
+.picture {
+	position: relative;
+	margin-top: 30px;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+.picture ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 2400px;
+	list-style: none;
+	transition: left 0.4s;
+}
+.picture li {
+	float: left;
+	width: 400px;
+	height: 400px;
+}
+.picture img {
+	max-width: 100%;
+	height: auto;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+window.addEventListener("load",function(){
+	let n=0; //순서 변수
+	let targetx=0;//위치
+
+	let liList=document.querySelectorAll(".controller li");
+	let picture=document.querySelector(".picture ul")
+
+	console.log(liList); // NodeList지만 Array하고 비슷합니다. 
+	console.log(liList[1]); // 2번째에 접근합니다. 
+
+	liList.forEach(function(item1, i){ // 해체 과정 , 6번의 반복 과정 
+		//이벤트는 능력을 부여함
+		// <li><a href="">두 번째</a></li>
+		// 사용자가 click 이벤트를 발생시킵니다. 
+
+		item1.addEventListener("click", function(e){ // LI에 클릭할 수 있는 능력을 부여합니다. 
+			e.preventDefault();
+
+			liList.forEach(function(item2){ // $(".controller li").removeClass("on");
+				item2.classList.remove("on");
+			});
+
+			// LI > A 위치에서 click 이벤트를 작성하면 A까지 이벤트 대상이 도달합니다. 
+			// e.currentTarget : LI, addEventListener에 등록된 대상 
+			// console.log(e.target,e.currentTarget); // $(this);
+			// console.log(item1); // $(this);
+			// console.log(i, item1, liList[i]); //1,<li><a href="">두 번째</a></li>
+
+			// e.currentTarget.classList.add("on"); // 이렇게 쓰고 
+			// item1.classList.add("on"); 이렇게 써도 됨 
+			n=i;
+			targetx=n*-1*400;
+
+			liList[i].classList.add("on");
+			picture.style.left=targetx+"px";
+		});
+		
+	});
+});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Example</h1>
+<div class="container">
+	<ul class="controller">
+		<li class="on"><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+	</ul>
+	<div class="picture">
+		<ul>
+			<li><img src="images/work1.jpg" alt=""></li>
+			<li><img src="images/work2.jpg" alt=""></li>
+			<li><img src="images/work3.jpg" alt=""></li>
+			<li><img src="images/work4.jpg" alt=""></li>
+			<li><img src="images/work5.jpg" alt=""></li>
+			<li><img src="images/work6.jpg" alt=""></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
