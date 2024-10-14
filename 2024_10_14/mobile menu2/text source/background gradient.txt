@@ -1,0 +1,3 @@
+background-image: linear-gradient(50deg,#83e8fe,#83e8fe,#a600fa,#a600fa);
+background-size: 400%;
+background-position-x: 50%;

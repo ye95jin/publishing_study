@@ -1,0 +1,40 @@
+@media (max-width: 1028px) {
+    /* 데스크탑 네비게이션 숨기기 */
+    #start header .inner #desktop {
+        display: none; /* 1028px 이하에서 데스크탑 네비게이션을 숨김 */
+    }
+
+    /* 모바일 네비게이션 보이기 */
+    #start header .inner #mobile {
+        display: block; /* 1028px 이하에서 모바일 네비게이션을 활성화 */
+    }
+
+    /* 로고 크기 조정 */
+    #start header .inner .logo {
+        width: 100%; /* 로고가 전체 너비를 차지하도록 설정 */
+        text-align: left; /* 로고 중앙 정렬 */
+    }
+
+    /* 모바일 탭 버튼 크기 조정 */
+    #start header .inner .tab {
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+	#mobile .gnb {
+		padding: 6em 1.25em;
+		height: calc(100vh - 12em);
+	}
+}
+@media only screen and (orientation: landscape) {
+	#mobile #start {
+		font-size: 1em;
+	}
+	#mobile .gnb {
+		padding: 4em 1.25em;
+		height: calc(100vh - 6em);
+	}
+}

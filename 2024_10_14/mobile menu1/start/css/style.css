@@ -1,0 +1,348 @@
+body, ul, ol, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+body {
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+	color: #000;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+img {
+	vertical-align: top;
+}
+
+body.fixed {
+	overflow-y: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* start */
+#start {
+    position: relative;
+    width: 100%;
+    /* overflow: hidden;  */
+}
+
+#start header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+#start header .inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+#start header .inner .logo {
+	position: relative;
+    left: 0; 
+    transform: none; 
+    width: auto; 
+}
+
+#start header .inner .logo img {
+    transition: all 0.3s;
+}
+
+
+/* desktop  */
+
+
+#start header .inner #desktop  {
+	display: flex;
+    flex-grow: 1; 
+    justify-content: flex-end; 
+}
+
+#start header .inner #desktop > ul {
+	display: flex;
+	gap: 20px;
+}
+
+#start header #desktop > ul > li {
+	position: relative;
+	padding: 0 50px;
+}
+
+#start header #desktop > ul > li > a {
+	display: block;
+    line-height: 40px;
+    font-size: 1.19em;
+    font-weight: 500;
+    color: #fff;
+    padding: 0 10px; 
+    white-space: nowrap;
+}
+
+#start header #desktop > ul > li:hover > a {
+    color: #000;
+}
+
+#start header #desktop > ul > li:hover ~ header {
+    background-color: #fff;
+}
+
+#start header #desktop > ul > li:hover > a,
+#start header #desktop > ul > li.active  > a {
+	color: #ee7158;
+}
+
+#start header #desktop ul ul {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%; 
+    box-sizing: border-box; 
+    overflow: hidden;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+}
+
+#start header #desktop ul ul a {
+	display: block;
+    line-height: 40px; 
+    font-size: 0.81em;
+    font-weight: 300;
+    background-color: #ee7158;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    white-space: nowrap;
+    box-sizing: border-box; 
+    width: 100%;
+}
+
+#start header #desktop ul ul a:hover,
+#start header #desktop ul ul a:focus {
+	background-color: #c0513b;
+}
+
+
+/* mobile  */
+
+
+#start header .inner #mobile {
+	position: fixed;
+	right: -100vw;
+	top: 0;
+	z-index: 1000;
+	/* padding: 3.125em 1.5625em 0 1.5625em; */
+	width: 20em;
+	height: 100%;
+	background-color: #fff;
+	/* transition: right 0.4s; */
+	overflow-y: scroll;
+	z-index: 99999;
+	box-sizing: border-box;
+}
+
+
+#start header .inner #mobile.active {
+	right: 0;
+	transition: right 0.4s;
+}
+
+#start header .inner #mobile .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f04e63; 
+    padding: 1em; 
+}
+
+#start header .inner #mobile .mobile-header .language {
+	font-size: 0.875em;
+	color: #fff;
+}
+
+#start header .inner #mobile .mobile-header .close {
+	/* position: absolute;
+	right: 1.875em;
+	top: 1.875em; */
+	width: 1.5em;
+	height: 1.5em;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: url(../images/btn_close.png) no-repeat 0 0;
+	background-size: cover;
+}
+
+
+#start header .inner .gnb #mobile > ul > li > a{
+	display: block;
+	position: relative;
+	line-height: 3.6;
+	font-size: 0.75em;
+	color: #000;
+	border-bottom: 1px solid #f1f1f1;
+	padding: 0 10px;
+}
+
+#start header .inner .gnb #mobile > ul > li:last-child > a {
+	border-bottom: none;
+}
+
+#start header .inner .gnb #mobile > ul > li.active > a {
+	background-color: #fff;
+	color: #b36b30;
+	border-bottom: none;
+}
+
+#start header .inner .gnb #mobile > ul > li > a::after {
+	content: "";
+	position: absolute;
+	right: 1.25em;
+	top: 1.125em;
+	width: 17px;
+	height: 17px; 
+	background: url(../images/icon_toggle_arrow.png) no-repeat;
+	background-size: 80%; 
+	background-position: center; 
+}
+
+#start header .inner .gnb #mobile > ul > li.active > a::after {
+	content: "";
+    position: absolute;
+    right: 1.25em;
+    top: 1.125em;
+    width: 17px;
+    height: 17px; 
+    background: url(../images/icon_toggle_arrow.png) no-repeat;
+    background-size: 80%; 
+    background-position: center;
+    transform: rotate(180deg); 
+}
+
+#start header .inner .gnb #mobile ul ul {
+	display: none;
+	overflow: hidden;
+	background-color: #f7f7f7;
+}
+
+#start header .inner .gnb #mobile ul ul li:first-child {
+	margin-top: 0.375em;
+}
+
+#start header .inner .gnb #mobile ul ul li:last-child {
+	margin-bottom: 0.375em;
+}
+
+#start header .inner .gnb #mobile ul ul li a {
+	display: block;
+	line-height: 2.6;
+	text-indent: 1.25em;
+	font-size: 0.875em;
+	color: #000;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+#start header .inner .gnb #mobile ul ul li:last-child a {
+	border-bottom: none;
+}
+
+
+/* tab */
+
+#start header .inner .tab  {
+    width: 31px; 
+    height: 31px; 
+    overflow: hidden;
+    text-indent: -9999px;
+    background: url('../images/btn_tab.png') no-repeat 0 0;
+    background-size: contain; 
+	transition: background 0.3s;
+}
+
+#start header #desktop > ul > li:hover ~ .tab {
+    background: url('../images/btn_tab_black.png') no-repeat 0 0;
+    background-size: contain;
+}
+
+
+#start header .inner .tab.active {
+	right: 16em;
+	background: url(../images/btn_close.png) no-repeat 0 0; 
+	background-size: cover;
+	transition: right 0.4s;
+}
+
+
+/* dim */
+
+#start .dim {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.6);
+	z-index: 999; 
+}
+
+#start .dim.active {
+	display: block;
+}
+
+
+
+/* slider */
+
+#start .slider {
+    position: relative;
+    width: 100%; /* 부모의 너비에 맞게 슬라이더 너비 설정 */
+    height: auto;
+    min-height: 650px;
+    background-color: #000;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* active */
+#header.active {
+	background-color: #fff;
+}
+
+#header.active .logo img {
+	content: url(../images/logo.png);
+}
+
+#header.active .tab {
+	content: url(../images/btn_tab_black.png);
+}
+
+#header.active #desktop ul li a {
+	color: #000;
+}
+
+#header.active #desktop ul li ul li a {
+	color: #fff;
+}
+
+#start header .inner #desktop > ul {
+	gap: 0;
+}

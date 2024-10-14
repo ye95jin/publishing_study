@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Layout Test</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/reponsive.css" />
+<style>
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script>
+window.addEventListener("load", function() {
+    let depthLi = document.querySelectorAll("#desktop > ul > li");
+    let header = document.querySelector("#header");
+    let logoImg = document.querySelector(".logo img");
+    let tabButton = document.querySelector(".tab");
+    let closeBtn = document.querySelector("#mobile .close"); 
+    let menu = document.querySelector("#mobile"); 
+    let menuLi = document.querySelectorAll("#mobile > ul > li");
+    let dim = document.querySelector(".dim"); 
+    let body = document.querySelector("body");
+	
+	let isMobile=/mobile/i.test(navigator.userAgent);
+
+	if(isMobile == true){
+		document.body.classList.add("mobile");
+	}
+
+    // 데스크탑 메뉴 동작
+	depthLi.forEach(function (item) {
+		item.addEventListener("mouseenter", function () {
+            header.classList.add("active");
+		});
+
+		item.addEventListener("mouseleave", function () {
+            header.classList.remove("active");
+		});
+    });
+
+    depthLi.forEach(function(item) {
+        item.addEventListener("mouseenter", function() {
+            item.classList.add("active");
+
+            let sub = item.lastElementChild;
+            gsap.fromTo(sub, { display: "block", height: 0 }, { height: "auto", duration: 0.3 });
+        });
+
+        item.addEventListener("mouseleave", function() {
+            item.classList.remove("active");
+
+            let sub = item.lastElementChild;
+            gsap.to(sub, { display: "none", height: 0, duration: 0.3 });
+        });
+    });
+
+    // 모바일 메뉴 탭 버튼 클릭 시 메뉴 열기 및 딤 활성화
+    tabButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        body.classList.add("fixed"); // 스크롤 고정
+        gsap.to(menu, {right: "0", duration: 0.3});
+        gsap.to(dim, {display: "block", opacity: 1, duration: 0.3}); // 딤 활성화
+    });
+
+    // 닫기 버튼 클릭 시 메뉴 닫기 및 딤 비활성화
+    closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        body.classList.remove("fixed"); // 스크롤 고정 해제
+        gsap.to(menu, {right: "-100vw", duration: 0.3});
+        gsap.to(dim, {opacity: 0, display: "none", duration: 0.3}); // 딤 비활성화
+    });
+
+    // 딤 클릭 시 메뉴 닫기 및 딤 비활성화
+    dim.addEventListener("click", function(e) {
+        e.preventDefault();
+        body.classList.remove("fixed"); // 스크롤 고정 해제
+        gsap.to(menu, {right: "-100vw", duration: 0.3});
+        gsap.to(dim, {opacity: 0, display: "none", duration: 0.3}); // 딤 비활성화
+    });
+
+    // 모바일 메뉴에서 각 항목 클릭 시 아코디언 동작
+    menuLi.forEach(function(item1,i){
+        item1.addEventListener("click",function(e){
+            e.preventDefault();
+
+            // item1에 active 클래스가 없으면,
+            if(item1.classList.contains("active") == false){
+                menuLi.forEach(function(item2,j){
+                    if(j == i){ // 열리는 메뉴
+                        item2.classList.add("active");
+                        gsap.fromTo(item2.lastElementChild, {
+                            display: "block", height:0
+                        },
+                        {
+                            height: "auto", duration:0.3
+                        });
+                    }
+                    else { // 닫히는 메뉴
+                        item2.classList.remove("active");
+                        gsap.to(item2.lastElementChild, {
+                            height: 0, display:"none",  duration:0.3
+                        });
+                    }
+                });
+            }
+            else { // 이미 열린 메뉴 닫기
+                item1.classList.remove("active");
+                gsap.to(item1.lastElementChild, {
+                    height: 0, display:"none",  duration:0.3
+                });
+            }
+        });
+    });
+});
+
+</script>
+</head>
+
+<body>
+	<div id="start">
+        <header id="header">
+			<div class="inner">	
+				<div class="logo">
+					<h1><a href=""><img src="images/logo_w.png" alt="logo"></a></h1>
+				</div>
+				<div class="gnb">
+					<nav id="desktop">
+						<ul>
+							<li>
+								<a href="">대상소개</a>
+								<ul>
+									<li><a href="">Respect Tree</a></li>
+									<li><a href="">CI</a></li>
+									<li><a href="">대상이야기</a></li>
+									<li><a href="">계열사현황</a></li>
+									<li><a href="">윤리경영</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">사업소개</a>
+								<ul>
+									<li><a href="">식품사업</a></li>
+									<li><a href="">소재사업</a></li>
+									<li><a href="">건강뉴트리션사업</a></li>
+									<li><a href="">축육&유통사업</a></li>
+									<li><a href="">인프라&기타사업</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">IR</a>
+								<ul>
+									<li><a href="">재무정보</a></li>
+									<li><a href="">IR자료실</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">그룹소식</a>
+								<ul>
+									<li><a href="">존중이야기</a></li>
+									<li><a href="">NEWS</a></li>
+									<li><a href="">ESG</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<nav id="mobile">
+						<div class="mobile-header">
+							<span class="language">KR</span> <!-- KR 텍스트 추가 -->
+							<a href="" class="close">X</a> <!-- 닫기 버튼 -->
+						</div>
+						<ul>
+							<li>
+								<a href="">대상소개</a>
+								<ul>
+									<li><a href="">Respect Tree</a></li>
+									<li><a href="">CI</a></li>
+									<li><a href="">대상이야기</a></li>
+									<li><a href="">계열사현황</a></li>
+									<li><a href="">윤리경영</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">사업소개</a>
+								<ul>
+									<li><a href="">식품사업</a></li>
+									<li><a href="">소재사업</a></li>
+									<li><a href="">건강뉴트리션사업</a></li>
+									<li><a href="">축육&유통사업</a></li>
+									<li><a href="">인프라&기타사업</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">IR</a>
+								<ul>
+									<li><a href="">재무정보</a></li>
+									<li><a href="">IR자료실</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">그룹소식</a>
+								<ul>
+									<li><a href="">존중이야기</a></li>
+									<li><a href="">NEWS</a></li>
+									<li><a href="">ESG</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a href="" class="tab">tab</a>
+			</div>
+        </header>
+		<div class="dim"></div>
+        <div class="slider"></div>
+    </div>
+</body>
+</html>

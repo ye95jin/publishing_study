@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+.clearfix::before, .clearfix::after {
+	content: "";
+	display: block;
+}
+.clearfix::after {
+	clear: both;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+}
+nav {
+	font-size: 0.875em;
+}
+nav > ul > li {
+	float: left;
+}
+nav > ul > li > a {
+	display: block;
+	padding: 10px 40px;
+	font-weight: 600;
+	background-color: #999;
+	color: #fff;
+}
+nav > ul > li:hover > a,
+nav > ul > li.active > a {
+	color: #ff0;
+}
+nav ul ul {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	box-shadow: 0 0 2px rgba(0,0,0,.1);
+}
+nav ul ul a {
+	display: block;
+	padding: 0 35px 0 40px;
+	line-height: 38px;
+	font-weight: 400;
+	background-color: #fff;
+	color: #666;
+}
+/*
+nav > ul > li:hover ul {
+	display: block;
+}
+*/
+nav ul ul a:hover,
+nav ul ul a:focus {
+	background-color: #f4f4f4;
+}
+.contents {
+	padding: 20px;
+	background-color: #f4f4f4;
+	color: #666;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<nav class="clearfix">
+		<ul>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">1DEPTH</a>
+				<ul>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+					<li><a href="">2depth</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="contents">contents</div>
+</div>
+</body>
+</html>
