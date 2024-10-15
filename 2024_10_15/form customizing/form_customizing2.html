@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+.check input {
+	margin-left: 20px;
+	margin-top: 40px;
+	vertical-align: middle;
+}
+.check input#check1 {
+	margin-top: 0;
+}
+.check_box1 {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background: url(images/spr_form.png) no-repeat 0 0;
+}
+.check_box1.checked {
+	background-position: -36px 0;
+}
+.check_box2 {
+	display: inline-block;
+	margin-top: 40px;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	background: url(images/spr_form.png) no-repeat -80px 0;
+}
+.check_box2.checked {
+	background-position: -107px 0;
+}
+.check_box3 {
+	display: inline-block;
+	margin-top: 40px;
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	background: url(images/spr_form.png) no-repeat 0 -30px;
+}
+.check_box3.checked {
+	background-position: -36px -30px;
+}
+.check_box4 {
+	display: inline-block;
+	margin-top: 40px;
+	width: 56px;
+	height: 33px;
+	vertical-align: middle;
+	background: url(images/spr_form.png) no-repeat 0 -66px;
+}
+.check_box4.checked {
+	background-position: -72px -66px;
+}
+
+.select {
+	margin-top: 40px;
+}
+.select dl {
+	display: inline-block;
+	position: relative;
+	line-height: 27px;
+	vertical-align: middle;
+}
+.select dl dt a {
+	display: block;
+	position: relative;
+	padding-left: 10px;
+	width: 180px;
+	height: 27px;
+	text-decoration: none;
+	font-size: 0.75em;
+	color: #666;
+	border: 1px solid #dedede;
+}
+.select dl dt a span {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -3px;
+	width: 10px;
+	height: 6px;
+	background: url(images/spr_btns.png) no-repeat -127px -73px;
+}
+.select dl dt a.active span {
+	background-position: -127px -93px;
+}
+.select dl dd {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 28px;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
+	width: 190px;
+	overflow: hidden;
+	background-color: #fff;
+	border: 1px solid #dedede;
+}
+.select dl dd li {
+	border-top: 1px solid #eaefe3;
+}
+.select dl dd li:first-child {
+	border-top: none;
+}
+.select dl dd li a {
+	display: block;
+	position: relative;
+	padding-left: 31px;
+	line-height: 32px;
+	text-decoration: none;
+	font-size: 0.75em;
+	background-color: #fff;
+	color: #888;
+	transition: background-color 0.3s;
+}
+.select dl dd li a.active {
+	background-color: #f1f1f1;
+}
+.select dl dd li a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 5px;
+	top: 6px;
+	width: 21px;
+	height: 21px;
+	background: url(images/spr_btns.png) no-repeat 0 0;
+}
+.select dl dd li .kr::after {
+	background-position: -392px -326px;
+}
+.select dl dd li .eng::after {
+	background-position: -392px -360px;
+}
+.select dl dd li .cn::after,
+.select dl dd ul li .glo:after {
+	background-position: -392px -395px;
+}
+.select select {
+	margin-left: 20px;
+	vertical-align: middle;
+	font-family: "Open Sans", sans-serif;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script>
+	window.addEventListener("load",function(){
+		let checkList=document.querySelectorAll(".check a");
+		let selectArea=document.querySelector("form .select");
+
+		// check list
+		checkList.forEach(function(item){
+			item.addEventListener("click",function(e){
+				e.preventDefault();
+
+				// item.classList.toggle("checked");
+				if(item.classList.contains("checked") == false){
+					item.classList.add("checked");
+					item.nextElementSibling.setAttribute("checked", true);
+					// <input type="checkbox" checked> : HTML5 이전 버전 
+					// <input type="checkbox" checked="true"> : HTML5 
+					// <input type="checkbox" checked> : HTML5 
+					// 개발자 모드에서 제대로 폼은 랜더링이 안됩니다. 
+				}
+				else{
+					item.classList.remove("checked");
+					// item.nextElementSibling.setAttribute("checked", true); 이렇게 x
+					item.nextElementSibling.removeAttribute("checked");
+				}
+			});
+		});
+
+		let dt=document.querySelector(".select dl dt");
+		let dd=document.querySelector(".select dl dd");
+		let ddList=dd.querySelectorAll("ul li");
+		let selectList=document.querySelectorAll(".select select option");
+		// <input type="checkbox" checked>
+		// 
+
+		dt.addEventListener("click",function(e){
+			e.preventDefault();
+
+			let link=e.target; // Li > A 일 경우 A 선택
+			// let link=e.currentTarget.firstElementChild;
+
+			if(link.classList.contains("active") == false){
+				link.classList.add("active");
+
+				gsap.fromTo(dd, {
+					display: "block", height:0
+				}, {
+					height: "auto" ,duration: 0.3
+				});
+			}
+			else{
+				link.classList.remove("active");
+
+				gsap.to(dd, {display: "none", height:0, duration:0.3});
+			}
+		});
+
+		ddList.forEach(function(item1, i){
+			item1.addEventListener("click", function(e){ // dd ul li
+				e.preventDefault();
+
+				let string=item1.firstElementChild.innerText; // dd ul li a
+
+				// console.log(string);
+				gsap.to(dd, {display: "none", height:0, duration: 0.3});
+
+				// dt.firstElementChild.innerText=string+"<span></span>";
+				dt.firstElementChild.innerHTML=string+"<span></span>";
+				// <dt><a href="#"> ... <span></span></a></dt>
+
+				// dt.firstElementChild.innerText=string; // dt a
+				dt.firstElementChild.classList.remove("active");
+				// AJAX : 비동기적으로 DB 데이터를 이용해 화면 드로잉하는 기법입니다. 
+
+				selectList.forEach(function(option, j){
+					// console.log(i, j)
+
+					if(j == (i+1)){
+						option.setAttribute("selected", true); // form 요소라서 제거할 필요 x 
+					}
+				});
+			});
+		});
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Example</h1>
+<div class="container">
+	<form name="join">
+		<div class="check">
+			<a href="" class="check_box1" title="check box1"></a>
+			<input type="checkbox" name="check1" id="check1">
+		</div>
+		<div class="check">
+			<a href="" class="check_box2" title="check box2"></a>
+			<input type="checkbox" name="check2" id="check2">
+		</div>
+		<div class="check">
+			<a href="" class="check_box3" title="check box3"></a>
+			<input type="radio" name="check3" id="check3">
+		</div>
+		<div class="check">
+			<a href="" class="check_box4" title="check box4"></a>
+			<input type="radio" name="check4" id="check4">
+		</div>
+		<div class="select">
+			<dl>
+				<dt><a href="#">GLOBAL SITE<span></span></a></dt>
+				<dd>
+					<ul>
+						<li><a href="/global/en/index" class="eng">Global / English</a></li>
+						<li><a href="/global/cn/index" class="glo">Global / 中國語（繁體）</a></li>
+						<li><a href="http://www.naturerepublic.cn/index" class="cn">China / 汉语（简体）</a></li>
+					</ul>
+				</dd>
+			</dl>
+			<select name="select">
+				<option>GLOBAL SITE</option>
+				<option>Global / English</option>
+				<option>Global / 中國語（繁體）</option>
+				<option>China / 汉语（简体）</option>
+			</select>
+		</form>
+	</div>
+</div>
+</body>
+</html>

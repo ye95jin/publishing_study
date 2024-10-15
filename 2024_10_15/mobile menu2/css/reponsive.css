@@ -1,0 +1,64 @@
+@media screen and (max-width: 1249px) {
+
+	#start header .inner {
+		padding: 35px 10px;
+	}
+
+	#start header .inner .gnb #desktop > ul {
+        gap:20px;
+    }
+
+	#start .slider .text p {
+		font-size: 2.2em; 
+	}
+	
+	#start .slider .text strong {
+		margin-top: 50px;
+		font-size: 2.5em; 
+	}
+}
+
+@media screen and (max-width: 959px) {
+
+	#start header .inner .gnb #desktop {
+		display: none;
+	}
+	
+	#start header .inner .gnb #mobile {
+		display: block;
+	}
+	
+	#start header .inner .side-button .tab {
+		display: block; 
+	}
+
+	#start .slider .text p {
+		font-size: 1.7em; 
+	}
+	
+	#start .slider .text strong {
+		margin-top: 40px;
+		font-size: 1.9em; 
+	}
+}
+
+@media screen and (max-width: 500px) {
+
+    #start header .inner .logo img {
+        width: 250px;  
+        height: auto; 
+    }
+
+    #start header .inner {
+        padding: 10px 10px; 
+    }
+
+    #start .slider .text p {
+        font-size: 1.2em; 
+    }
+    
+    #start .slider .text strong {
+        margin-top: 30px;
+        font-size: 1.5em;
+    }
+}
