@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	height: 1200px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 600px;
+}
+section .inner {
+	padding: 10px 0;
+	width: 50%;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 2s;
+}
+section .inner.active {
+	opacity: 1;
+}
+.box {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color: #8ac007;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script>
+// scrollTrigger 옵션 
+// 화면 위치에 닿으면 반응이 이루어지는 애니메이션입니다. 
+
+// 이는 이벤트와 비슷합니다.
+// 이벤트를 등록하면 바로 발생되지 않고, 접점(트리거)을 만들어야 합니다. 
+// btn.addEventListener("click",function(){});
+
+window.addEventListener("load",function(){
+	const tl=gsap.timeline();
+
+	let sectionList=document.querySelectorAll("section .inner");
+	
+	// 바로 반응되는 애니메이션입니다. 
+	// tl.to(sectionList, {opacity:1, duration: 0.3, stagger:0.3});
+
+	// 스크롤에 맞춰서 동작을 시켜 봅시다. 
+	// 바로 발생됩니다. 
+	// gsap.to(".box", {left:30, duration: 0.3});
+	// 트리거 위치에서 발생됩니다. 
+	// gsap.to(".box", {left:30, duration: 0.3, scrollTrigger: { }});
+
+	/*
+	sectionList.forEach(function(item){
+		gsap.to(item, {
+			opacity:1,
+			duration:0.3,
+			scrollTrigger: { 
+				trigger: item,// 애니메이션이 발생되는 위치입니다. 따라서 for로 분배 
+				// item의 상단이 뷰포트의 하단과 닿을 때입니다. 
+				start: "top bottom", // 애니메이션 발생되는 위치입니다. 
+				onEnter: function(){ //진입 시, 위에서 아래로 접근 시의 함수입니다. 
+					console.log("enter");
+				}
+
+			}
+		});
+	});
+	*/
+
+	sectionList.forEach(function(item){
+		gsap.to(item, {
+			scrollTrigger: { 
+				trigger: item, 
+				start: "top bottom", 
+				onEnter: function(){ 
+					//console.log("enter");
+					item.classList.add("active");
+				}
+			}
+		});
+	});
+});
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: GSAP Library</h1>
+<div class="container">
+	<section></section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+</div>
+</body>
+</html>

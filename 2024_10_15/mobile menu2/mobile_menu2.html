@@ -1,174 +1,198 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<title>basic :: Layout Test</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/reponsive.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-<script>
-window.addEventListener("load", function() {
-    let header = document.querySelector("#header");
-    let nav = document.querySelector("#desktop");
-	let languageToggle = document.querySelector('.language-toggle');
-    let languageMenu = document.querySelector('.language-options');
-    let isOpen = false; // 메뉴가 열렸는지 상태를 저장
+  <head>
+    <title>basic :: Layout Test</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reponsive.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        let header = document.querySelector("#header");
+        let nav = document.querySelector("#desktop");
+        let languageToggle = document.querySelector(".language-toggle");
+        let languageMenu = document.querySelector(".language-options");
+        let isOpen = false; // 메뉴가 열렸는지 상태를 저장
 
-    // 네비게이션에 마우스를 올렸을 때
-    nav.addEventListener("mouseenter", function() {
-        header.classList.add("active");
-    });
+        // 네비게이션에 마우스를 올렸을 때
+        nav.addEventListener("mouseenter", function () {
+          header.classList.add("active");
+        });
 
-    // 네비게이션에서 마우스를 벗어났을 때
-    nav.addEventListener("mouseleave", function() {
-        header.classList.remove("active");
-    });
+        // 네비게이션에서 마우스를 벗어났을 때
+        nav.addEventListener("mouseleave", function () {
+          header.classList.remove("active");
+        });
 
-    // KO 버튼 클릭 시 드롭다운 메뉴 열기/닫기
-    languageToggle.addEventListener("click", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        if (isOpen) {
+        // KO 버튼 클릭 시 드롭다운 메뉴 열기/닫기
+        languageToggle.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (isOpen) {
             // 닫기 애니메이션
-            gsap.to(languageMenu, { height: 0, duration: 0.4, ease: "power1.out" });
+            gsap.to(languageMenu, {
+              height: 0,
+              duration: 0.4,
+              ease: "power1.out",
+            });
             isOpen = false;
-        } else {
+          } else {
             // 열기 애니메이션
-            gsap.to(languageMenu, { height: "auto", duration: 0.4, ease: "power1.out" });
+            gsap.to(languageMenu, {
+              height: "auto",
+              duration: 0.4,
+              ease: "power1.out",
+            });
             isOpen = true;
-        }
-    });
+          }
+        });
 
-    // 메뉴 외부 클릭 시 드롭다운 메뉴 닫기
-    window.addEventListener("click", function(event) {
-        if (!languageMenu.contains(event.target) && event.target !== languageToggle && isOpen) {
-            gsap.to(languageMenu, { height: 0, duration: 0.4, ease: "power1.out" });
+        // 메뉴 외부 클릭 시 드롭다운 메뉴 닫기
+        window.addEventListener("click", function (event) {
+          if (
+            !languageMenu.contains(event.target) &&
+            event.target !== languageToggle &&
+            isOpen
+          ) {
+            gsap.to(languageMenu, {
+              height: 0,
+              duration: 0.4,
+              ease: "power1.out",
+            });
             isOpen = false;
-        }
-    });
-});
+          }
+        });
+      });
+    </script>
+  </head>
 
-</script>
-</head>
-
-<body>
-	<div id="start">
-        <header id="header">
-			<div class="inner">	
-				<div class="logo">
-					<h1><a href=""><img src="images/logo_light.png" alt="logo"></a></h1>
-				</div>
-				<div class="gnb">
-					<nav id="desktop">
-						<ul>
-							<li>
-								<a href="">소개</a>
-								<ul>
-									<li><a href="">인사말</a></li>
-									<li><a href="">체험관 홍보영상</a></li>
-									<li><a href="">체험관 캐릭터 소개</a></li>
-									<li><a href="">체험관</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">안내</a>
-								<ul>
-									<li><a href="">체험관 안내</a></li>
-									<li><a href="">찾아오시는 길</a></li>
-									<li><a href="">유실물 안내</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">예약</a>
-								<ul>
-									<li><a href="">이용안내</a></li>
-									<li><a href="">예약하기</a></li>
-									<li><a href="">예약정보확인/취소</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">커뮤니티</a>
-								<ul>
-									<li><a href="">공지사항</a></li>
-									<li><a href="">갤러리</a></li>
-									<li><a href="">자주묻는질문</a></li>
-									<li><a href="">보도자료</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-					<nav id="mobile">
-						<div class="mobile-header">
-							<a href="" class="close">X</a> 
-						</div>
-						<ul>
-							<li>
-								<a href="">소개</a>
-								<ul>
-									<li><a href="">인사말</a></li>
-									<li><a href="">체험관 홍보영상</a></li>
-									<li><a href="">체험관 캐릭터 소개</a></li>
-									<li><a href="">체험관</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">안내</a>
-								<ul>
-									<li><a href="">체험관 안내</a></li>
-									<li><a href="">찾아오시는 길</a></li>
-									<li><a href="">유실물 안내</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">예약</a>
-								<ul>
-									<li><a href="">이용안내</a></li>
-									<li><a href="">예약하기</a></li>
-									<li><a href="">예약정보확인/취소</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="">커뮤니티</a>
-								<ul>
-									<li><a href="">공지사항</a></li>
-									<li><a href="">갤러리</a></li>
-									<li><a href="">자주묻는질문</a></li>
-									<li><a href="">보도자료</a></li>
-								</ul>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div class="side-button">
-					<div class="language">
-						<a href="" class="language-toggle">KO</a>
-						<ul class="language-options">
-							<li><a href="">KO</a></li>
-							<li><a href="">EN</a></li>
-						</ul>
-					</div>
-					<a href="" class="tab">
-						<div class="menu-button">
-							<span class="menu-icon"></span>
-						</div>
-					</a>
-				</div>
-			</div>
-        </header>
-		<div class="dim"></div>
-        <div class="slider">
-			<div class="text">
-				<p>세상을 인식하고 구현하는 욕망의 진화!</p>
-				<strong>
-				가상세계, 메타버스를 탐구하고 체험한다
-				</strong>
-			</div>
-		</div>
+  <body>
+    <div id="start">
+      <header id="header">
+        <div class="inner">
+          <div class="logo">
+            <h1>
+              <a href=""><img src="images/logo_light.png" alt="logo" /></a>
+            </h1>
+          </div>
+          <div class="gnb">
+            <nav id="desktop">
+              <ul>
+                <li>
+                  <a href="">소개</a>
+                  <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">체험관 홍보영상</a></li>
+                    <li><a href="">체험관 캐릭터 소개</a></li>
+                    <li><a href="">체험관</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">안내</a>
+                  <ul>
+                    <li><a href="">체험관 안내</a></li>
+                    <li><a href="">찾아오시는 길</a></li>
+                    <li><a href="">유실물 안내</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">예약</a>
+                  <ul>
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">예약하기</a></li>
+                    <li><a href="">예약정보확인/취소</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">커뮤니티</a>
+                  <ul>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">갤러리</a></li>
+                    <li><a href="">자주묻는질문</a></li>
+                    <li><a href="">보도자료</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <nav id="mobile">
+              <div class="mobile-header">
+                <a href="" class="close">X</a>
+              </div>
+              <ul>
+                <li>
+                  <a href="">소개</a>
+                  <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">체험관 홍보영상</a></li>
+                    <li><a href="">체험관 캐릭터 소개</a></li>
+                    <li><a href="">체험관</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">안내</a>
+                  <ul>
+                    <li><a href="">체험관 안내</a></li>
+                    <li><a href="">찾아오시는 길</a></li>
+                    <li><a href="">유실물 안내</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">예약</a>
+                  <ul>
+                    <li><a href="">이용안내</a></li>
+                    <li><a href="">예약하기</a></li>
+                    <li><a href="">예약정보확인/취소</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="">커뮤니티</a>
+                  <ul>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">갤러리</a></li>
+                    <li><a href="">자주묻는질문</a></li>
+                    <li><a href="">보도자료</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="side-button">
+            <div class="language">
+              <a href="" class="language-toggle">KO</a>
+              <ul class="language-options">
+                <li><a href="">KO</a></li>
+                <li><a href="">EN</a></li>
+              </ul>
+            </div>
+            <a href="" class="tab">
+              <div class="menu-button">
+                <span class="menu-icon"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="dim"></div>
+      <div class="slider">
+        <div class="text">
+          <p>세상을 인식하고 구현하는 욕망의 진화!</p>
+          <strong> 가상세계, 메타버스를 탐구하고 체험한다 </strong>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

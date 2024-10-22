@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	height: 1200px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 600px;
+}
+section .inner {
+	padding: 10px 0;
+	width: 50%;
+	text-align: center;
+}
+.box {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-color: #8ac007;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script>
+	window.addEventListener("load",function(){
+		// 트리거 위치를 정하기 위해 for 구문을 사용합니다. 
+		gsap.utils.toArray("section .inner").forEach(function(item,i){
+			const tl=gsap.timeline({ // scrollTrigger set
+				scrollTrigger: {
+					trigger: item,
+					start: "top bottom",
+					scrub: true,
+					onEnter: function(){ 
+						console.log("enter");
+					}
+				}
+			});
+
+			tl.to(item, { x: "50%", duration: 1 }); // ScrollTrigger call 
+		});
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: GSAP Library</h1>
+<div class="container">
+	<section></section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+	<section>
+		<div class="inner">
+			<div class="box"></div>
+		</div>
+	</section>
+</div>
+</body>
+</html>

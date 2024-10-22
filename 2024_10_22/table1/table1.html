@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Layout Test</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 1em;
+}
+
+.mytbl {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.search {
+	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 20px 0;
+}
+
+input[type=text] {
+	width: 200px;
+	padding: 8px;
+	font-size: 0.938em;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.search input[type="image"] {	
+	margin-left: 8px;
+}
+
+.mytbl table th {
+	padding: 12px 0;
+	line-height: 1.4;
+	font-size: 0.938em;
+	font-weight: 500;
+	color: #353535;
+	border: 1px solid #fff;
+	background-color: #e1e1e1;
+}
+
+.mytbl table td {
+	padding: 12px 10px;
+	line-height: 1.4;
+	font-size: 0.938em;
+	color: #353535;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.mytbl table td.num {
+	width: 70px;
+	text-align: center;
+}
+
+.mytbl table td.divide {
+	width: 70px;
+	text-align: center;
+}
+
+.mytbl table td.divide img {
+	display: block;
+	margin: auto;
+}
+
+.mytbl table td.date {
+	width: 80px;
+	font-size: 0.875em;
+	color: #5b5b5b;
+}
+
+.mytbl table td.title {
+	position: relative;
+	text-align: left;
+	text-indent: 10px;
+}
+
+.mytbl table td.title a {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transform: translateY(-50%);
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.pagination .btn_prev,
+.pagination .btn_next {
+	margin: 0 10px;
+}
+
+.pagination ul {
+	display: flex;
+	align-items: center;
+}
+
+.pagination ul li {
+	margin: 0 5px;
+}
+
+.pagination ul li a {
+	display: block;
+	padding: 8px 12px;
+	font-size: 0.938em;
+}
+
+.pagination .btn_prev a,
+.pagination .btn_next a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+}
+
+@media ( max-width : 1000px ) {
+	.mytbl {
+		padding: 0 20px;
+	}
+}
+
+@media ( max-width : 740px ) {
+	.mytbl table td.num {
+		width: 40px;
+	}
+	.mytbl table td.divide {
+		width: 40px;
+	}		
+	.pagination {
+		display: none;
+	}
+}
+
+</style>
+<!-- http://www.kortek.co.kr/kor/company/news-notice.do -->
+</head>
+
+<body>
+<div class="mytbl">
+	<form>
+		<div class="search">
+			<input type="text" value="제목 + 내용" id="search_area">
+			<input type="image" src="images/btn_search.gif" alt="검색">
+		</div>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col" class="num">번호</th>
+				<th scope="col" class="divide">구분</th>
+				<th scope="col" class="title">제목</th>
+				<th scope="col" class="date">등록일</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="num">107</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">코텍, 카지노용 모니터 시장 확대 "제2의 전성기 기대"</a></td>
+				<td class="date">2016-10-14</td>
+			</tr>
+			<tr>
+				<td class="num">106</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">디스플레이 호조에 '특수 모니터' 관련주 눈길</a></td>
+				<td class="date">2016-10-11</td>
+			</tr>
+			<tr>
+				<td class="num">105</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">코텍, 자사주 30만주 취득 결정</a></td>
+				<td class="date">2016-09-21</td>
+			</tr>
+			<tr>
+				<td class="num">104</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">코텍, 카지노용 모니터 사업 급반등</a></td>
+				<td class="date">2016-09-20</td>
+			</tr>
+			<tr>
+				<td class="num">103</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">코텍, 카지노용 모니터 사업 호조..전자칠판 매출 본격화-KB</a></td>
+				<td class="date">2016-09-13</td>
+			</tr>
+			<tr>
+				<td class="num">102</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">코텍, 3가지 반전이 투자포인트-KB증권</a></td>
+				<td class="date">2016-09-13</td>
+			</tr>
+			<tr>
+				<td class="num">101</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">KB誠 "코텍, 카지노용 모니터 사업성장, 최대주주 신뢰도 상승 등 주목</a></td>
+				<td class="date">2016-09-13</td>
+			</tr>
+			<tr>
+				<td class="num">100</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">인천대, 매트릭스 학사제도 도입, 코텍 등 27개 기업과 협약 체결 … '대학 속 기업, 기업 속 대학' 실현</a></td>
+				<td class="date">2016-09-13</td>
+			</tr>
+			<tr>
+				<td class="num">99</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">미래가 불투명하면 '알짜 스몰캡-코텍'이 최고</a></td>
+				<td class="date">2016-09-09</td>
+			</tr>
+			<tr>
+				<td class="num">98</td>
+				<td class="divide"><img src="images/news_notice_icon.gif" alt="icon"></td>
+				<td class="title"><a href="">[성공異야기]②산업용 모니터 전문기업 '코텍' 그룹 성장 이끈다</a></td>
+				<td class="date">2016-09-06</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="pagination">
+		<div class="btn_prev"><a href="" title="prev"><img src="images/list_prev.gif" alt="prev"></a></div>
+		<ul>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">5</a></li>
+			<li><a href="">6</a></li>
+			<li><a href="">7</a></li>
+			<li><a href="">8</a></li>
+			<li><a href="">9</a></li>
+			<li><a href="">10</a></li>
+		</ul>
+		<div class="btn_next"><a href="" title="next"><img src="images/list_next.gif" alt="next"></a></div>
+	</div>
+</div>
+</body>
+</html>
