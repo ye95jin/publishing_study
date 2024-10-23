@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>오'키친</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script>
+		window.addEventListener("load", function () {
+		  // 메인 슬라이더 (mainSwiper)
+		  new Swiper(".mainSwiper", {
+			loop: true,
+			pagination: {
+			  el: ".swiper-pagination",
+			  clickable: true,
+			},
+			autoplay: {
+			  delay: 3000,
+			  disableOnInteraction: false,
+			},
+		  });
+	  
+		  // recommend 슬라이더
+		  let control = document.querySelector("#sub_slider .cunt");
+		  let currentDOM = document.querySelector("#sub_slider .cunt .num");
+		  let totalDOM = document.querySelector("#sub_slider .cunt .total");
+		  let progressbar = document.querySelector("#sub_slider .swiper-pagination");
+	  
+		  new Swiper(".cardSwiper", {
+			loop: true,
+			slidesPerView: 1.5,
+			spaceBetween: 10,
+			navigation: {
+			  nextEl: ".cardSwiper .swiper-button-next",
+			  prevEl: ".cardSwiper .swiper-button-prev",
+			},
+			breakpoints: {
+			  640: {
+				slidesPerView: 2,
+			  },
+			  920: {
+				slidesPerView: 3,
+			  },
+			},
+			on: {
+			  init: function () {
+				let current = this.realIndex;
+				let total = this.slides.length;
+	  
+				currentDOM.innerText = current + 1;
+				totalDOM.innerText = total;
+			  },
+			  slideChange: function () {
+				let current = this.realIndex;
+	  
+				currentDOM.innerText = current + 1;
+			  },
+			},
+		  });
+	  
+		  // 그리드 뷰와 리스트 뷰 버튼 상태 관리 스크립트
+		  let gridViewBtn = document.getElementById("gridView");
+		  let listViewBtn = document.getElementById("listView");
+	  
+		  // 기본적으로 그리드 뷰 버튼이 활성화 상태
+		  gridViewBtn.classList.add("active");
+	  
+		  // 그리드 뷰 버튼 클릭 시
+		  gridViewBtn.addEventListener("click", function () {
+			// 그리드 뷰 버튼 활성화, 리스트 뷰 버튼 비활성화
+			gridViewBtn.classList.add("active");
+			listViewBtn.classList.remove("active");
+		  });
+	  
+		  // 리스트 뷰 버튼 클릭 시
+		  listViewBtn.addEventListener("click", function () {
+			// 리스트 뷰 버튼 활성화, 그리드 뷰 버튼 비활성화
+			listViewBtn.classList.add("active");
+			gridViewBtn.classList.remove("active");
+		  });
+	  
+		  // 모든 하트 버튼을 선택
+		  let heartButtons = document.querySelectorAll(".heart-button");
+	  
+		  // 첫 번째와 두 번째 하트 버튼을 눌린 상태로 설정 (1번, 2번 아이템)
+		  if (heartButtons.length > 0) {
+			heartButtons[0].classList.add("active"); // 첫 번째 아이템 하트 활성화
+		  }
+		  if (heartButtons.length > 1) {
+			heartButtons[1].classList.add("active"); // 두 번째 아이템 하트 활성화
+		  }
+	  
+		  // 하트 버튼 클릭 이벤트
+		  heartButtons.forEach(function (button) {
+			button.addEventListener("click", function (event) {
+			  event.preventDefault(); // 기본 링크 동작 방지
+			  // 하트가 비어 있으면 채워진 하트로 변경, 다시 클릭 시 비어있는 하트로 돌아감
+			  this.classList.toggle("active");
+			});
+		  });
+	  
+		  let tabButton = document.querySelector(".tab");
+		  let closeBtn = document.querySelector(".gnb .close");
+		  let menu = document.querySelector(".gnb");
+		  let dim = document.querySelector(".dim");
+		  let body = document.querySelector("body");
+	  
+		  // 탭 버튼 클릭 시 GNB와 딤 활성화
+		  tabButton.addEventListener("click", function (e) {
+			e.preventDefault();
+			body.classList.add("fixed"); // 스크롤 고정
+			gsap.to(menu, { right: "0", duration: 0.3, zIndex: 2000 }); // GNB가 딤 위로
+			gsap.to(dim, { display: "block", opacity: 1, duration: 0.3, zIndex: 1000 }); // 딤 활성화
+	  
+			// GNB 열릴 때 헤더 배경색을 투명하게 변경
+			header.style.backgroundColor = "transparent";
+			menu.classList.add("open"); // GNB 열림 상태 표시
+		  });
+	  
+		  // 닫기 버튼 클릭 시 메뉴와 딤 비활성화
+		  closeBtn.addEventListener("click", function (e) {
+			e.preventDefault();
+			body.classList.remove("fixed"); // 스크롤 고정 해제
+			gsap.to(menu, { right: "-100vw", duration: 0.3 });
+			gsap.to(dim, { opacity: 0, display: "none", duration: 0.3 }); // 딤 비활성화
+	  
+			menu.classList.remove("open"); // GNB 열림 상태 표시 제거
+	  
+			// 스크롤 위치에 따라 헤더 색상 복원
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			if (currentScroll > 0) {
+			  header.style.backgroundColor = "#f74d4e"; // 기본 빨간색 배경색
+			} else {
+			  header.style.backgroundColor = "transparent"; // 최상단일 경우 투명
+			}
+		  });
+	  
+		  // 딤 클릭 시 메뉴와 딤 비활성화
+		  dim.addEventListener("click", function (e) {
+			e.preventDefault();
+			body.classList.remove("fixed"); // 스크롤 고정 해제
+			gsap.to(menu, { right: "-100vw", duration: 0.3 });
+			gsap.to(dim, { opacity: 0, display: "none", duration: 0.3 }); // 딤 비활성화
+	  
+			menu.classList.remove("open"); // GNB 열림 상태 표시 제거
+	  
+			// 스크롤 위치에 따라 헤더 색상 복원
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+			if (currentScroll > 0) {
+			  header.style.backgroundColor = "#f74d4e"; // 기본 빨간색 배경색
+			} else {
+			  header.style.backgroundColor = "transparent"; // 최상단일 경우 투명
+			}
+		  });
+	  
+		  // 상단, 하단 네비게이션 
+		  let lastScrollTop = 0;
+		  const header = document.querySelector('#start header'); // 상단 헤더 선택
+		  const bottomNav = document.querySelector('.bottom-nav'); // 하단 네비게이션 바 선택
+	  
+		  window.addEventListener('scroll', function () {
+			let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+	  
+			// GNB가 열려 있는 경우 헤더 색상 변경 방지
+			if (menu.classList.contains("open")) {
+			  return;
+			}
+	  
+			if (currentScroll > lastScrollTop) {
+			  // 스크롤을 내릴 때 - 하단 네비게이션 바 표시, 상단 헤더 숨기기
+			  bottomNav.style.transform = 'translateY(0)';
+			  header.style.transform = 'translateY(-100%)'; // 위로 숨기기
+			} else {
+			  // 스크롤을 올릴 때 - 상단 헤더 표시, 하단 네비게이션 바 숨기기
+			  bottomNav.style.transform = 'translateY(100%)'; // 아래로 숨기기
+			  header.style.transform = 'translateY(0)';
+	  
+			  if (currentScroll > 0) {
+				// 스크롤이 페이지 최상단이 아닐 때 배경색 추가
+				header.style.backgroundColor = '#f74d4e';
+			  } else {
+				// 페이지가 최상단일 때 배경색 제거
+				header.style.backgroundColor = 'transparent';
+			  }
+			}
+	  
+			// 현재 스크롤 값을 저장 (다음 스크롤 이벤트에서 비교하기 위해)
+			lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+		  });
+		});
+	  </script>
+	  
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div id="start">
+        <!-- 헤더 -->
+        <header id="header">
+            <div class="logo">
+              <h1><a href=""></a></h1>
+            </div>
+            <div class="gnb">
+              <div class="gnb-header">
+                <div class="top">
+                  <a href="">로그인 해주세요.</a>
+                  <div class="utils">
+                    <a href="" class="home"></a>
+                    <a href="" class="close"></a>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <ul>
+                    <li><a href="">마이'키친</a></li>
+                    <li><a href="">즐겨찾기</a></li>
+                    <li><a href="">레시피찾기</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="gnb-title">
+                <strong>레시피 메뉴</strong>
+                <p>
+                  오늘은 뭐 먹지? 고민하지말고 <br />
+                  오'키친에서 간단하고 빠르게!
+                </p>
+              </div>
+              <nav id="menu">
+                <ul>
+                  <li><a href="">인기레시피</a></li>
+                  <li><a href="">신규레시피</a></li>
+                  <li><a href="">종류별</a></li>
+                  <li><a href="">재료별</a></li>
+                  <li><a href="">방법</a></li>
+                  <li><a href="">테마</a></li>
+                  <li><a href="">기념일</a></li>
+                  <li><a href="">도구</a></li>
+                </ul>
+              </nav>
+            </div>
+            <a href="" class="tab">tab</a>
+        </header>
+        <div class="dim"></div>
+
+        <!-- 슬라이더 -->
+        <slider id="slider">
+          <div class="main_slider">
+            <div class="swiper-container mainSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="images/main1.png" alt="main1" />
+                  <div class="slider-text">
+                    <ul class="tags">
+                      <li>#계란요리 #카레</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>#맥주안주 #브런치 #치즈듬뿍</li>
+                    </ul>
+                    <strong class="tip-title"
+                      >요리의 업그레이드 <br />
+                      셰프의 팁</strong
+                    >
+                    <p class="description">오뚜기 간편식이 요리가 되는 팁!</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/main2.png" alt="main2" />
+                  <div class="slider-text">
+                    <ul class="tags">
+                      <li>#한식 #집밥 #비빔장</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>#만능소스 #소불고기양념</li>
+                    </ul>
+                    <strong class="tip-title"
+                      >온 가족과 함께 <br />
+                      오늘은 오뚜기집밥</strong
+                    >
+                    <p class="description">오뚜기 간편식이 요리가 되는 팁!</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/main3.png" alt="main3" />
+                  <div class="slider-text">
+                    <ul class="tags">
+                      <li>#김치 #장국</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>#국수맛집 #분식집 #포장마차</li>
+                    </ul>
+                    <ul class="tags">
+                      <li>#신규레시피 가볍게 소울 푸드</li>
+                    </ul>
+                    <p class="description">오뚜기 간편식이 요리가 되는 팁!</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="images/main4.png" alt="main4" />
+                  <div class="slider-text">
+                    <ul class="tags">
+                      <li>#치즈듬뿍 #샐러드 #브런치</li>
+                    </ul>
+                    <strong class="tip-title"
+                      >샐러드 토핑 <br />
+                      오뚜기 스트링치즈!</strong
+                    >
+                    <p class="description">오뚜기 간편식이 요리가 되는 팁!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slider>
+      </div>
+
+      <section id="main_container">
+        <div id="coupon">
+            <div class="promo-text">
+              <p>앱 설치하고<br />10% 할인쿠폰 받기</p>
+              <p>매월 앱 설치 고객께만 드리는<br />포켓 앱 전용 할인쿠폰까지</p>
+            </div>
+            <div class="promo-image">
+              <img src="images/top_banner_icon.png" alt="top_banner_icon" />
+            </div>
+        </div>
+
+        <div id="recommend">
+          <div class="inner">
+            <div class="title">
+              <h2>추천레시피</h2>
+              <a href="">view All</a>
+            </div>
+            <div id="sub_slider">
+              <div class="swiper-container cardSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="">
+                      <div class="photo">
+                        <img src="images/sub_slide1.png" alt="banner1" />
+                      </div>
+                      <div class="label">
+                        <dl>
+                          <dt>토마토 냉파스타</dt>
+                          <dd>오뚜기 프레스코 후실리 30g, 오뚜기</dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="">
+                      <div class="photo">
+                        <img src="images/sub_slide2.png" alt="banner2" />
+                      </div>
+                      <div class="label">
+                        <dl>
+                          <dt>차돌박이 된장찌개</dt>
+                          <dd>즉석애호박된장국1봉(18g*2), 애호박</dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="">
+                      <div class="photo">
+                        <img src="images/sub_slide3.png" alt="banner3" />
+                      </div>
+                      <div class="label">
+                        <dl>
+                          <dt>시나몬롤</dt>
+                          <dd>오뚜기 찹쌀호떡믹스 1개(540g),콩기름 5T</dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="">
+                      <div class="photo">
+                        <img src="images/sub_slide4.png" alt="banner4" />
+                      </div>
+                      <div class="label">
+                        <dl>
+                          <dt>바지락찜</dt>
+                          <dd>
+                            바지락 800g, 생마늘 10톨, 청양고추 3개, 오뚜기
+                            프레스코
+                          </dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="">
+                      <div class="photo">
+                        <img src="images/sub_slide5.png" alt="banner5" />
+                      </div>
+                      <div class="label">
+                        <dl>
+                          <dt>매콤 쉬림프 카레라이스</dt>
+                          <dd>오뚜기 바몬드카레 매운맛 골드 1봉, 순후</dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="cunt">
+                <span class="num">1</span> / <span class="total">total</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="popular">
+          <div class="popular-title">
+            <div class="title-banner">
+              <img src="images/sub_banner1.png" alt="banner1" />
+            </div>
+            <div class="title-text">
+              <strong>인기레시피</strong>
+              <span>Popular Recipe</span>
+              <p>
+                오'키친에서 많은 분들이 찾아본 인기 레시피!!<br />
+                빠르고 간편하게, 그리고 맛도 최고!
+              </p>
+            </div>
+		</div>
+		<div class="recipe-container">
+			<div class="inner">
+				<div class="recipe-links">
+				  <a href="">종류별</a>
+				  <a href="">재료별</a>
+				</div>
+              <div class="view-buttons">
+                <button id="gridView"></button>
+                <button id="listView"></button>
+              </div>
+              <div class="item-container">
+                <div class="recipe-item">
+                  <a href="">
+                    <img
+                      class="recipe-photo"
+                      src="images/list1.png"
+                      alt="list1"
+                    />
+                  </a>
+                  <span class="badge">NEW</span>
+                  <div class="tags">#디저트 #핫케이크믹스</div>
+                  <div class="recipe-name">브라우니 쿠키</div>
+                  <div class="ingredients">오뚜기 쌀핫케이크믹스</div>
+                  <div class="rating">
+                    <img src="images/share.png" alt="star" />
+                  </div>
+                  <div class="actions">
+                    <a href="#" class="heart-button">
+                      <img src="images/share2_off.png" alt="빈 하트" />
+                    </a>
+                    <a href=""
+                      ><img src="images/share3_off.png" alt="share3_off"
+                    /></a>
+                  </div>
+                </div>
+                <div class="recipe-item">
+                  <a href="">
+                    <img
+                      class="recipe-photo"
+                      src="images/list2.png"
+                      alt="list2"
+                    />
+                  </a>
+                  <span class="badge">NEW</span>
+                  <div class="tags">#디저트 #오뚜기잼</div>
+                  <div class="recipe-name">사과잼 그래놀라</div>
+                  <div class="ingredients">오뚜기 사과잼 5T, 그래놀라</div>
+                  <div class="rating">
+                    <img src="images/share.png" alt="star" />
+                  </div>
+                  <div class="actions">
+                    <a href="#" class="heart-button">
+                      <img src="images/share2_off.png" alt="빈 하트" />
+                    </a>
+                    <a href=""
+                      ><img src="images/share3_off.png" alt="share3_off"
+                    /></a>
+                  </div>
+                </div>
+                <div class="recipe-item">
+                  <a href="">
+                    <img
+                      class="recipe-photo"
+                      src="images/list3.png"
+                      alt="list3"
+                    />
+                  </a>
+                  <span class="badge">NEW</span>
+                  <div class="tags">#디저트 #컵스프 #식빵</div>
+                  <div class="recipe-name">브레드 푸딩</div>
+                  <div class="ingredients">오뚜기 컵스프 콘크림</div>
+                  <div class="rating">
+                    <img src="images/share.png" alt="star" />
+                  </div>
+                  <div class="actions">
+                    <a href="#" class="heart-button">
+                      <img src="images/share2_off.png" alt="빈 하트" />
+                    </a>
+                    <a href=""
+                      ><img src="images/share3_off.png" alt="share3_off"
+                    /></a>
+                  </div>
+                </div>
+                <div class="recipe-item">
+                  <a href="">
+                    <img
+                      class="recipe-photo"
+                      src="images/list4.png"
+                      alt="list4"
+                    />
+                  </a>
+                  <span class="badge">NEW</span>
+                  <div class="tags">#디저트 #한식 #베이킹</div>
+                  <div class="recipe-name">흑임자 다식</div>
+                  <div class="ingredients">오뚜기 옛날 볶음검은깨</div>
+                  <div class="rating">
+                    <img src="images/share.png" alt="star" />
+                  </div>
+                  <div class="actions">
+                    <a href="#" class="heart-button">
+                      <img src="images/share2_off.png" alt="빈 하트" />
+                    </a>
+                    <a href=""
+                      ><img src="images/share3_off.png" alt="share3_off"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <a href="" class="more-button">더보기</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="tip">
+          <div class="tip-title">
+            <div class="title-text">
+              <strong>셰프의 팁!</strong>
+              <span>오뚜기가 제안하는 맛있고 건강한 요리</span>
+            </div>
+            <div class="title-banner">
+              <img src="images/sub_banner2.png" alt="banner2" />
+            </div>
+            <div class="hashtag">
+              <div class="hashtag-header">
+                <div class="hashtag-title">
+                  <span class="label">인기</span>
+                  <strong>간편식 업그레이드</strong>
+                </div>
+                <div class="hashtag-text">
+                  <p>
+                    #분식집 #브런치 #집밥 #치즈듬뿍 #캠핑 #안주 <br />
+                    #간단 꿀조합 #부드러운 #키즈셰프
+                  </p>
+                </div>
+              </div>
+              <div class="menu-list">
+                <div class="menu-item">
+                  <div class="menu-photo">
+                    <img src="images/list5.png" alt="list5" />
+                  </div>
+                  <div class="menu-info">
+                    <strong>분식집 라면</strong>
+                    <p>
+                      진라면 X 대파기름 간단 꿀조합!!<br />
+                      오뚜기 진라면 1봉, 오뚜기 맛있는계란 1개
+                    </p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-photo">
+                    <img src="images/list6.png" alt="list6" />
+                  </div>
+                  <div class="menu-info">
+                    <strong>한라산볶음밥</strong>
+                    <p>
+                      새우볶음밥 X 오뚜기 라조장!!<br />
+                      오뚜기 라조장 양파 1T, 새우볶음밥 1봉
+                    </p>
+                  </div>
+                </div>
+
+                <div class="menu-item">
+                  <div class="menu-photo">
+                    <img src="images/list7.png" alt="list7" />
+                  </div>
+                  <div class="menu-info">
+                    <strong>깐풍만두</strong>
+                    <p>
+                      오뚜기 라조장 산초 고추맛기름!!<br />
+                      오뚜기 X.O.물만두 2봉, 대파 1/2대
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="info">
+          <div class="top-info">
+            <div class="inner">
+              <strong>오뚜기의 쉽고 간단한 계량 꿀팁!</strong>
+              <p>
+                밥숟가락, 종이컵으로 <br />
+                간단하고 쉽게 알려드립니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="customer">
+            <p>고객센터 080-433-8888</p>
+            <ul>
+              <li>월 ~ 금 : 오전 9시 ~ 17시</li>
+              <li>점심시간 : 12:30 ~ 13:30</li>
+              <li>토요일/일요일/공휴일은 휴무입니다.</li>
+            </ul>
+          </div>
+
+          <div class="inquiry">
+            <p class="">
+              고객센터가 종료된 5시 이후와 <br />
+              토요일/일요일/공휴일에는<br />
+              1:1 문의 게시판을 이용바랍니다.
+            </p>
+            <div class="inquiry-button">
+				<a href="">
+					<img src="images/ft_info.png" alt="ft_info" />
+					<span>1:1 문의</span>
+				</a>
+            </div>
+          </div>
+
+          <div class="notice">
+            <div class="inner">
+              <span>공지사항 [1월 3차] 미리보는 오'키친 전체메뉴</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+	  <footer id="footer">
+		<div class="inner">
+			<div class="footer-links">
+				<ul>
+					<li><a href="">이용약관</a></li>
+					<li><a href="">개인정보처리방침</a> </li>
+					<li><a href="">법적고지</a> </li>
+					<li><a href="">제품제안</a></li>
+				</ul>
+			  </div>
+			
+			  <div class="company-info">
+				<p>(주)오뚜기</p>
+				<p>대표이사 : 이강훈</p>
+				<p>(431-070) 안양시 동안구 흥안대로 405 /</p>
+				<p>사업자등록번호 : 138-81-03238</p>
+				<p>통신판매업신고 : 제 2003-경기안양-169호 </p>
+				<p>건강기능식품 판매업 신고 : 제 2007-00002호 /</p>
+				<p>사업자정보공개</p>
+				<p>copyright (c) ottogimall.co.kr all rights reserved.</p>
+			  </div>
+			
+				<div class="footer-logo">
+				  <img src="images/ft_logo.png" alt="O'Kitchen Logo" />
+				</div>
+		</div>
+	  </footer>
+
+
+<!-- 하단 네비게이션 바 -->
+<div class="bottom-nav">
+	<a href="" class="nav-item">
+	  <img src="images/home1_on.png" alt="Home" />
+	</a>
+	<a href="" class="nav-item">
+	  <img src="images/home2_off.png" alt="Food" />
+	</a>
+	<a href="" class="nav-item">
+	  <img src="images/home3_off.png" alt="Menu" />
+	</a>
+	<a href="" class="nav-item">
+	  <img src="images/home4_off.png" alt="Profile" />
+	</a>
+	<a href="" class="nav-item">
+	  <img src="images/home5_off.png" alt="Chat" />
+	</a>
+  </div>
+    </div>
+  </body>
+</html>
