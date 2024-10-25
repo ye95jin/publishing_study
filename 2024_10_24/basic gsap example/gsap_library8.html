@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	height: 1200px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+section .inner {
+	padding: 10px 0;
+	width: 50%;
+	text-align: center;
+}
+div[class^=box] {
+	display: inline-block;
+	margin: 10px;
+	width: 40px;
+	height: 40px;
+	background-color: #8ac007;
+	opacity: 0; /*불투명도 0 display: none;을 미리 css에 적어 놓는게 좋음*/
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script>
+	window.addEventListener("load", function(){
+		// GSAP TO
+		/*
+		gsap.fromTo(".box1", { x: -100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,
+			scrollTrigger: {
+				trigger: "#current",
+				scrub:1, // 반응이 되는 컨테이너
+				top: "top bottom", // 시작 지점 
+				end: "bottom 80%" // 끝나는 지점
+			}
+		}); 
+
+		gsap.fromTo(".box2", { y: -100, opacity: 0}, { y: 0, opacity: 1, duration: 0.3,
+			scrollTrigger: {
+				trigger: "#current", // 반응이 되는 컨테이너
+				scrub:1,
+				top: "top bottom", // 시작 지점 
+				end: "bottom 80%" // 끝나는 지점
+			}
+		}); 
+
+		gsap.fromTo(".box3", { x: 100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,
+			scrollTrigger: {
+				trigger: "#current", // 반응이 되는 컨테이너
+				scrub:1,
+				top: "top bottom", // 시작 지점 
+				end: "bottom 80%" // 끝나는 지점
+			}
+		});
+		*/
+
+		// Timeline
+		// 같은 위치에서 scrollTrigger 옵션이 추가되면 Timeline으로 작성합니다.
+		const tl=gsap.timeline({
+			scrollTrigger: {
+				trigger: "#current", 
+				scrub:1,
+				start: "top 80%", 
+				end: "bottom 20%" 
+			}
+		});
+
+		// tl.fromTo(".box1", { x: -100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,});
+		// tl.fromTo(".box2", { y: -100, opacity: 0}, { y: 0, opacity: 1, duration: 0.3,});
+		// tl.fromTo(".box3", { x: 100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,});
+
+		
+		tl.fromTo(".box1", { x: -100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,})
+		.fromTo(".box2", { y: -100, opacity: 0}, { y: 0, opacity: 1, duration: 0.3,}, 0)
+		.fromTo(".box3", { x: 100, opacity: 0}, { x: 0, opacity: 1, duration: 0.3,}, 0);
+	});
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: GSAP Library</h1>
+<div class="container">
+	<section></section>
+	<section id="current">
+		<div class="inner">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+		</div>
+	</section>
+	<section></section>
+</div>
+</body>
+</html>

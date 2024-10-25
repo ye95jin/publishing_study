@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1rem;
+	background: #f1f1f1;
+	color: #555;
+}
+.container {
+	min-width: 440px;
+}
+.title {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+.container div[class^=area] {
+	height: 90vh;
+}
+.container div[class^=area] h2 {
+	line-height: 1.5;
+	font-weight: 300;
+	font-size: 24px;
+}
+.container div[class^=area] img {
+	margin-top: 20px;
+	/* width: 300px; */
+	opacity: 0;
+	transform: translateY(80px);
+	transition: all 0.8s;
+}
+.container div[class^=area].on img {
+	transform: translateY(0);
+	opacity: 1;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script>
+	window.addEventListener("load",function(){
+		/*
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: ".area1",
+				scrub:1, 
+				top: "top bottom", 
+				end: "bottom 80%" 
+			}
+		});
+		*/
+
+		// 컨테이너 영역
+		let pageList = document.querySelectorAll("div[class^=area]");
+
+		window.addEventListener("scroll", function() {
+			if (window.scrollY > 150) {
+				document.querySelector(".container").classList.add("fixed");
+			} else {
+				document.querySelector(".container").classList.remove("fixed");
+			}
+		});
+			
+		pageList.forEach(function(item, i) {
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: item,
+					start: "top 80%",
+					end: "bottom 20%",
+					onEnter: function() {
+						item.classList.add("on");
+					},
+					onLeaveBack: function() {
+						item.classList.remove("on");
+					}
+				}
+			});
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: Parallax Interface</h1>
+<div class="container">
+	<div class="area1">
+		<h2>area1</h2>
+		<img src="images/work1.jpg" alt="work1">
+	</div>
+	<div class="area2">
+		<h2>area2</h2>
+		<img src="images/work2.jpg" alt="work2">
+	</div>
+	<div class="area3">
+		<h2>area3</h2>
+		<img src="images/work3.jpg" alt="work3">
+	</div>
+	<div class="area4">
+		<h2>area4</h2>
+		<img src="images/work4.jpg" alt="work4">
+	</div>
+	<div class="area5">
+		<h2>area5</h2>
+		<img src="images/work5.jpg" alt="work5">
+	</div>
+</div>
+</body>
+</html>
