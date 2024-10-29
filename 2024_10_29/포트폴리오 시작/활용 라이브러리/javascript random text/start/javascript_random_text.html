@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Random Text</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: #f15941;
+}
+#output {
+	padding: 50px;
+	text-transform: uppercase;
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	color: #fff;
+}
+</style>
+<script>
+window.addEventListener("load", function(){
+	function randomText(str, dom){
+		let fake="abcdefghijklmnopqrstuvwxyz#%&^+=-";
+		let text=str;
+		let speed=50;
+		let increment=2;
+
+		let length=text.length;
+		let si=0;
+		let stri=0;
+		let block="";
+		let fixed="";
+
+		(function rustle(i){
+			setTimeout(function(){
+				if(--i){
+					rustle(i);
+				}
+
+				nextFrame(i);
+				si=si+1;
+			}, speed);
+		})(length*increment+1);
+
+		function nextFrame(pos){
+			for(let i=0; i<length-stri; i++){
+				let num=Math.floor(fake.length * Math.random()); // random number
+				let letter=fake.charAt(num); // get random letter
+				block=block+letter;
+			}
+
+			if(si == (increment-1)){
+				stri++;
+			}
+
+			if(si == increment){
+				fixed=fixed+text.charAt(stri-1);
+				si=0;
+			}
+
+			dom.innerHTML=fixed+block;
+
+			block="";
+		}
+	}
+});
+</script>
+</head>
+
+<body>
+<div id="output"></div>
+</body>
+</html>

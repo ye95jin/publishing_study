@@ -1,0 +1,239 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: #333;
+}
+section {
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+/* title */
+.title {
+	margin: 40px auto;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	width: 90%;
+	overflow: hidden;
+	line-height: 1.5;
+	font-weight: 100;
+	font-size: 4.375em;
+	background-color: transparent;
+	color: #666;
+	box-sizing: border-box;
+}
+.title span {
+	overflow: hidden;
+	color: #fff;
+}
+.cluster {
+	position: relative;
+	margin: 100px auto;
+	padding-bottom: 100px;
+	max-width: 874px;
+	height: 792px;
+	background-color: transparent;
+}
+.cluster .cluster-pieces {
+	position: absolute;
+}
+.cluster .circle {
+	left: 214px;
+	bottom: 0;
+	z-index: 1;
+	width: 360px;
+	height: 360px;
+	background-color: #666;
+	border-radius: 50%;
+}
+.cluster .photo1 {
+	right: 0;
+	top: 0;
+	z-index: 2;
+	width: 450px;
+}
+.cluster .dots-element1 {
+	z-index: 3;
+	left: 0;
+	top: 80px;
+	width: 494px;
+}
+.cluster .caption {
+	line-height: 3;
+	text-align: right;
+	font-size: 0.875em;
+	color: #666;
+}
+.cluster .caption span {
+	color: #000;
+}
+.cluster2 {
+	height: 996px;
+	max-width: 874px;
+}
+.cluster .triangle {
+	left: -28px;
+	top: 0;
+	z-index: 3;
+	width: 448px;
+	height: 446px;
+}
+.cluster .photo2 {
+	right: 0;
+	top: 162px;
+	z-index: 1;
+	width: 674px;
+}
+.cluster .dots-element2 {
+	left: 0;
+	top: 400px;
+	z-index: 2;
+	width: 310px;
+}
+.sp300 {
+	padding-bottom: 300px;
+}
+
+@media only screen and (max-width: 1024px) {
+	.title {
+		padding-left: 40px;
+		font-size: 3.75em;
+	}
+	.cluster {
+		margin: 20px auto;
+		max-width: 600px;
+		height: 550px;
+	}
+	.cluster .circle {
+		left: 146px;
+		top: 300px;
+		width: 246px;
+		height: 246px;
+	}
+	.cluster .photo1 {
+		width: 310px;
+	}
+	.cluster .dots-element1 {
+		left: 0;
+		top: 56px;
+		width: 340px;
+	}
+	.cluster2 {
+		height: 678px;
+		max-width: 600px;
+	}
+	.cluster .triangle {
+		left: -14px;
+		height: 304px;
+		max-width: 307px;
+	}
+	.cluster .photo2 {
+		top: 112px;
+		width: 460px;
+	}
+	.cluster .dots-element2 {
+		left: 0;
+		top: 275px;
+		width: 216px;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.title {
+		font-size: 2.75em;
+	}
+	.cluster {
+		height: 436px;
+		max-width: 480px;
+	}
+	.cluster .circle {
+		left: 115px;
+		top: 240px;
+		width: 196px;
+		height: 196px;
+	}
+	.cluster .photo1 {
+		width: 248px;
+	}
+	.cluster .dots-element1 {
+		left: 0;
+		top: 45px;
+		width: 274px;
+	}
+	.cluster2 {
+		height: 542px;
+		max-width: 480px;
+	}
+	.cluster .triangle {
+		left: -10px;
+		width: 240px;
+		height: 240px;
+	}
+	.cluster .photo2 {
+		top: 88px;
+		width: 369px;
+	}
+	.cluster .dots-element2 {
+		left: 0;
+		top: 220px;
+		width: 174px;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.title {
+		padding-left: 0;
+		font-size: 2.125em;
+	}
+	.cluster {
+		height: 530px;
+		max-width: 320px;
+	}
+	.cluster .cluster-pieces {
+		position: relative;
+	}
+	.cluster .circle {
+		display: none;
+	}
+	.cluster .photo1 {
+		top: 0;
+		width: 320px;
+	}
+	.cluster .dots-element1 {
+		display: none;
+	}
+	.cluster2 {
+		height: 268px;
+		max-width: 320px;
+	}
+	.cluster .triangle {
+		display: none;
+	}
+	.cluster .photo2 {
+		top: 0;
+		width: 320px;
+	}
+	.cluster .dots-element2 {
+		display: none;
+	}
+}

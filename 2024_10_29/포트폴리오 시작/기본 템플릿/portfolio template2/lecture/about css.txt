@@ -1,0 +1,56 @@
+1) CSS
+
+
+background-clip: padding-box;
+
+요소의 배경 이미지나 색상이 요소의 padding 영역까지만 적용되도록 합니다.
+
+즉, 배경이 테두리 영역을 벗어나지 않고 padding 영역 안에 포함되도록 합니다.
+
+
+-ms-overflow-style: none;
+
+Internet Explorer와 Edge 브라우저에서 스크롤바를 숨깁니다.
+
+
+scrollbar-width: none;
+
+다른 브라우저에서도 스크롤바를 숨깁니다.
+
+Firefox에서 스크롤바 표시를 제어하는 속성입니다.
+
+
+scroll-behavior: smooth;
+
+스크롤 동작을 부드럽게 만듭니다.
+
+
+will-change: transform;
+
+해당 요소의 변형 동작을 미리 예측할 수 있게 되어, 변형이 일어날 때 더 부드러운 애니메이션 처리가 가능해집니다.
+
+
+
+2) Responsive Pixel
+
+
+1240px : PC
+
+1024px : Tablet
+
+768px : Mobile
+
+
+
+3) Interaction
+
+
+#header.on : PC 메뉴 활성화
+
+#header.menu-open .hd-wrap .hd-menu : Mobile 메뉴 활성화
+
+#header.menu-open .hd-wrap .hd-menu .gnb-wrap : Mobile 메뉴 활성화
+
+#header .hd-wrap .hd-menu .gnb-wrap .gnb > li.open : Mobile 메뉴 활성화
+
+#header.menu-open .btn_all_menu : Mobile 메뉴 활성화

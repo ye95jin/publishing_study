@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>libraries :: TypeIt Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #f1f1f1;
+	color: #555;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #555;
+}
+.container {
+	margin-top: 50px;
+}
+.container p {
+	font-family: "Roboto", sans-serif;
+	line-height: 1.8;
+	font-size: 1.25em;
+	font-weight: 300;
+}
+.container p strong {
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+}
+</style>
+<script src="https://unpkg.com/typeit@8.3.3/dist/index.umd.js"></script>
+<script>
+window.addEventListener("load", function(){
+	new TypeIt("#simple", {
+		strings: ["This is a great string.", "But here is a better one."],
+		speed: 50,
+		waitUntilVisible: true
+	}).go();
+});
+</script>
+</head>
+
+<body>
+<h1 class="title">libraries :: TypeIt</h1>
+<div class="container">
+	<p id="simple"></p>
+</div>
+</body>
+</html>

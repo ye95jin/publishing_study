@@ -1,0 +1,32 @@
+projectTl.fromTo(".pj_wrapper", {
+	y: 400
+}, {
+	y: (deviceHeight > 1080) ? -totalHeight : -(totalHeight+620), duration: 3
+});
+
+
+y: (deviceHeight > 1080) ? -totalHeight : -(totalHeight+620), duration: 3
+
+애니메이션의 끝 상태입니다. y 속성은 3항 연산자(? :)를 사용하여 설정됩니다.
+
+만약 deviceHeight가 1080보다 크다면 y 축 위치를 -totalHeight로 설정합니다. 그렇지 않으면 -(totalHeight + 620)로 설정합니다.
+
+
+mediaQuery.add("(max-width: 768px)", function(){ // mobile
+	gsap.from(".project_text", {
+		y: -50,
+		opacity: 0,
+		duration: 1,
+		scrollTrigger: {
+			trigger: ".project",
+			start: "top 80%",
+			toggleActions: "play none none reset"
+		}
+	});
+});
+
+
+play : 애니메이션이 시작됩니다.
+none : 뷰포트에서 나갈 때 아무 행동도 하지 않습니다.
+none : 다시 들어올 때도 아무 행동도 하지 않습니다.
+reset : 뷰포트를 벗어나면 애니메이션을 초기 상태로 되돌립니다.

@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+/* helvetica */
+@font-face {
+	font-family: Helvetica;
+	font-weight: 300;
+	src: url("../font/Helvetica-Light.woff2") format("woff2"), url("../font/Helvetica-Light.woff") format("woff"), url("../font/Helvetica-Light.ttf") format("ttf");
+}
+@font-face {
+	font-family: Helvetica;
+	font-weight: 400;
+	src: url("../font/Helvetica.woff2") format("woff2"), url("../font/Helvetica.woff") format("woff"), url("../font/Helvetica.ttf") format("ttf");
+}
+@font-face {
+	font-family: Helvetica;
+	font-weight: 700;
+	src: url("../font/Helvetica-Bold.woff2") format("woff2"), url("../font/Helvetica-Bold.woff") format("woff"), url("../font/Helvetica-Bold.ttf") format("ttf");
+}
+
+/* pretendard */
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 400;
+	src: url("../font/Pretendard-Regular.woff2") format("woff2"), url("../font/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 300;
+	src: url("../font/Pretendard-Light.woff2") format("woff2"), url("../font/Pretendard-Light.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 500;
+	src: url("../font/Pretendard-Medium.woff2") format("woff2"), url("../font/Pretendard-Medium.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 600;
+	src: url("../font/Pretendard-SemiBold.woff2") format("woff2"), url("../font/Pretendard-SemiBold.woff") format("woff");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 700;
+	src: url("../font/Pretendard-Bold.woff2") format("woff2"), url("../font/Pretendard-Bold.woff") format("woff");
+}
+@font-face {
+	font-family:"Pretendard Variable";
+	font-weight:45 920;
+	font-style:normal;
+	font-display:swap;
+	src:url("../font/PretendardVariable.woff2") format("woff2-variations")
+}
+
+.hlv {
+	font-family: Helvetica;
+}
+.serif {
+	font-family: "Noto Serif Display";
+	font-weight: 500;
+}
+.pre {
+	font-family: "Pretendard";
+}
+section.blank {
+	height: 100vh;
+}
+
+/* total */
+.m_only {
+	display: none;
+}
+html._hidden,
+body._hidden,
+._hidden {
+	overflow: hidden;
+	height: auto !important;
+}
+
+/* button */
+.btn_s {
+	position: relative;
+	width: 300px;
+	height: 50px;
+	background-color: #000;
+	border: 1px solid #000;
+	cursor: pointer;
+	transition: 0.1s;
+}
+.btn_s a {
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	padding: 13px 0 13px 16px;
+	width: 300px;
+	height: 50px;
+	line-height: 1.15;
+	text-decoration: none;
+	font-family: "Pretendard", sans-serif;
+	font-size: 1.25em;
+	font-weight: 400;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+	box-sizing: border-box;
+}
+.btn_s a::before,
+.btn_s a::after {
+	content: "";
+	position: absolute;
+	cursor: pointer;
+}
+.btn_s a::before {
+	right: 11px;
+	top: 11px;
+	z-index: 1;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #000;
+	border-left: 0;
+	border-bottom: 0;
+}
+.btn_s a::after {
+	right: 2px;
+	bottom: 13px;
+	width: 32px;
+	height: 1px;
+	background-color: #000;
+	transform: rotate(-45deg);
+	transform-origin: 0% 100%;
+}
+.btn_b {
+	position: relative;
+	width: 630px;
+	height: 480px;
+	background-color: #000;
+	border: 1px solid #000;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+.btn_b a {
+	display: flex;
+	align-items: flex-end;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	padding: 0 0 20px 20px;
+	width: 630px;
+	height: 480px;
+	line-height: 1.5;
+	text-decoration: none;
+	font-weight: 300;
+	font-size: 1.5em;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #000;
+	box-sizing: border-box;
+}
+.btn_b a::before,
+.btn_b a::after {
+	content: "";
+	position: absolute;
+	cursor: pointer;
+}
+.btn_b a::before {
+	right: 20px;
+	top: 20px;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000;
+	border-left: 0;
+	border-bottom: 0;
+}
+.btn_b a::after {
+	right: -21px;
+	top: 120px;
+	width: 141px;
+	height: 1px;
+	background-color: #000;
+	transform: rotate(-45deg);
+	transform-origin: 0% 100%;
+}
+.btn_s:hover a,
+.btn_b:hover a {
+	background-color: #000;
+	color: #fff;
+}
+.btn_s:hover a::before,
+.btn_b:hover a::before {
+	border: 1px solid #fff;
+	border-left: 0;
+	border-bottom: 0;
+}
+.btn_s:hover a::after,
+.btn_b:hover a::after {
+	background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+	.m_only {
+		display: block;
+	}
+	.d_only {
+		display: none;
+	}
+	.btn_s {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 320px;
+		font-size: 1em;
+		background-color: none;
+		border: 0;
+	}
+	.btn_s::before {
+		content: "";
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		background-color: #000;
+		border: 1px solid #000;
+	}
+	.btn_s a {
+		padding: 16px 0 13px 16px;
+		width: 100%;
+		font-size: 1em;
+	}
+	.btn_s:hover::before {
+		background-color: #fff;
+	}
+}
+

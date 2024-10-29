@@ -1,0 +1,82 @@
+Intro
+
+About
+
+Skills
+	Web
+	Front End
+	Back End
+
+Portfolio
+	Oksuro
+	Purito Seoul
+	Lifeplus
+	Men Noblesse
+	b.state design
+
+
+FAQ / Get in Touch / Contact
+
+
+Discover our Best Sellers
+
+Purito Seoul
+
+
+Filling empty space with value
+
+GONGANGIROK
+
+Maintenance 2022
+
+
+YOUR EFFORTS,
+YOUR development
+
+
+curiosity
+
+새로운 시도를 두려워하지 않고 모르는것이 있으면 알 때까지 노력하는 개발자입니다.
+
+I am a developer who is not afraid to try new things and keeps trying until I figure out what I don't know.
+
+
+NEXT MOBILE DEVICE
+
+designdigit
+
+
+Frontend
+
+빠르게 변하는 웹개발 트랜드 속에서,다양한 시도와 함께 사용자 입장을 고려하며, 성실하게 성장하는 프론트엔드 개발자가 되겠습니다.
+
+In the midst of rapidly changing web development trends, I will become a front-end developer who grows faithfully while considering the user's position and making various attempts.
+
+
+Our Portfolio
+
+Oksuro
+React / Redux / JavaScript / Styled-component
+Oksuro는 AI 이미지 생성의 미래를 선도하는 글로벌 플랫폼입니다.
+
+Purito Seoul
+
+Lifeplus
+
+Men Noblesse
+
+b.state design
+
+
+Developer who cares about users
+
+
+PHONE 010-0000-0000
+
+MAIL designdigit@naver.com
+
+GIT https://github.com/designdigit
+
+PORTFOLIO https://designdigit.github.io/portfolio
+
+COPYRIGHT ⓒ 2024 Designdigit. ALL RIGHTS RESERVED.

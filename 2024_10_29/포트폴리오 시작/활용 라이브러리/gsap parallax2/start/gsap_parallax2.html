@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Parallax</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+	overflow-x: hidden;
+}
+
+/* start */
+#start {
+	height: 100vh;
+	background-color: #000;
+}
+#start header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+}
+#start header .inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	height: 100px;
+	max-width: 1200px;
+}
+#start header .logo h1 a {
+	font-size: 1em;
+	font-weight: 500;
+	color: #fff;
+}
+#start header nav ul {
+	display: flex;
+	gap: 2em;
+}
+#start header nav ul li a {
+	display: block;
+	line-height: 100px;
+	font-size: 0.875em;
+	font-weight: 300;
+	letter-spacing: 0.25em;
+	color: #fff;
+}
+#start header.active .logo h1 a,
+#start header.active nav ul li a {
+	color: #000;
+}
+
+@media only screen and (max-width: 1200px) {
+	#start header .inner {
+		padding: 0 25px;
+	}
+}
+
+/* section1 */
+#section1 {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+#section1 .title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#section1 .title h2 {
+	line-height: 2;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+#section1 .specs div {
+	position: absolute;
+	top: 100vh;
+}
+#section1 .specs div img {
+	opacity: 0.25;
+}
+#section1 .specs .html {
+	left: 5vw;
+	width: 200px;
+	transform: rotate(-25deg);
+}
+#section1 .specs .css {
+	right: 5vw;
+	width: 124px;
+	transform: rotate(32deg);
+	filter: blur(8px);
+}
+#section1 .specs .javascript {
+	left: 30vw;
+	width: 220px;
+	transform: rotate(-24deg);
+	filter: blur(4px);
+}
+#section1 .specs .sass {
+	right: 20vw;
+	width: 150px;
+}
+#section1 .specs .react {
+	left: 50vw;
+	width: 220px;
+}
+
+/* section2 */
+#section2 {
+	position: relative;
+	padding-top: 20vh;
+	height: 100vh;
+	overflow-x: hidden;
+	background-color: #f1f1f1;
+	box-sizing: border-box;
+}
+#section2 .title {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+#section2 .title h2 {
+	font-size: 2.2em;
+	font-weight: 300;
+}
+#section2 .skills_inner {
+	margin: 0 auto;
+	margin-top: 60px;
+	max-width: 1200px;
+}
+#section2 .skills_inner .skills_wrap {
+	height: 400px;
+}
+#section2 .skills_inner .skills_wrap ul {
+	display: flex;
+	gap: 20px;
+	height: 100%;
+}
+#section2 .skills_inner .skills_wrap ul li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 260px;
+	border: 1px solid rgba(0,0,0,.3);
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/lenis.js"></script>
+<script src="js/main.js"></script>
+</head>
+
+<body>
+<div id="start">
+	<header>
+		<div class="inner">
+			<div class="logo">
+				<h1><a href="">Portfolio</a></h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="">Intro</a></li>
+					<li><a href="">Skills</a></li>
+					<li><a href="">Portfolio</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+</div>
+<section id="section1">
+	<div class="icons">
+		<div class="title">
+			<h2>ScrollTrigger enables anyone to create jaw-dropping scroll-based animations with minimal code. Infinitely flexible.</h2>
+		</div>
+		<div class="specs">
+			<div class="html">
+				<img src="images/html_icon.svg" alt="html">
+			</div>
+			<div class="css">
+				<img src="images/css_icon.svg" alt="css">
+			</div>
+			<div class="javascript">
+				<img src="images/javascript_icon.svg" alt="javascript">
+			</div>
+			<div class="sass">
+				<img src="images/sass_icon.svg" alt="sass">
+			</div>
+			<div class="react">
+				<img src="images/react_icon.svg" alt="react">
+			</div>
+		</div>
+	</div>
+</section>
+<section id="section2">
+	<div class="title">
+		<h2>Skills</h2>
+	</div>
+	<div class="skills_inner">
+		<div class="skills_wrap">
+			<ul>
+				<li>skill1</li>
+				<li>skill2</li>
+				<li>skill3</li>
+				<li>skill4</li>
+			</ul>
+		</div>
+	</div>
+</section>
+</body>
+</html>

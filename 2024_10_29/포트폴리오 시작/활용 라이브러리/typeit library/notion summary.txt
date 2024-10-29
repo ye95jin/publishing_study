@@ -1,0 +1,101 @@
+Typeit 라이브러리에 관련된 설명입니다.
+
+
+1) 관련 경로
+
+https://www.typeitjs.com
+
+https://www.typeitjs.com/docs/vanilla/usage
+
+
+
+2) CDN
+
+<script src="https://unpkg.com/typeit@@{TYPEIT_VERSION}/dist/index.umd.js"></script>
+
+
+
+3) NPM
+
+> npm install typeit-react
+
+
+import TypeIt from "typeit";
+
+
+
+4) 자세한 설명
+
+
+4-1) 예제1
+
+new TypeIt("#simple", {
+	strings: "This is a simple string.",
+	speed: 50,
+	waitUntilVisible: true
+}).go();
+
+
+waitUntilVisible: true : 요소가 뷰포트, 사용자가 보는 화면에 나타날 때까지 타이핑을 시작하지 않도록 설정합니다.
+
+.go() : 모든 설정을 완료하고 타이핑 애니메이션을 시작합니다.
+
+
+4-2) 예제2
+
+new TypeIt("#simple", {
+	strings: ["This is a great string.", "But here is a better one."],
+	speed: 50,
+	waitUntilVisible: true
+}).go();
+
+
+strings: ["This is a great string.", "But here is a better one."], : 두 문장을 타이핑합니다.
+
+
+4-3) 예제3
+
+new TypeIt("#simple", {
+	strings: ["<strong>This is a great string.</strong>", "<span>But here is a better one.</span>"],
+	speed: 50,
+	waitUntilVisible: true,
+	afterComplete: function(instance){
+		instance.destroy();
+	}
+}).go();
+
+
+afterComplete: function(instance){ : 타이핑이 끝난 후에 콜백 함수입니다.
+
+instance.destroy(); : 커서를 없앱니다.
+
+
+4-4) 예제4
+
+const titleText=new TypeIt("#simple", {
+	speed: 50,
+	waitUntilVisible: true,
+	afterComplete: function(instance){
+		instance.destroy();
+	}
+});
+
+titleText.type("Backend Developer", {delay: 300})
+.move(-13)
+.pause(300)
+.delete(4)
+.type("Front", {delay: 300})
+.move(null, {to: "END"})
+.type("<br><span>designdigit</span>")
+.go();
+
+
+.move(-13) : : 현재 커서를 왼쪽으로 13칸 이동시킵니다.
+
+.pause(300) : 다음 작업을 시작하기 전에 300ms 동안 일시 정지합니다.
+
+.delete(4) : 현재 커서 위치에서 4개의 문자를 삭제합니다.
+
+.move(null, {to: "END"}) : 커서를 텍스트의 끝으로 이동시킵니다.
+
+.type("<br><span>designdigit</span>") : 줄바꿈(<br>)과 함께 "designdigit"라는 문자열을 추가로 타이핑합니다.

@@ -1,0 +1,471 @@
+@charset "utf-8";
+
+/* project */
+.project {
+	position: relative;
+	width: 100%;
+	margin-top: 37.5em;
+	height: 100vh;
+	overflow: hidden;
+}
+.project .project_tit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	line-height: 1.15;
+	transform: translate(-50%,-50%);
+}
+.project .project_tit .project_text {
+	margin: 0 auto;
+	max-width: 90%;
+}
+.project .pj_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 10%;
+	margin: 0 auto;
+	max-width: 1520px;
+}
+.project .pj_wrapper .pj_box {
+	flex: 1 45%;
+	max-width: 45%;
+	letter-spacing: 0.02em;
+	transition: 0.3s;
+}
+.project .pj_wrapper .pj_box:nth-child(2n) {
+	margin-top: -175px;
+}
+.project .pj_wrapper .pj_box:nth-child(2n-1) {
+	margin-top: 275px;
+}
+.project .pj_wrapper .pj_box:first-child {
+	flex: 1 100%;
+	margin-top: 0;
+	max-width: 100%;
+}
+.project .pj_wrapper .pj_box:first-child > a {
+	margin-left: auto;
+	max-width: 45%;
+}
+.project .pj_wrapper .pj_right {
+	margin-left: auto;
+}
+.project .pj_wrapper .pj_box:nth-child(2n-1) .pj_thumb {
+	filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.2));
+}
+.project .pj_wrapper .pj_box:nth-child(2n) .pj_thumb {
+	filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.2));
+}
+.project .pj_wrapper .pj_box > a {
+	display: block;
+}
+.project .pj_wrapper .pj_box .pj_thumb {
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+.project .pj_wrapper .pj_box .pj_thumb img {
+	width: 100%;
+	height: initial;
+	filter: grayscale(1);
+	transition: 0.5s;
+}
+.project .pj_wrapper .pj_box a:hover .pj_thumb {
+	filter: none;
+}
+.project .pj_wrapper .pj_box a:hover img {
+	filter: grayscale(0);
+	transform: rotate(-3deg) scale(1.1);
+}
+.project .pj_wrapper .pj_box ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	font-size: 0.875em;
+	line-height: 1.14;
+}
+.project .pj_wrapper .pj_box ul li {
+	padding: 8px 10px;
+	height: 31px;
+	background-color: #000;
+	color: #fff;
+}
+.project .pj_wrapper .pj_box p {
+	margin: 20px 0 13px;
+	line-height: 44px;
+	word-break: keep-all;
+	word-wrap: break-word;
+	font-size: 2.25em;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+.project .pj_wrapper .pj_box span {
+	display: block;
+	word-break: keep-all;
+	word-wrap: break-word;
+	line-height: 1.5;
+	font-size: 1em;
+	font-weight: 400;
+	letter-spacing: 0.32px;
+	color: #666;
+}
+.project .btn_b,
+.project .btn_b a {
+	width: calc(100% - 18px);
+}
+
+@media screen and (min-width: 1921px) {
+	.project .pj_wrapper .pj_box p {
+		max-width: 80%;
+	}
+	.project .pj_wrapper .pj_box span {
+		max-width: 90%;
+	}
+}
+@media all and (min-width: 1440px) and (max-width: 1540px) {
+	.project .pj_wrapper {
+		max-width: 1380px;
+	}
+	.project .btn_b,
+	.project .btn_b a {
+		width: calc(100% - 10px);
+		height: 350px;
+	}
+}
+@media all and (min-width: 1281px) and (max-width: 1439px) {
+	.project .pj_wrapper {
+		width: 1280px;
+	}
+}
+@media screen and (max-width: 1280px) {
+	.project .pj_wrapper {
+		padding: 0 10%;
+		width: 100%;
+	}
+	.project .pj_wrapper div .pj_box:not(:last-child) {
+		margin-bottom: 200px;
+	}
+	.project .btn_b,
+	.project .btn_b a {
+		width: calc(100% - 10px);
+		height: 300px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.project .pj_wrapper .pj_box p {
+		font-size: 2em;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+	.project .pj_wrapper {
+		padding: 0 10%;
+	}
+	.project .pj_wrapper div .pj_box:not(:last-child) {
+		margin-bottom: 200px;
+	}
+	.project .btn_b,
+	.project .btn_b a {
+		height: 300px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.project {
+		margin-top: 200px;
+		height: auto;
+	}
+	.project .project_tit {
+		display: block;
+		left: 0;
+		right: 0;
+		top: 0;
+		padding: 0 24px 24px;
+		width: auto;
+		transform: none;
+	}
+	.project .pj_wrapper {
+		display: block;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+	.project .pj_wrapper .pj_box {
+		margin-top: 106px !important;
+		width: 100%;
+		max-width: 100%;
+		letter-spacing: 0.02em;
+		transition: 0.3s;
+	}
+	.project .project_text img {
+		width: auto !important;
+	}
+	.project .pj_wrapper .pj_box:first-child > a,
+	.project .pj_wrapper .pj_box:last-child {
+		max-width: 100%;
+	}
+	.project .pj_wrapper div .pj_box:not(:last-child) {
+		margin-bottom: 0;
+	}
+	.project .pj_wrapper .pj_box:first-child {
+		margin-top: 0 !important;
+	}
+	.project .pj_wrapper .pj_box .pj_thumb {
+		margin-bottom: 15px;
+	}
+	.project .pj_wrapper .pj_box ul {
+		gap: 0;
+		font-size: 0.625em;
+	}
+	.project .pj_wrapper .pj_box ul li {
+		margin: 5px 5px 0 0;
+		padding: 6px 8px;
+		height: 23px;
+	}
+	.project .pj_wrapper .pj_box p {
+		max-width: 90%;
+		margin: 20px 0 10px;
+		font-size: 1.5em;
+		line-height: 1.2;
+	}
+	.project .pj_wrapper .pj_box span {
+		display: block;
+		max-width: 80%;
+		line-height: 18px;
+		font-size: 0.8125em;
+	}
+}
+
+/* comment */
+.comment {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 30vh;
+}
+.comment .aosup {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	line-height: 1.5;
+	text-align: center;
+	font-size: 2.25em;
+	word-break: keep-all;
+	transform: translate(-50%,-50%);
+}
+
+@media screen and (max-width: 1280px) {
+	.comment .aosup {
+		font-size: 1.875em;
+	}
+}
+@media screen and (max-width: 768px) {
+	.comment {
+		height: 55vh;
+	}
+	.comment .aosup {
+		font-size: 1.25em;
+	}
+}
+
+/* update */
+.update {
+	position: relative;
+	height: 100vh;
+}
+.update .update_text {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.update .swiper_wrap {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 90%;
+	max-width: 1520px;
+	transform: translate(-50%,-50%);
+}
+.update .swiper {
+	display: none;
+	height: 0;
+	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.25));
+}
+.update .swiper .swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* font-size: 1.125em; */
+	background-color: #000;
+}
+.update .swiper .swiper-slide .swiper_bg {
+	width: 100%;
+	height: 100%;
+}
+.update .swiper .swiper-slide .swiper_text {
+	padding: 72px 100px;
+	line-height: 1.2;
+	height: 100%;
+	color: #fff;
+	box-sizing: border-box;
+}
+.update .swiper .swiper-slide .cate {
+	margin-bottom: 10px;
+	width: 320px;
+	font-weight: 500;
+}
+.update .swiper .swiper-slide .cate span {
+	display: block;
+}
+.update .swiper .swiper-slide .cate .date {
+	margin-top: 20px;
+	font-size: 1em;
+	font-weight: 400;
+}
+.update .swiper .swiper-slide .swiper_text .tit {
+	margin: 10px 0 20px;
+	width: 320px;
+	line-height: 1.5;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+.update .swiper .swiper-slide .swiper_text .txt {
+	width: 500px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+.update .swiper .swiper-slide .swiper_text .tit,
+.update .swiper .swiper-slide .swiper_text .txt {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	white-space: normal;
+	word-break: keep-all;
+}
+.update .swiper .swiper-slide .swiper_text a {
+	position: relative;
+	display: block;
+	text-decoration: none;
+	width: 172px;
+	padding: 11px;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 15px;
+	line-height: 1.15;
+	margin-top: 30px;
+}
+.update .swiper .swiper-slide .swiper_text a::before {
+	content: "";
+	position: absolute;
+	right: 17px;
+	top: 15px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #fff;
+	border-left: 0;
+	border-bottom: 0;
+	transform: rotate(45deg);
+}
+.update .swiper .swiper-slide .swiper_text a::after {
+	content: "";
+	position: absolute;
+	right: 16px;
+	top: 20px;
+	width: 50px;
+	height: 1px;
+	background-color: #fff;
+}
+.update .swiper .swiper-pagination {
+	left: -37px;
+	bottom: 19px;
+	line-height: 1.15;
+	text-align: right;
+	font-size: 1em;
+	font-weight: 300;
+	color: #fff;
+}
+.update .swiper .swiper-button-next {
+	right: 37px;
+}
+.update .swiper .swiper-button-next::after {
+	right: 37px;
+}
+.update .swiper .swiper-button-prev {
+	left: 37px;
+}
+.update .swiper .swiper-button-next::after,
+.update .swiper .swiper-button-prev::after {
+	color: #fff;
+}
+.update .update_btn {
+	display: none;
+	position: absolute;
+	right: 10px;
+	bottom: -90px;
+	opacity: 0;
+}
+
+@media all and (min-width: 1440px) and (max-width: 1540px) {
+	.update .swiper .swiper_wrap {
+		width: 80%;
+		max-width: initial;
+	}
+}
+@media screen and (max-width: 1280px) {
+	.update .update_text {
+		display: none;
+	}
+	.update .update_text img {
+		width: 100%;
+	}
+	.update .swiper_wrap {
+		width: 90%;
+		max-width: initial;
+	}
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+	.update .update_btn {
+		bottom: -200px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.update {
+		padding-bottom: 15vh;
+		height: auto;
+	}
+	.update .update_title {
+		padding: 0 24px 24px;
+		font-weight: 300;
+		font-size: 2.5em;
+	}
+	.update .swiper_wrap {
+		top: 0;
+		left: 0;
+		max-width: 100%;
+		width: 100%;
+		transform: none;
+	}
+	.update .swiper {
+		display: block !important;
+		padding: 0 24px;
+		height: 350px !important;
+		filter: none;
+	}
+	.update .swiper .swiper-slide {
+		padding-bottom: 20px;
+		width: 100%;
+	}
+	.update .swiper .swiper-slide .swiper_text {
+		padding: 32px 50px
+	}
+	.update .swiper .swiper-slide .swiper_text .tit,
+	.update .swiper .swiper-slide .swiper_text .txt {
+		width: auto;
+	}
+}

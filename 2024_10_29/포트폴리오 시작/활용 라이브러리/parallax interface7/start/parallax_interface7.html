@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: GSAP Library</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="js/lenis.js"></script>
+<script src="js/main.js"></script>
+</head>
+
+<body>
+<div id="container">
+	<section class="blank"></section>
+	<section class="project">
+		<div class="project_tit">
+			<span class="project_text">
+				<img class="d_only" src="images/main_project_title.png" alt="projects">
+				<img class="m_only" src="images/main_project_title_mo.png" alt="projects">
+			</span>
+		</div>
+		<div class="pj_wrapper">
+			<div class="pj_box pj_left pj_box1">
+				<a href="">
+					<div class="pj_thumb"><img src="images/project1.png" alt="project1"></div>
+					<ul class="hlv">
+						<li>React</li>
+						<li>SASS</li>
+						<li>PWA</li>
+					</ul>
+					<p class="pre">Wylie 리뉴얼</p>
+					<span class="pre">정적 JSON 데이터 로딩 및 프로젝트 페이지 랜더링 / 클래스 컴포넌트로 게시판 기능 일부 구현 / SASS 활용, Nesting 및 Mixin 기능 활용</span>
+				</a>
+			</div>
+			<div class="pj_box pj_left pj_box2">
+				<a href="">
+					<div class="pj_thumb"><img src="images/project2.png" alt="project2"></div>
+					<ul class="hlv">
+						<li>React</li>
+						<li>Fetch</li>
+						<li>Styled Component</li>
+					</ul>
+					<p class="pre">YBMECC 리뉴얼</p>
+					<span class="pre">정적 JSON 데이터 로딩 및 상품 페이지 랜더링, 컴포넌트를 활용한 지역번호 동적 랜더링, SASS 활용, Nesting 및 Mixin 기능 활용</span>
+				</a>
+			</div>
+			<div class="pj_box pj_left pj_box3">
+				<a href="">
+					<div class="pj_thumb"><img src="images/project3.png" alt="project3"></div>
+					<ul class="hlv">
+						<li>React</li>
+						<li>SASS</li>
+					</ul>
+					<p class="pre">ArtCenter Nabi 리뉴얼</p>
+					<span class="pre">정적 JSON 데이터 로딩 및 상품 페이지 랜더링, 컴포넌트를 활용한 지역번호 동적 랜더링, SASS 활용, Nesting 및 Mixin 기능 활용</span>
+				</a>
+			</div>
+			<div class="pj_box pj_left pj_box4">
+				<a href="">
+					<div class="pj_thumb"><img src="images/project4.png" alt="project4"></div>
+					<ul class="hlv">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>Tailwindcss</li>
+						<li>JavaScript</li>
+					</ul>
+					<p class="pre">WConcept 리뉴얼</p>
+					<span class="pre">SwiperJS를 활용한 슬라이더 구현, useAgent API를 활용한 모바일 분기, GitHub를 활용한 버전 관리</span>
+				</a>
+			</div>
+			<div class="pj_box pj_right pj_box5">
+				<div class="d_only">
+					<div class="btn_b hlv"><a href="" target="_blank">View<br>All Projects</a></div>
+				</div>
+				<div class="btn_s m_only"><a href="" target="_blank">View all Projects</a></div>
+			</div>
+		</div>
+	</section>
+	<section class="comment">
+		<span class="pre aosup">새로운 시도를 두려워하지 않고<br>알 때까지 노력하는 개발자입니다.</span>
+	</section>
+	<section class="update">
+		<span class="update_text d_only">
+			<img src="images/main_update_top.png" class="update_top" alt="update top">
+			<img src="images/main_update_bottom.png" class="update_bottom" alt="update bottom">
+		</span>
+		<span class="update_title hlv m_only"><img src="images/update_title_mo.png" alt="update"></span>
+		<div class="swiper_wrap">
+			<div class="swiper updateSwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="swiper_bg">
+							<div class="swiper_text pre">
+								<p class="cate">
+									<span>Open Source</span>
+									<span class="date">2024.10.24</span>
+								</p>
+								<p class="tit">Axios 데이터 출력</p>
+								<p class="txt">메인 페이지 상품 등록(dummy data) + 장바구니 페이지(cookies data)<br>상품 추가 페이지(axios)</p>
+								<a href="" class="hlv">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper_bg">
+							<div class="swiper_text pre">
+								<p class="cate">
+									<span>Open Source</span>
+									<span class="date">2023.10.24</span>
+								</p>
+								<p class="tit">React 활용을 위한 기능 구현</p>
+								<p class="txt">React Component 활용 + useState와 map을 사용하여 배열 추가<br>토글, 모달 관련 UI 구현</p>
+								<a href="" class="hlv">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper_bg">
+							<div class="swiper_text pre">
+								<p class="cate">
+									<span>Open Source</span>
+									<span class="date">2023.10.24</span>
+								</p>
+								<p class="tit">React를 활용한 다이어리 기능 구현</p>
+								<p class="txt">React를 이용하여 글 작성, 수정 및 삭제 등의 페이지로 구성<br>Local Storage를 이용하여 사용자 입력 리스트 수정</p>
+								<a href="" class="hlv">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d_only">
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination hlv"></div>
+				</div>
+			</div>
+			<div class="update_btn">
+				<div class="btn_s"><a href="" target="_blank">View All News</a></div>
+			</div>
+		</div>
+	</section>
+</div>
+</body>
+</html>
