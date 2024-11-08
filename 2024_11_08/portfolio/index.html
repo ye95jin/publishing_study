@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fastly.jsdelivr.net/gh/xpressengine/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.6/swiper-bundle.min.css"
+    />
+	<link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.6/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="js/lenis.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="start">
+        <header id="header">
+          <div class="hd-wrap">
+            <div class="hd-left">
+              <h1 class="hd-logo">
+                <a href=""><img src="images/logo.svg" alt="logo" /></a>
+              </h1>
+              <div class="hd-menu">
+                <nav class="gnb-wrap">
+                  <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">SKILLS</a></li>
+                    <li><a href="">PROJECTS</a></li>
+                    <li><a href="">OPEN-SOURCE</a></li>
+                    <li><a href="">CONTACT</a></li>
+                  </ul>
+                </nav>
+                <div class="hd-allmenu-open">
+                  <div class="btn-allmenu">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hd-info">
+              <a href="">GIT</a>
+              <a href="">RESUME</a>
+            </div>
+          </div>
+        </header>
+      </div>
+      <main class="container">
+        <!-- intro -->
+        <section class="sc-intro">
+          <div class="text-box">
+            <p class="text">Front-end</p>
+            <p class="main-text">PORTFOLIO</p>
+            <p class="mini-text">
+              I am a proactive developer <br />who navigates seamlessly between <br />design and
+              development, continually<br />
+              acquiringthe necessary knowledge and skills.
+            </p>
+          </div>
+          <div class="img-box">
+            <img src="images/main-star.png" alt="main-star" />
+          </div>
+          <div class="particle-wrap">
+            <div class="particle particle1">
+              <img src="images/particle1.png" alt="particle1" />
+            </div>
+            <div class="particle particle2">
+              <img src="images/particle2.png" alt="particle2" />
+            </div>
+          </div>
+          <div class="scroll-container">
+            <img src="images/star_s_icon.png" alt="scroll icon" class="scroll-icon" />
+            <div class="scroll-btn">Scroll Down</div>
+          </div>
+        </section>
+
+        <!-- about -->
+        <section class="sc-about">
+          <div class="icons">
+            <div class="title">
+              <img src="images/star_l_icon.png" alt="sc-about-icon" class="sc-about-icon" />
+              <h2>ABOUT ME ;</h2>
+              <p>
+                디자인과 개발을 자유롭게 넘나들며,<br />
+                필요한 지식과 기술을 끊임없이 습득하는 다재다능한 개발자입니다.
+              </p>
+            </div>
+            <div class="specs">
+              <div class="icon1">
+                <img src="images/about_icon1.png" alt="wave icon" />
+              </div>
+              <div class="icon2">
+                <img src="images/particle1.png" alt="particle icon" />
+              </div>
+              <div class="icon3">
+                <img src="images/particle2.png" alt="star icon" />
+              </div>
+              <div class="icon4">
+                <img src="images/about_icon2.png" alt="shooting star icon" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- skills -->
+        <section class="sc-skills">
+          <div class="title">
+            <h2>SKILLS</h2>
+          </div>
+          <div class="skills_inner">
+            <div class="skills_wrap">
+              <ul>
+                <!-- 신규 스킬 카드 디자인 -->
+                <li class="column">
+                  <!-- Post-->
+                  <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnail">
+                      <img src="images/skills1.png" alt="skill1" />
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                      <div class="category">ReactJS & JSP</div>
+                      <h1 class="title">React를 활용한 <br />사용자 인터페이스 구현 </h1>
+                      <h2 class="sub_title">Java 웹 애플리케이션 구현</h2>
+                      <p class="description">
+                        EcmaScript 2022 기반 Native JavaScript 구현<br />
+                        JSX, JavaScript 확장 XML 작성<br />
+                        외부 플러그인 활용 및 기본 include와 제어문 작성
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <!-- 신규 스킬 카드 디자인 끝 -->
+
+                <!-- <li>
+                  <div class="skills-title">01 ReactJS & JSP</div>
+                  <div class="content">
+                    <a href="">
+                      <div class="skills-photo">
+                        <img src="images/skills1.png" alt="skill1" />
+                      </div>
+                      <div class="skills-text">
+                        <p class="top">
+                          React를 활용한 사용자 인터페이스 구현 및<br />
+                          Java 웹 애플리케이션 구현
+                        </p>
+                        <p class="bottom">
+                          EcmaScript 2022 기반 Native JavaScript 구현<br />
+                          JSX, JavaScript 확장 XML 작성<br />
+                          외부 플러그인 활용 및 구현 및 기본 include와 제어문 작성
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </li> -->
+
+                <li class="column">
+                  <!-- Post-->
+                  <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnail">
+                      <img src="images/skills2.png" alt="skill2" />
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                      <div class="category">JavaScript</div>
+                      <h1 class="title">jQuery를 활용한 <br />인터랙티브 요소 구성</h1>
+                      <h2 class="sub_title">Java 웹 애플리케이션 연결</h2>
+                      <p class="description">
+                        EcmaScript 2022 기반 jQuery 제어문 작성<br />
+                        HTML 구조와 jQuery 활용 예제 작성<br />
+                        Ajax 기능 활용 및 기본 설정과 이벤트 구성
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- <li>
+                  <div class="skills-title">02 JavaScript</div>
+                  <div class="content">
+                    <a href="">
+                      <div class="skills-photo">
+                        <img src="images/skills2.png" alt="skill2" />
+                      </div>
+                      <div class="skills-text">
+                        <p class="top">jQuery 플러그인 활용 및 구현</p>
+                        <p class="bottom">외부 API 구현(Google Map, SwiperJS)</p>
+                      </div>
+                    </a>
+                  </div>
+                </li> -->
+
+                <li class="column">
+                  <!-- Post-->
+                  <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnail">
+                      <img src="images/skills3.png" alt="skill3" />
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                      <div class="category">HTML & CSS & SASS</div>
+                      <h1 class="title">HTML5를 활용한 <br />웹 인터페이스 설계 </h1>
+                      <h2 class="sub_title">CSS/SASS 스타일링 구현</h2>
+                      <p class="description">
+                        HTML5 DTD 문법 준수 및 웹 접근성 강화<br />
+                        시맨틱 구조 페이지 작성 가이드<br />
+                        CSS/SASS로 반응형 및 스타일 구성 설정
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- <li>
+                  <div class="skills-title">03 HTML & CSS & SASS</div>
+                  <div class="content">
+                    <a href="">
+                      <div class="skills-photo">
+                        <img src="images/skills3.png" alt="skill3" />
+                      </div>
+                      <div class="skills-text">
+                        <p class="top">
+                          HTML5 DTD 문법 준수 및 웹 접근성을 높인<br />
+                          Semantic Page 작성
+                        </p>
+                        <p class="bottom">
+                          IR 기법을 이용한 스타일 구현, 모바일 스타일 구현,<br />
+                          전처리 기능을 CSS 프로그래밍 구현
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </li> -->
+
+                <li class="column">
+                  <!-- Post-->
+                  <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnail">
+                      <img src="images/skills4.png" alt="skill4" />
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                      <div class="category">CSS & UI Prototype</div>
+                      <h1 class="title">GitHub를 활용한 <br />협업 시스템 관리 </h1>
+                      <h2 class="sub_title">Figma로 UI 가이드 작성</h2>
+                      <p class="description">
+                        Git 브랜치 전략과 버전 관리 수행<br />
+                        Figma 활용, 프로토타입과 가이드 작성<br />
+                        협업 프로세스 구축 및 실시간 피드백 반영
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- <li>
+                  <div class="skills-title">04 CSS & UI Prototype</div>
+                  <div class="content">
+                    <a href="">
+                      <div class="skills-photo">
+                        <img src="images/skills4.png" alt="skill4" />
+                      </div>
+                      <div class="skills-text">
+                        <p class="top">
+                          GitHub를 활용한 Git 시스템 협업 및 Figma를 이용한<br />
+                          사용자 가이드 작성
+                        </p>
+                        <p class="bottom">
+                          IR 기법을 이용한 스타일 구현, 모바일 스타일 구현,<br />
+                          전처리 기능을 CSS 프로그래밍 구현
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- projects -->
+        <section class="projects">
+          <div class="project_tit">
+            <img src="images/project-icon.png" alt="project-icon" class="project-icon" />
+            <span class="project_text"> PROJECTS </span>
+          </div>
+          <div class="pj_wrapper">
+            <div class="pj_box pj_left pj_box1">
+              <a href="">
+                <div class="pj_thumb"><img src="images/project1.png" alt="project1" /></div>
+                <ul class="hlv">
+                  <li>React</li>
+                  <li>SASS</li>
+                  <li>PWA</li>
+                </ul>
+                <p class="pre">Wylie 리뉴얼</p>
+                <span class="pre"
+                  >정적 JSON 데이터 로딩 및 프로젝트 페이지 랜더링 / 클래스 컴포넌트로 게시판 기능
+                  일부 구현 / SASS 활용, Nesting 및 Mixin 기능 활용</span
+                >
+              </a>
+            </div>
+            <div class="pj_box pj_left pj_box2">
+              <a href="">
+                <div class="pj_thumb"><img src="images/project2.png" alt="project2" /></div>
+                <ul class="hlv">
+                  <li>React</li>
+                  <li>Fetch</li>
+                  <li>Styled Component</li>
+                </ul>
+                <p class="pre">O'kichen 리뉴얼</p>
+                <span class="pre"
+                  >정적 JSON 데이터 로딩 및 상품 페이지 랜더링, 컴포넌트를 활용한 지역번호 동적
+                  랜더링, SASS 활용, Nesting 및 Mixin 기능 활용</span
+                >
+              </a>
+            </div>
+            <div class="pj_box pj_left pj_box3">
+              <a href="">
+                <div class="pj_thumb"><img src="images/project3.png" alt="project3" /></div>
+                <ul class="hlv">
+                  <li>React</li>
+                  <li>SASS</li>
+                </ul>
+                <p class="pre">ArtCenter Nabi 리뉴얼</p>
+                <span class="pre"
+                  >정적 JSON 데이터 로딩 및 상품 페이지 랜더링, 컴포넌트를 활용한 지역번호 동적
+                  랜더링, SASS 활용, Nesting 및 Mixin 기능 활용</span
+                >
+              </a>
+            </div>
+            <div class="pj_box pj_left pj_box4">
+              <a href="">
+                <div class="pj_thumb"><img src="images/project4.png" alt="project4" /></div>
+                <ul class="hlv">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Tailwindcss</li>
+                  <li>JavaScript</li>
+                </ul>
+                <p class="pre">WConcept 리뉴얼</p>
+                <span class="pre"
+                  >SwiperJS를 활용한 슬라이더 구현, useAgent API를 활용한 모바일 분기, GitHub를
+                  활용한 버전 관리</span
+                >
+              </a>
+            </div>
+            <div class="pj_box pj_right pj_box5">
+              <div class="d_only">
+                <div class="btn_b hlv">
+                  <a href="" target="_blank">
+                    <strong class="text">ALL PROJECTS</strong>
+                    <img src="images/btn_view_more.png" alt="view-icon" class="btn-icon" />
+                  </a>
+                </div>
+              </div>
+              <div class="btn_s m_only">
+                <a href="" target="_blank">
+                  <strong class="text">ALL PROJECTS</strong>
+                  <img src="images/btn_view_more.png" alt="view-icon" class="btn-icon" />
+                </a>
+              </div>
+            </div>
+            <div class="pj_box pj_right pj_box6">
+              <img
+                class="project-star-icon"
+                src="images/project_star.png"
+                alt="project star icon"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- open-source -->
+        <div class="open-source">
+          <div class="main-tit serif">OPEN-SOURCE</div>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card">
+                <div class="content">
+                  <h2 class="title">Mountain View</h2>
+                  <p class="copy">
+                    Check out all of these gorgeous mountain trips with beautiful views of, you
+                    guessed it, the mountains
+                  </p>
+                  <button class="btn">View More</button>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <div class="content">
+                  <h2 class="title">To The Beach</h2>
+                  <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+                  <button class="btn">View More</button>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <div class="content">
+                  <h2 class="title">Desert Destinations</h2>
+                  <p class="copy">It's the desert you've always dreamed of</p>
+                  <button class="btn">View More</button>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <div class="content">
+                  <h2 class="title">Explore The Galaxy</h2>
+                  <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+                  <button class="btn">View More</button>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <div class="content">
+                  <h2 class="title">Explore The Galaxy</h2>
+                  <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+                  <button class="btn">View More</button>
+                </div>
+              </div>
+
+              <!-- <div class="swiper-slide">
+                <div class="thumb">
+                  <a href=""><img src="images/open-source/project1.png" alt="project1" /></a>
+                </div>
+                <div class="desc">
+                  <div class="name serif">Oksuro</div>
+                  <p>
+                    초소형 냉온열 갈바닉 진동<br />
+                    멀티 뷰티 디바이스
+                  </p>
+                  <a href="" class="btn">View More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thumb">
+                  <a href=""><img src="images/open-source/project1.png" alt="project2" /></a>
+                </div>
+                <div class="desc">
+                  <div class="name serif">Purito Seoul</div>
+                  <p>
+                    초소형 냉온열 갈바닉 진동<br />
+                    멀티 뷰티 디바이스
+                  </p>
+                  <a href="" class="btn">View More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thumb">
+                  <a href=""><img src="images/open-source/project1.png" alt="project3" /></a>
+                </div>
+                <div class="desc">
+                  <div class="name serif">Lifeplus</div>
+                  <p>
+                    헤드 교체 식 LED 미세전류 진동<br />
+                    멀티 뷰티 디바이스
+                  </p>
+                  <a href="" class="btn">View More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thumb">
+                  <a href=""><img src="images/open-source/project1.png" alt="project4" /></a>
+                </div>
+                <div class="desc">
+                  <div class="name serif">Men Noblesse</div>
+                  <p>
+                    건강한 광채를 선사하는<br />
+                    디바이스 전용 젤
+                  </p>
+                  <a href="" class="btn">View More</a>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="thumb">
+                  <a href=""><img src="images/open-source/project1.png" alt="project5" /></a>
+                </div>
+                <div class="desc">
+                  <div class="name serif">b.state design</div>
+                  <p>
+                    건강한 광채를 선사하는<br />
+                    디바이스 전용 젤
+                  </p>
+                  <a href="" class="btn">View More</a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="main-contact">
+          <div class="tit">
+            <p class="animate-text">
+              Front-end<br />
+              Development
+            </p>
+          </div>
+          <div class="contact-icon"></div>
+        </div>
+      </main>
+      <div class="footer">
+        <div class="ft-wrap">
+          <div class="ft-left">
+            <div class="ft-logo">
+              <a href=""><img src="images/logo.svg" alt="logo" /></a>
+            </div>
+            <div class="ft-info">
+              <p>
+                <span><strong>NOTION</strong>https://</span>
+                <span><strong>MAIL</strong>ye95jin@naver.com</span>
+              </p>
+              <p>
+                <span><strong>GIT</strong>https://github.com/</span>
+                <span><strong>PORTFOLIO</strong>https://</span>
+              </p>
+              <p class="copy">COPYRIGHT ⓒ 2024 Yejin. ALL RIGHTS RESERVED.</p>
+            </div>
+          </div>
+          <!-- <div class="ft-right">
+				<div class="ft-link">
+					<a href="">About Us</a>
+					<a href="" class="privacy-btn"><strong>개인정보처리방침</strong></a>
+				</div>
+				<div class="ft-sns">
+					<a href=""><i class="xi-linkedin"></i></a>
+					<a href=""><i class="xi-facebook-official"></i></a>
+				</div>
+			</div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
