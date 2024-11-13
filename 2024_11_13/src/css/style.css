@@ -1,0 +1,129 @@
+/* 기본 스타일 초기화 */
+body, ul, ol, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, table, th, td {
+	margin: 0;
+	padding: 0;
+}
+body {
+	line-height: 1;
+	font-family: "Open Sans", "Noto Sans KR", sans-serif;
+	font-size: 1em;
+	color: #000;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+img {
+	vertical-align: top;
+}
+
+.product-section {
+    text-align: center;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-top: 50px;
+}
+
+.product-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: space-between; 
+}
+
+.product-grid li {
+    flex: 1 1 calc(25% - 20px); 
+    max-width: 300px; 
+    box-sizing: border-box; 
+}
+
+.product-item {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden; 
+    color: inherit;
+    transition: box-shadow 0.3s ease;
+}
+
+
+.product-image {
+    background-color: #f9f9f9; 
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.product-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 1rem;
+    margin: 17px 0;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+}
+
+.product-price .discount {
+    color: #f42d10;
+}
+
+.product-price .price {
+    color: #000;
+}
+
+.original-price {
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    margin-top: 15px;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.page-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #d3d3d3;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-indicator.active {
+    width: 30px; 
+    height: 10px;
+    background-color: #333; 
+    border-radius: 20px; 
+}
