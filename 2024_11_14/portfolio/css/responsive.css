@@ -1,0 +1,120 @@
+/* 모바일 (최대 576px) */
+@media (max-width: 576px) {
+}
+
+/* 작은 태블릿 (577px ~ 767px) */
+@media (min-width: 577px) and (max-width: 767px) {
+}
+
+/* 큰 태블릿 / 작은 데스크탑 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+	
+	#start header .hd-wrap {
+		padding: 0 20px 0 20px;
+	}
+
+	#start header .gnb-wrap {
+		display: none;
+	}
+
+	#header .hd-wrap .hd-allmenu-open {
+		display: block;
+	}
+
+	.sc-intro .text-box {
+		width: 700px;
+	}
+
+	.sc-intro .text-box .text {
+		font-size: 7.38em;
+	}
+
+	.sc-intro .text-box .main-text {
+		font-size: 123px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 387px;
+        font-size: 9px;	
+	}
+
+	.sc-intro .particle1 {
+		width: 70px;
+		left: 66%;
+        margin-top: -183px;
+	}
+
+	.sc-intro .particle2 {
+		width: 70px;
+		left: 86%;
+	}
+
+	.sc-intro::before {
+		right: -800px;
+	}
+}
+
+/* 작은 데스크탑 (1025px ~ 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+		
+	#start header .hd-wrap {
+		padding: 0 10px 0 10px;
+	}
+
+	.sc-intro .text-box {
+		width: 880px;
+	}
+
+	.sc-intro .text-box .text {
+		font-size: 8.38em;
+	}
+
+	.sc-intro .text-box .main-text {
+		font-size: 133px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 274px;
+        font-size: 9px;	
+	}
+
+	.sc-intro .particle1 {
+		width: 80px;
+		left: 54%;
+        margin-top: -183px;
+	}
+
+	.sc-intro .particle2 {
+		width: 80px;
+		left: 65%;
+	}
+
+	.sc-intro::before {
+		right: -1000px;
+	}
+}
+
+/* 일반 데스크탑 (1280px 이상) */
+@media (min-width: 1280px) {
+	.sc-intro .text-box {
+		width: 1050px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 324px;
+		font-size: 13px;
+	}
+
+	.sc-intro .particle1 {
+		left: 51%;
+		margin-top: -201px;
+	}
+
+	.sc-intro .particle2 {
+		left: 55%;
+	}
+
+	.sc-intro::before {
+		right: -1100px;
+	}
+}
