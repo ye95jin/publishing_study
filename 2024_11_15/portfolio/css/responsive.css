@@ -1,0 +1,608 @@
+/* 모바일 (최대 576px) */
+@media (max-width: 576px) {
+		/* header */
+		#start header .hd-wrap {
+			padding: 0 20px 0 20px;
+		}
+	
+		#start header .gnb-wrap {
+			display: none;
+		}
+	
+		#header .hd-wrap .hd-allmenu-open {
+			display: block;
+		}
+
+		#header .hd-wrap .hd-info {
+		display: none;
+		  }
+	
+		/* intro */
+	
+		.sc-intro .text-box {
+			width: 350px;
+			text-align: center;
+		}
+	
+		.sc-intro .text-box .text {
+			font-size: 3.8em;
+		}
+	
+		.sc-intro .text-box .main-text {
+			font-size: 60px;
+		}
+	
+		.sc-intro .mini-text {
+			display: none;
+		}
+	
+		.sc-intro .particle1 {
+			width: 45px;
+			left: 88%;
+			margin-top: -100px;
+		}
+	
+		.sc-intro .particle2 {
+			width: 55px;
+			left: 181%;
+			margin-top: 40px;
+		}
+	
+		.sc-intro::before {
+			right: -200px;
+		}
+	
+		.sc-intro .img-box {
+			right: -45%;
+			width: 440px;
+			bottom: -5%;
+		}
+
+		.scroll-container {
+			display: none;
+		}
+
+		/* about */
+
+		.sc-about .sc-about-icon {
+			width: 40px;
+		}
+
+		.sc-about .title h2 {
+			font-size: 2em;
+		}
+
+		.sc-about .title p {
+			font-size: 0.48em;
+		}
+
+		.sc-about .specs .icon1 {
+			left: 10vw;
+			width: 80px;
+		}
+
+		.sc-about .specs .icon2 {
+			left: 13vw;
+			width: 60px;
+		}
+
+		.sc-about .specs .icon3 {
+			right: 15vw;
+			width: 70px;
+		}
+
+		.sc-about .specs .icon4 {
+			width: 240px;
+		}
+
+		.sc-about::after {
+			width: 187%;
+			left: -475px;
+		}
+		
+		
+}
+
+/* 작은 태블릿 (577px ~ 767px) */
+@media (min-width: 577px) and (max-width: 767px) {
+		/* header */
+		#start header .hd-wrap {
+			padding: 0 20px 0 20px;
+		}
+	
+		#start header .gnb-wrap {
+			display: none;
+		}
+	
+		#header .hd-wrap .hd-allmenu-open {
+			display: block;
+		}
+
+		
+		#header .hd-wrap .hd-info {
+			display: none;
+		}
+	
+		/* intro */
+	
+		.sc-intro .text-box {
+			width: 500px;
+			text-align: center;
+		}
+	
+		.sc-intro .text-box .text {
+			font-size: 5.1em;
+		}
+	
+		.sc-intro .text-box .main-text {
+			font-size: 90px;
+		}
+	
+		.sc-intro .mini-text {
+			display: none;
+		}
+	
+		.sc-intro .particle1 {
+			width: 64px;
+			left: 88%;
+			margin-top: -131px;
+		}
+	
+		.sc-intro .particle2 {
+			width: 60px;
+			left: 127%;
+			margin-top: 58px;
+		}
+	
+		.sc-intro::before {
+			right: -300px;
+		}
+	
+		.sc-intro .img-box {
+			right: -48%;
+			width: 671px;
+		}
+
+		.scroll-container {
+			display: none;
+		}
+
+		/* about */
+
+		.sc-about .sc-about-icon {
+			width: 45px;
+		}
+
+		.sc-about .title h2 {
+			font-size: 3em;
+		}
+
+		.sc-about .title p {
+			font-size: 0.68em;
+		}
+
+		.sc-about .specs .icon1 {
+			left: 10vw;
+			width: 90px;
+		}
+
+		.sc-about .specs .icon2 {
+			left: 13vw;
+			width: 70px;
+		}
+
+		.sc-about .specs .icon3 {
+			right: 15vw;
+			width: 80px;
+		}
+
+		.sc-about .specs .icon4 {
+			width: 250px;
+		}
+
+		.sc-about::after {
+			width: 129%;
+		}
+
+		/* projects */
+
+		.projects .pj_wrapper {
+			display: flex;
+			flex-direction: column; 
+			align-items: center; 
+			gap: 60px; 
+			padding: 0 60px;
+		}
+
+		.projects .pj_wrapper .pj_box {
+			flex: none; 
+			max-width: 100%; 
+			width: 100%;
+			margin-top: 0; 
+		}
+
+		.projects .pj_wrapper .pj_box:nth-child(2n-1) {
+			margin-top: 0;
+			max-width: 100%;
+		}
+
+		.projects .pj_wrapper .pj_box:first-child > a {
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.projects .pj_wrapper .pj_box > a {
+			display: block;
+			max-width: 100%;
+		}
+
+		.projects .pj_wrapper .pj_box:nth-child(2n) {
+			margin-top: 0;
+			max-width: 100%;
+		}
+	
+		.projects .pj_wrapper .pj_box ul {
+			padding-top: 30px;
+			font-size: 0.6em;
+		}
+	
+		.projects .pj_wrapper .pj_box p {
+			margin: 15px 0 10px;
+			font-size: 1.8em;
+		}
+	
+		.projects .pj_wrapper .pj_box span {
+			font-size: 0.8em;
+		}
+
+		.pj_box5 {
+			display: none;
+		}
+
+		.pj_box6 {
+			display: none;
+		}
+}
+
+/* 큰 태블릿 / 작은 데스크탑 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+	
+	/* header */
+	#start header .hd-wrap {
+		padding: 0 20px 0 20px;
+	}
+
+	#start header .gnb-wrap {
+		display: none;
+	}
+
+	#header .hd-wrap .hd-allmenu-open {
+		display: block;
+	}
+
+	#start header .hd-wrap .hd-left {
+		gap: 2.7em;
+	}
+
+	/* intro */
+
+	.sc-intro .text-box {
+		width: 700px;
+	}
+
+	.sc-intro .text-box .text {
+		font-size: 7.38em;
+	}
+
+	.sc-intro .text-box .main-text {
+		font-size: 123px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 387px;
+        font-size: 9px;	
+		bottom: 47%;
+	}
+
+	.sc-intro .particle1 {
+		width: 70px;
+		left: 80%;
+		margin-top: -174px;
+	}
+
+	.sc-intro .particle2 {
+		width: 70px;
+		left: 88%;
+	}
+
+	.sc-intro::before {
+		right: -600px;
+	}
+
+	.sc-intro .img-box {
+		right: -26%;
+        width: 732px;
+	}
+
+	.scroll-container {
+		display: none;
+	}
+
+	/* about */
+
+	.sc-about .sc-about-icon {
+		width: 50px;
+	}
+
+	.sc-about .title h2 {
+		font-size: 4em;
+	}
+
+	.sc-about .title p {
+		font-size: 0.9em;
+	}
+
+		.sc-about .specs .icon2 {
+		left: 13vw;
+		width: 87px;
+	}
+
+	.sc-about .specs .icon2 {
+		left: 13vw;
+		width: 87px;
+	}
+
+	.sc-about .specs .icon3 {
+		right: 15vw;
+		width: 94px;
+	}
+
+	.sc-about .specs .icon4 {
+		width: 280px;
+	}
+
+		/* projects */
+
+		.projects .pj_wrapper {
+			display: flex;
+			flex-direction: column; 
+			align-items: center; 
+			gap: 60px; 
+			padding: 0 60px;
+		}
+
+		.projects .pj_wrapper .pj_box {
+			flex: none; 
+			max-width: 100%; 
+			width: 100%;
+			margin-top: 0; 
+		}
+
+		.projects .pj_wrapper .pj_box:nth-child(2n-1) {
+			margin-top: 0;
+			max-width: 100%;
+		}
+
+		.projects .pj_wrapper .pj_box:first-child > a {
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.projects .pj_wrapper .pj_box > a {
+			display: block;
+			max-width: 100%;
+		}
+
+		.projects .pj_wrapper .pj_box:nth-child(2n) {
+			margin-top: 0;
+			max-width: 100%;
+		}
+	
+		.projects .pj_wrapper .pj_box ul {
+			padding-top: 30px;
+			font-size: 0.6em;
+		}
+	
+		.projects .pj_wrapper .pj_box p {
+			margin: 15px 0 10px;
+			font-size: 1.8em;
+		}
+	
+		.projects .pj_wrapper .pj_box span {
+			font-size: 0.8em;
+		}
+
+		.pj_box5 {
+			display: none;
+		}
+
+		.pj_box6 {
+			display: none;
+		}
+
+	/* contact */
+	.main-contact {
+		padding: 0 40px ;
+	}
+
+	.main-contact .tit p {
+		font-size: 6.5em;
+	}
+
+	.main-contact .contact-icon {
+		top: 60%;
+		left: 50%;
+		width: 120px;
+		height: 100px;
+	}
+	
+}
+
+/* 작은 데스크탑 (1025px ~ 1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+	
+	/* header */
+	#start header .hd-wrap {
+		padding: 0 10px 0 10px;
+	}
+
+	/* intro */
+	.sc-intro .text-box {
+		width: 880px;
+	}
+
+	.sc-intro .text-box .text {
+		font-size: 8.38em;
+	}
+
+	.sc-intro .text-box .main-text {
+		font-size: 133px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 274px;
+        font-size: 9px;	
+		left: 64%;
+		bottom: 47%;
+	}
+
+	.sc-intro .particle1 {
+		width: 80px;
+		left: 72%;
+        margin-top: -183px;
+	}
+
+	.sc-intro .particle2 {
+		width: 80px;
+		left: 69%;
+	}
+
+	.sc-intro::before {
+		right: -800px;
+	}
+
+	.sc-intro .img-box {
+		right: -20%;
+		width: 839px;
+	}
+
+	/* about */
+
+	.sc-about .sc-about-icon {
+		width: 50px;
+	}
+
+	.sc-about .title h2 {
+		font-size: 5em;
+	}
+
+	.sc-about .title p {
+		font-size: 1.2em;
+	}
+
+	.sc-about .specs .icon2 {
+		left: 13vw;
+		width: 87px;
+	}
+
+	.sc-about .specs .icon3 {
+		right: 15vw;
+		width: 94px;
+	}
+
+	.sc-about .specs .icon4 {
+		width: 280px;
+	}
+
+	/* skills */
+
+
+	/* projects */
+
+	.projects .pj_wrapper {
+		padding: 0 60px;
+	}
+
+	.projects .pj_wrapper .pj_box ul {
+		padding-top: 30px;
+		font-size: 0.6em;
+	}
+
+	.projects .pj_wrapper .pj_box p {
+		margin: 15px 0 10px;
+		font-size: 1.8em;
+	}
+
+	.projects .pj_wrapper .pj_box span {
+		font-size: 0.8em;
+	}
+
+	.btn_b a {
+		right: -2px;
+		bottom: 20px;
+		padding: 33px 20px 20px 20px;
+		height: 428px;
+	}
+
+	.btn_b a .text {
+		font-size: 1.2em;
+	}
+
+	.btn_b a::before {
+		right: 20px;
+		top: 33px;
+		width: 75px;
+		height: 75px;
+	}
+
+	.btn_b a::after {
+		right: -12px;
+		top: 112px;
+		width: 111px;
+	}
+
+	/* contact */
+	.main-contact {
+		padding: 0 40px ;
+	}
+
+	.main-contact .tit p {
+		font-size: 8.5em;
+	}
+
+	.main-contact .contact-icon {
+		top: 60%;
+		left: 50%;
+		width: 140px;
+		height: 120px;
+	}
+}
+
+/* 일반 데스크탑 (1280px 이상) */
+@media (min-width: 1280px) {
+
+	/* intro */
+	.sc-intro .text-box {
+		width: 1050px;
+	}
+
+	.sc-intro .mini-text {
+		margin-left: 411px;
+		font-size: 13px;
+	}
+
+	.sc-intro .particle1 {
+		left: 68%;
+        margin-top: -224px;
+	}
+
+	.sc-intro .particle2 {
+		left: 57%;
+	}
+
+	.sc-intro::before {
+		right: -1100px;
+	}
+}
